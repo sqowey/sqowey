@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wudsim</title>
+    <link rel="stylesheet" href="./rechtliches_style.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Content of the navigation-bar -->
+    <div id="sideNav" class="sidenav">
+        <span id="navCloseButton" class="navClosebtn" onclick="closeNav()">&times;</span>
+        <a href="./index.html">Startseite</a>
+        <a href="../app/login.html">Login</a>
+        <a href="../app/register.html">Registrieren</a>
+        <a href="#">Über Uns</a>
+        <a href="./credits.html">Credits</a>
+        <a onclick="toTop()">Datenschutz</a>
+        <a href='./rechtliches.html?teil="Impressum"'>Impressum</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    <!-- Button to open the navigation-bar -->
+    <div id="navOpener">
+        <span id="navOpenerButton" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <!-- Main content of the site -->
+    <div id="main">
+        <div id="datenschutz">
+            <div class="title_container">
+                <span class="title">Datenschutzerkl&auml;rung</span>
+            </div>
+            <br>
+            <div id="datenschutz-inhalt" class="inhalt">
+                <strong>Verantwortlicher gem&auml;&szlig; Art. 4 Nr. 7 Datenschutz-Grundverordnung &lpar;DS&minus;GVO&rpar; ist:</strong><br>
+                <ul>
+                    <li>Konstantin Protzen</li>
+                    <li>Tel: &plus;49 151 56007805</li>
+                    <li>E-Mail: cuzimbisonratte&commat;gmail&period;com</li>
+                </ul>
+                <br>
+                <strong>Diese Daten sammeln wir:</strong><br>
+                <ul>
+                    <li>Daten, die einer Person zugeordnet werden k&ouml;nnen:<sup>&ast;1</sup></li>
+                    <ul>
+                        <li>E-Mail</li>
+                        <li>Benutzername</li>
+                        <li>Passwort</li>
+                        <li>Nachrichten</li>
+                        <li>Profilbild</li>
+                    </ul>
+                    <li>Daten, die keiner Person zugeordnet werden k&ouml;nnen:<sup>&ast;2</sup></li>
+                    <ul>
+                        <li>IP-Adresse</li>
+                        <li>Referrer</li>
+                        <li>Besuchszeit</li>
+                        <li>Browser-Kennung</li>
+                        <li>Auf welche Seiten zugegriffen wurde</li>
+                    </ul>
+                    <br>
+                </ul>
+                <br>
+                <strong>Wof&uuml;r die Daten genutzt werden:</strong><br>
+                <ul>
+                    <li>E-Mail:
+                        <ul>
+                            <li>Verifikation, gegen Bot-angriffe</li>
+                            <li>Wenn sie den Newsletter aktivieren, senden wir ihn dir hier zu</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Benutzername:
+                        <ul>
+                            <li>Anmelden</li>
+                            <li>Nutzung als Anzeigename bei Kontakt mit anderen Nutzern</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Passwort:
+                        <ul>
+                            <li>Anmelden</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <strong>Weitergabe an Dritte:</strong><br>
+                <ul>
+                    <li>Ihre Daten, werden nur auf <strong>unseren Servern</strong> gespeichert.</li>
+                    <li>Ihre Daten, werden nicht an dritte weitergegeben<sup>&ast;3</sup></li>
+                </ul>
+                <br>
+                <strong>Speicherung der Daten:</strong><br>
+                <ul>
+                    <li>Persönliche Daten, werden gespeichert, bis sie eine löschung ihres accounts anfordern.</li>
+                    <li>Persönlich nicht zuordenbare Daten, werden gespeichert, bis zum Neujahresanfang<sup>&ast;4</sup></li>
+                </ul>
+                <br>
+                <strong>Recht auf auskunft der Daten (Art. 15 DS-GVO):</strong><br>
+                <ul>
+                    <li>Du kannst alle Persönlichen Daten auf der Profilseite ansehen.</li>
+                    <li>Einen detallierteren Bericht kannst du auf der Profilseite anfordern.</li>
+                </ul>
+                <br>
+                <strong>Recht auf berichtigung der Daten (Art. 16 DS-GVO):</strong><br>
+                <ul>
+                    <li>Um Persönliche Daten zu berichtigen, nutzen sie bitte das Kontaktformular.</li>
+                </ul>
+                <br>
+                <strong>Recht auf Löschung der Daten (Art. 17 DS-GVO):</strong><br>
+                <ul>
+                    <li>Ihre Daten können sie auf der Profilseite löschen.</li>
+                </ul>
+                <br>
+                <strong>Recht auf mitteilung bei offenlegung der Daten (Art. 19 DS-GVO):</strong><br>
+                <ul>
+                    <li>Nach offenlegung ihrer Daten werden sie innerhalb weniger Tage per E-Mail informiert<sup>&ast;5</sup>.</li>
+                </ul>
+                <br>
+                <strong>Recht auf Wiederspruch (Art. 21 DS-GVO):</strong><br>
+                <ul>
+                    <li>Wiederspruch gegen speicherung ihrer Daten, können sie einlegen,<br>indem sie auf der Profilseite eine löschung des Profils anfordern.<br>Durch löschung des Profils, werden alle Daten von unseren servern gelöscht.</li>
+                </ul>
+                <br>
+                <strong>Recht auf wiederrufen einer datenschutzrechtlichen Einwilligung (Art. 7 DS-GVO):</strong><br>
+                <ul>
+                    <li>Sie können die datenschutzrechtliche Einwilligung wiederrufen, indem sie eine löschung ihres Profils anfordern.<br>Durch löschung des Profils, werden alle Daten von unseren servern gelöscht.</li>
+                </ul>
+                <br>
+                <strong>Recht auf beschwerde bei der zuständigen Behörde (Art. 7 DS-GVO):</strong><br>
+                <ul>
+                    <li>Sie können sich jederzeit bei der zuständigen Aufsichtsbehörde beschweren,<br>wenn sie der Meinung sind, dass ein Verstoß bei der Verarbeitung ihrer Daten vorliegt.</li>
+                </ul>
+                <br><br><br>
+                <div class="minitext">
+                    <span><sup>&ast;1</sup> Diese Daten, werden nur gesammelt, wenn sie den Messenger nutzen.</span>
+                    <br>
+                    <span><sup>&ast;2</sup> Wir verwenden diese Daten um:</span><br>
+                    <ol>
+                        <li>die Bedienbarkeit unserer Seite zu verbessern.</li>
+                        <li>technische Probleme zu erkennen</li>
+                        <li>im Falle eines Angriffes auf unsere Services, den Strafverfolgungsbehörden die notwendigen Informationen bereitzustellen</li>
+                    </ol>
+                    <span><sup>&ast;3</sup> Wenn sie am Beta-Programm teilnehmen, gelten nur Datenschutzbestimmungen, wie dort separat beschrieben.</span>
+                    <br>
+                    <span><sup>&ast;4</sup> Am 01.01 werden jährlich um 0 Uhr alle Daten, die vor dem 25.12 gesammelt wurden, gelöscht</span>
+                    <br>
+                    <span><sup>&ast;5</sup> Dies geschieht, solange es nicht unmöglich ist und auch nicht mit unverhältnissmässigem Aufwand verbunden ist, sie zu informieren.</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="impressum">
+            <div class="title_container">
+                <span class="title">Impressum</span>
+            </div>
+            <br>
+            <div id="impressum-inhalt">
+                <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+                <span id="warning">Das unangemeldete Aufsuchen der privaten Geschäfts-Adresse wird als Hausfriedensbruch gedeutet und wird ohne Ausnahme zur Anzeige gebracht.</span>
+                <ul>
+                    <li>Konstantin Protzen</li>
+                    <li>Reinhold-Schneider-Str. 4</li>
+                    <li>76530 Baden-Baden</li>
+                </ul>
+                <h2>Kontakt:</h2>
+                <ul>
+                    <li>Telefon: 015156007805</li>
+                    <li>E-Mail: <a id="linkToContact" href="kontakt.html">cuzimbisonratte@gmail.com</a></li>
+                </ul>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+    <script src="./rechtliches_script.js"></script>
+    <script src="./rechtliches_themes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+body {
+    font-family: Dosis;
+    background-color: #282c36;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+#topbar {
+    margin: auto;
+    background-color: #2f3947;
+    height: 60px;
+    width: 70%;
+    border: 0;
+}
+
+#topbar div {
+    display: flex;
+    margin: auto;
+    width: 1000px;
+    height: 100%;
+}
+
+#topbar div h1,
+#topbar div a {
+    display: inline-flex;
+    align-items: center;
+}
+
+#topbar div h1 {
+    flex: 1;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: #eaebed;
+    font-weight: normal;
+}
+
+#topbar div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c1c4c8;
+    font-weight: bold;
+}
+
+#topbar div a i {
+    padding: 2px 8px 0 0;
+}
+
+#topbar div a:hover {
+    color: #eaebed;
+}
+
+#main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#main h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #e0e0e3;
+    color: #4a536e;
+}
+
+#main>p,
+#main>div {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #282c36;
+}
+
+#main>p table td,
+#main>div table td {
+    padding: 5px;
+}
+
+#main>p table td:first-child,
+#main>div table td:first-child {
+    font-weight: bold;
+    color: #4a536e;
+    padding-right: 15px;
+}
+
+#main>div p {
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+
+/* 
+Navigation
+*/
+
+#navigation {
+    width: 15%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+}
+
+
+/*  
+Statusknoepfe
+*/
+
+#statussetter {
+    background-color: #2f3947;
+    font-size: 375%;
+    width: 10%;
+    height: 10%;
+    display: block;
+    float: right;
+}
+
+#online {
+    margin-left: 10px;
+    color: #00ff00;
+}
+
+#away {
+    color: #ffff00;
+}
+
+#notDisturb {
+    color: #ff0000;
+    margin-right: 10px;
+}

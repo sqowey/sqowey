@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wudsim - Registrieren</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="formular_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+    <div id="login">
+        <h1>REGISTRIEREN</h1>
+        <form action="register.php" method="post">
+
+            <!-- E-Mail field -->
+            <label for="E-Mail">
+                <i class="fas fa-at"></i>
+            </label>
+            <input type="text" name="email" placeholder="E-Mail" id="email" required>
+
+            <!-- Username field -->
+            <label for="username">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="username" placeholder="Nutzername" id="username" required>
+
+            <!-- Password field -->
+            <label for="password">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="password" name="password" placeholder="Passwort" id="password" required>
+
+            <div id="passwordRequirements">
+                <div id="passwordRequirement1">
+                    <i id="passwordRequirement1icon" class="far fa-times-circle"></i> Sonderzeichen
+                </div>
+                <div id="passwordRequirement2">
+                    <i id="passwordRequirement2icon" class="far fa-times-circle"></i> Gro&szlig;buchstaben
+                </div>
+                <div id="passwordRequirement3">
+                    <i id="passwordRequirement3icon" class="far fa-times-circle"></i> Kleinbuchstaben
+                </div>
+                <div id="passwordRequirement4">
+                    <i id="passwordRequirement4icon" class="far fa-times-circle"></i> L&auml;nge 8-100
+                </div>
+            </div>
+
+            <!-- Login-knopf -->
+            <input id="submitButton" type="submit" value="Registrieren">
+
+            <!-- Zum login -->
+            <span id="linkToOther" onclick='window.location.assign("login.html")'>Login</span>
+        </form>
+    </div>
+    <script src="formular_themes.js"></script>
+    <script src="register_script.js"></script>
+</body>
+
+</html>
