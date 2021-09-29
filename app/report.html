@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wudsim - Fehler melden</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="report_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+    <h1>Fehler melden</h1>
+    <form action="report.php" method="post">
+        <input type="textarea" name="fehler" placeholder="Was ist passiert?" id="fehler" required>
+        <input type="textarea" name="reproduzieren" placeholder="Wie k&ouml;nnen wir den Fehler reproduzieren?" id="reproduzieren" required>
+        <input type="textarea" name="funktionsweise" placeholder="Was h&auml;tte passieren sollen?" id="funktionsweise" required>
+
+        <!-- Login-knopf -->
+        <input type="submit" value="Absenden">
+
+        <!-- Zur Startseite -->
+        <!-- <span id="linkToOther" onclick='window.location.assign("index.html")'>Zur&uuml;ck</span> -->
+    </form>
+    <script src="formular_themes.js"></script>
+</body>
+
+</html>

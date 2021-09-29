@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wudsim - Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="formular_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+    <div id="login">
+        <h1>LOGIN</h1>
+        <form action="authenticate.php" method="post">
+
+            <!-- Username field -->
+            <label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+            <input type="text" name="username" placeholder="Nutzername" id="username" required>
+
+            <!-- Password field -->
+            <label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+            <input type="password" name="password" placeholder="Passwort" id="password" required>
+
+            <!-- Login-knopf -->
+            <input type="submit" value="Login">
+
+            <!-- Zum Registrieren -->
+            <span id="linkToOther" onclick='window.location.assign("register.html")'>Registrieren</span>
+        </form>
+    </div>
+    <script src="formular_themes.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wudsim</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Content of the navigation-bar -->
+    <div id="sideNav" class="sidenav">
+        <span id="navCloseButton" class="navClosebtn" onclick="closeNav()">&times;</span>
+        <a href="../app/login.html">Login</a>
+        <a href="../app/register.html">Registrieren</a>
+        <a href="#">Über Uns</a>
+        <a href="./credits.html">Credits</a>
+        <a href='./rechtliches.html?teil="Datenschutz"'>Datenschutz</a>
+        <a href='./rechtliches.html?teil="Impressum"'>Impressum</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    <!-- Button to open the navigation-bar -->
+    <div id="navOpener">
+        <span id="navOpenerButton" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <!-- Main content of the site -->
+    <div id="main">
+
+        <!-- Title -->
+        <div class="title">
+            KOMM ZU UNS UND HAB<br>GUTE LAUNE, DENN...
+        </div>
+        <!-- Text under the Titel -->
+        <div class="title-mintext">
+            hier kannst du dich mit all deinen Freunden treffen<br> und hier muss der Spruch dann noch irgendwie weitergehen oder so...
+        </div>
+        <!-- Add a rule -->
+        <hr>
+        <!-- The both Images -->
+        <div id="darkLightDemo">
+            <div>
+                <img id="clouds_light" onclick="darkLightChange()" src="clouds_light.png">
+            </div>
+            <div id="darkLightDemoText" class="titles">
+                HELL<br>oder<br>DUNKEL?
+            </div>
+            <div>
+                <img id="clouds_dark" onclick="darkLightChange()" src="clouds_dark.png">
+            </div>
+        </div>
+        <br><br>
+        <div class="mintexts">
+            Egal was du möchtest,<br>du findest es hier.
+        </div>
+        <hr>
+        <div id="start">
+            <a id="start_open" href="../app/index.html">Öffnen <i id="start_icon" class="fas fa-power-off"></i></a>
+        </div>
+
+        <!-- <img src="logo.png"> -->
+    </div>
+    <script src="./script.js"></script>
+    <script src="./index_themesjs.js"></script>
+</body>
+
+</html>

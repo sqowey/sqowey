@@ -1,0 +1,61 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+
+body {
+    /* set dark-mode as standart-background */
+    background-color: #282C36;
+    /* set to "Dosis" as font */
+    font-family: Dosis;
+    /* Set Transition, that Themes can smoothly change */
+    transition: 1s;
+    /* Maximalhöhe nutzen */
+    height:100%;
+}
+
+h1{
+    text-align: center;
+}
+
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#themeButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+form{
+    margin: auto;
+    width:100%;
+    height: 100%;
+}
+input{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 400px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+input[type="submit"]{
+    background-color: rgb(94, 136, 32);
+    height: 50px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}

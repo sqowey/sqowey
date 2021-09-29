@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wudsim</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="index_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+    <div id="choose">
+        <h1>Bitte wählen</h1>
+        <div id="auswahlen">
+            <!-- Username field -->
+            <span onclick='window.location.assign("login.html")'>Anmelden</span>
+
+            <!-- Password field -->
+            <span onclick='window.location.assign("register.html")'>Registrieren</span>
+
+            <!-- Password field -->
+            <span onclick='window.location.assign("help.html")'>Hilfe</span>
+        </div>
+    </div>
+    <script src="index_themes.js"></script>
+</body>
+
+</html>

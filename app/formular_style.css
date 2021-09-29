@@ -1,0 +1,154 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Theme-button settings */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#themeButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* Einstellungen der ganzen seite */
+
+* {
+    box-sizing: border-box;
+    /* Set size of font */
+    font-size: 16px;
+    /* Activate antialising */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    /* set dark-mode as standart-background */
+    background-color: #282C36;
+    /* set to "Dosis" as font */
+    font-family: Dosis;
+    /* Set Transition, that Themes can smoothly change */
+    transition: 1s;
+}
+
+#login {
+    /* Width of the login-box */
+    width: 400px;
+    /* Background-color of the login-box */
+    background-color: #ffffff;
+    /* Shadow of the box, so that it looks nice */
+    box-shadow: 0 0 10px 0 #000;
+    /* position the login-box in the middle */
+    margin: 100px auto;
+    /* radius around the fields */
+    border-radius: 15px;
+}
+
+#login h1 {
+    /* Center the Text */
+    text-align: center;
+    /* Set Text-standart-color */
+    color: #5b6574;
+    /* set font size */
+    font-size: 24px;
+    /* set space to the sides */
+    padding: 20px 0 20px 0;
+    /* set space to the bottom */
+    border-bottom: 1px solid #dee0e4;
+}
+
+#login form {
+    /* Display-art einstellen */
+    display: flex;
+    /* set multi-line mode */
+    flex-wrap: wrap;
+    /* Align the Formular to the center */
+    justify-content: center;
+    /* Set space to the top */
+    padding-top: 20px;
+}
+
+#login form label {
+    /* Display-art einstellen */
+    display: flex;
+    /* Align to the center */
+    justify-content: center;
+    /* Align the icons to the center */
+    align-items: center;
+    /* Set icon width */
+    width: 50px;
+    /* Set icon height */
+    height: 50px;
+    /* Set icon background */
+    background-color: #3274d6;
+    /* Set icon color */
+    color: #ffffff;
+}
+
+#login form label:hover {
+    /* change icon background on hover */
+    background-color: #c300ff;
+    /* change icon color on hover */
+    color: #000000;
+}
+
+#login form input[type="password"],
+#login form input[type="text"] {
+    /* Set field-width */
+    width: 310px;
+    /* Set field-height */
+    height: 50px;
+    /* Create a border */
+    border: 1px solid #dee0e4;
+    /* Set space to bottom */
+    margin-bottom: 20px;
+    /* Set padding */
+    padding: 0 15px;
+}
+
+#login form input[type="submit"] {
+    /* Set submit-button width */
+    width: 95%;
+    /* Set space around the button */
+    padding: 15px;
+    /* Set space to top */
+    margin-top: 15px;
+    /* Set submit-button color */
+    background-color: #254674;
+    /* Remove border */
+    border: 0;
+    /* Change cursor on hovering */
+    cursor: pointer;
+    /* Activate bold font */
+    font-weight: bold;
+    /* Set submit-button-text-color  */
+    color: #ffffff;
+    /* Activate */
+    transition: background-color 0.2s;
+    /* Round the corners */
+    border-radius: 15px;
+}
+
+#login form input[type="submit"]:hover {
+    /* Change submit-button color on hover */
+    background-color: #28c785;
+    /* Activate transition */
+    transition: background-color 0.2s;
+}
+
+#passwordRequirements div i{
+    color: red
+}
