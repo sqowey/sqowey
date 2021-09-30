@@ -3,7 +3,7 @@
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
     $DATABASE_PASS = '';
-    $DATABASE_NAME = 'wudism';
+    $DATABASE_NAME = 'accounts';
 
     // Connect with the Credentials
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -12,7 +12,8 @@
     if (mysqli_connect_errno()) {
 
         // Log the error
-        error_log("Error(101)-"+mysqli_connect_error(),0);
+        error_log("Error(101)-".mysqli_connect_error(),0);
+        exit("Error(101)-".mysqli_connect_error());
 
         // Display an error.
         header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
@@ -23,7 +24,7 @@
     if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
 
         // Log the error
-        error_log("Error(102)-Username:"+$_POST['username']+"|E-Mail:"+$_POST['email']+"|Passworthash:"+password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+        error_log("Error(102)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // Could not get the data that should have been sent.
         header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
@@ -36,7 +37,7 @@
     if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
 
         // Log the error
-        error_log("Error(103)-Username:"+$_POST['username']+"|E-Mail:"+$_POST['email']+"|Passworthash:"+password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+        error_log("Error(103)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // One or more values are empty.
         header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
@@ -53,7 +54,7 @@
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
         // Log the error
-        error_log("Error(104)-E-Mail:"+$_POST['email'],0);
+        error_log("Error(104)-E-Mail:".$_POST['email'],0);
 
         // Show error
         header('Location: message.html?error=%22Das%20ist%20keine%20echte%20Mailadresse%22');
@@ -67,7 +68,7 @@
         if(strlen($_POST['username']) > 18 || strlen($_POST['username']) < 4){
 
             // Log the error
-            error_log("Error(104)-Nutzername:"+$_POST['username'],0);    
+            error_log("Error(104)-Nutzername:".$_POST['username'],0);    
 
             // show error
             header('Location: message.html?error=%22Der%20Benutzername%20muss%20zwischen%204%20und%2018%20lang%20sein%22');
@@ -80,7 +81,7 @@
     if (strlen($_POST['password']) > 50 || strlen($_POST['password']) < 8) {
 
         // Log the error
-        error_log("Error(105)-Passwort:"+$_POST['username'],0);    
+        error_log("Error(105)-Passwort:".$_POST['username'],0);    
 
         // Show error
         header('Location: message.html?error=%22Das%20Passwort%20muss%20den%20Anforderungen%20entsprechen%22');
@@ -101,7 +102,7 @@
         if ($stmt->num_rows > 0) {
 
             // Log the error
-            error_log("Error(105)-Username:"+$_POST['username']+"|E-Mail:"+$_POST['email']+"|Passworthash:"+password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+            error_log("Error(105)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
     
             // Username exists already
             header('Location: message.html?error=%22Nutzername%20existiert%20schon%22');
@@ -127,7 +128,7 @@
         }
         $stmt->close();
     } else {
-        error_log("Error()-Username:"+$_POST['username']+"|E-Mail:"+$_POST['email']+"|Passworthash:"+$password,0);
+        error_log("Error()-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".$password,0);
         header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
         exit();
     }
