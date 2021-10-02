@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wudsim - Support</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="support_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+    <div id="container1">
+        <h1>Fehler melden</h1>
+        <form action="support.php" method="post">
+            <select id="area" name="area">
+                <option value="app">App</option>
+                <option value="homepage">Homepage</option>
+            </select>
+            <input type="textarea" name="fehler" placeholder="Was ist passiert?" id="fehler" required>
+            <input type="textarea" name="reproduzieren" placeholder="Wie k&ouml;nnen wir den Fehler reproduzieren?" id="reproduzieren" required>
+        </form>
+    </div>
+    <script src="formular_themes.js"></script>
+</body>
+
+</html>
