@@ -68,7 +68,7 @@
         if(strlen($_POST['username']) > 18 || strlen($_POST['username']) < 4){
 
             // Log the error
-            error_log("Error(104)-Nutzername:".$_POST['username'],0);    
+            error_log("Error(105)-Nutzername:".$_POST['username'],0);    
 
             // show error
             header('Location: message.html?error=%22Der%20Benutzername%20muss%20zwischen%204%20und%2018%20lang%20sein%22');
@@ -81,7 +81,7 @@
     if (strlen($_POST['password']) > 50 || strlen($_POST['password']) < 8) {
 
         // Log the error
-        error_log("Error(105)-Passwort:".$_POST['username'],0);    
+        error_log("Error(107)-Passwort:".$_POST['username'],0);    
 
         // Show error
         header('Location: message.html?error=%22Das%20Passwort%20muss%20den%20Anforderungen%20entsprechen%22');
@@ -102,7 +102,7 @@
         if ($stmt->num_rows > 0) {
 
             // Log the error
-            error_log("Error(105)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+            error_log("Error(108)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
     
             // Username exists already
             header('Location: message.html?error=%22Nutzername%20existiert%20schon%22');
@@ -121,7 +121,12 @@
                 header('Location: message.html?message=%22Erfolgreich%20registriert%22&showReportButton=false');
                 exit();
             } else {
-                // Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
+                // Something is wrong with the sql statement, make sure accounts table exists with all 3 fields.
+
+                // Log the error
+                error_log("Error(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+
+                // Username exists already
                 header('Location: message.html?message=%22Fehler%20mit%20der%20Datenbank%22');
                 exit();
             }
