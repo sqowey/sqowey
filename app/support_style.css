@@ -58,61 +58,71 @@ h1 {
     border-bottom: 1px solid #dee0e4;
 }
 
-#container1 form {
-    /* Display-art einstellen */
-    display: flex;
-    /* set multi-line mode */
-    flex-wrap: wrap;
-    /* Align the Formular to the center */
-    justify-content: center;
-    /* Set space to the top */
-    padding-top: 20px;
-}
 
-#container1 form input[type="select"],
-#container1 form input[type="textarea"] {
-    /* Set field-width */
-    width: 310px;
-    /* Set field-height */
-    height: 50px;
-    /* Create a border */
-    border: 1px solid #dee0e4;
-    /* Set space to bottom */
-    margin-bottom: 20px;
-    /* Set space to top */
-    margin-top: 20px;
-    /* Set padding */
-    padding: 0 15px;
-    /* make border round */
-    border-radius: 15px;
-}
+/*
+The Dropdowns
+*/
 
-#container1 form input[type="submit"] {
-    /* Set submit-button width */
-    width: 95%;
-    /* Set space around the button */
-    padding: 15px;
-    /* Set space to top */
-    margin-top: 15px;
-    /* Set submit-button color */
-    background-color: #254674;
-    /* Remove border */
-    border: 0;
-    /* Change cursor on hovering */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
     cursor: pointer;
-    /* Activate bold font */
-    font-weight: bold;
-    /* Set submit-button-text-color  */
-    color: #ffffff;
-    /* Activate */
-    transition: background-color 0.2s;
-    /* Round the corners */
-    border-radius: 15px;
 }
 
-#container1 form input[type="submit"]:hover {
-    /* Change submit-button color on hover */
-    background-color: #28c785;
-    /* Activate transition */
-    transition: background-color 0.2s;
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#area {
+    display: none;
 }
