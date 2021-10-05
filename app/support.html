@@ -14,16 +14,28 @@
     </div>
     <div id="container1">
         <h1>Fehler melden</h1>
-        <form action="support.php" method="post">
-            <label for="area">Wo tritt das Problem auf?</label>
-            <select id="area" name="area">
-                <option value="app">App</option>
-                <option value="homepage">Homepage</option>
-            </select>
-            <input type="textarea" name="fehler" placeholder="Was ist passiert?" id="fehler" required>
-            <input type="textarea" name="reproduzieren" placeholder="Wie k&ouml;nnen wir den Fehler reproduzieren?" id="reproduzieren" required>
-        </form>
+        <div id="wherehappens">
+            <div class="dropdown">
+                <button id="happens_in" class="dropbtn">Wo passiert es?</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="happens_in('App');">App</a>
+                    <a href="#" onclick="happens_in('Startseite');">Startseite</a>
+                </div>
+            </div>
+        </div>
+        <div id="area">
+            <div class="dropdown">
+                <button id="happening_area" class="dropbtn">Wo passiert es?</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="happening_area('Sprachkanal');">Sprachkanal</a>
+                    <a href="#" onclick="happening_area('Textkanal');">Textkanal</a>
+                    <a href="#" onclick="happening_area('Einstellungen');">Einstellungen</a>
+                    <a href="#" onclick="happening_area('Sonstige');">Sonstige</a>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="support.js"></script>
     <script src="formular_themes.js"></script>
 </body>
 
