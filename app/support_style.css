@@ -1,6 +1,10 @@
 /* Import the font "Dosis" that's used */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+* {
+    font-family: Dosis;
+}
+
 body {
     /* set dark-mode as standart-background */
     background-color: #282C36;
@@ -29,10 +33,14 @@ h1 {
     right: 10px;
 }
 
+#div {
+    margin: auto;
+}
+
 
 /* form */
 
-#container1 {
+#container {
     /* Width of the login-box */
     width: 400px;
     /* Background-color of the login-box */
@@ -45,7 +53,7 @@ h1 {
     border-radius: 15px;
 }
 
-#container1 h1 {
+#container h1 {
     /* Center the Text */
     text-align: center;
     /* Set Text-standart-color */
@@ -63,13 +71,26 @@ h1 {
 The Dropdowns
 */
 
+.dropdown-menu {
+    margin: auto;
+}
+
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #296b5e;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+    margin: auto;
+    width: 400px;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #29646b;
 }
 
 
@@ -78,6 +99,7 @@ The Dropdowns
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: auto;
 }
 
 
@@ -86,10 +108,11 @@ The Dropdowns
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    width: 400px;
 }
 
 
@@ -106,7 +129,7 @@ The Dropdowns
 /* Change color of dropdown links on hover */
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1
+    background-color: #dddddd;
 }
 
 
@@ -116,13 +139,77 @@ The Dropdowns
     display: block;
 }
 
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.dropdown-menu-div {
+    margin-top: 5px;
 }
 
-#area {
+
+/* 
+The formular
+*/
+
+.hiddenFormField {
+    display: none;
+}
+
+form,
+input {
+    margin: auto;
+    text-align: center;
+    width: 92.5%;
+}
+
+form input[type="textarea"],
+form input[type="text"] {
+    /* Set field-height */
+    height: 50px;
+    /* Create a border */
+    border: 1px solid #75a7a7;
+    /* Set space to bottom */
+    margin-bottom: 20px;
+    /* Set padding */
+    padding: 0 15px;
+    border-radius: 15px;
+}
+
+form input[type="submit"] {
+    /* Set submit-button width */
+    width: 95%;
+    /* Set space around the button */
+    padding: 15px;
+    /* Set space to top */
+    margin-top: 15px;
+    /* Set submit-button color */
+    background-color: #254674;
+    /* Remove border */
+    border: 0;
+    /* Change cursor on hovering */
+    cursor: pointer;
+    /* Activate bold font */
+    font-weight: bold;
+    /* Set submit-button-text-color  */
+    color: #d7dbdb;
+    /* Activate */
+    transition: background-color 0.2s;
+    /* Round the corners */
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+#title {
+    margin-top: 15px;
+}
+
+
+/* Generally hide all options */
+
+#error,
+#user,
+#server,
+#other {
+    display: none;
+}
+
+#app_error_area {
     display: none;
 }
