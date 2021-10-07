@@ -12,28 +12,85 @@
     <div id="themeButton">
         <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
     </div>
-    <div id="container1">
+    <div id="container">
         <h1>Fehler melden</h1>
-        <div id="wherehappens">
+        <!-- This is to choose which type of error to report -->
+        <div id="error_type" class="dropdown-menu" class="dropdown-menu-div">
             <div class="dropdown">
-                <button id="happens_in" class="dropbtn">Wo passiert es?</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="happens_in('App');">App</a>
-                    <a href="#" onclick="happens_in('Startseite');">Startseite</a>
+                <button id="error_type_button" class="dropbtn">Was m&ouml;chtest du melden?</button>
+                <div id="error_type_dropdown" class="dropdown-content">
+                    <a href="#" onclick="error_type('error');">Funktionsfehler</a>
+                    <a href="#" onclick="error_type('user');">Nutzer melden</a>
+                    <a href="#" onclick="error_type('server');">Server melden</a>
+                    <a href="#" onclick="error_type('other');">Sonstiges</a>
                 </div>
             </div>
         </div>
-        <div id="area">
-            <div class="dropdown">
-                <button id="happening_area" class="dropbtn">Wo passiert es?</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="happening_area('Sprachkanal');">Sprachkanal</a>
-                    <a href="#" onclick="happening_area('Textkanal');">Textkanal</a>
-                    <a href="#" onclick="happening_area('Einstellungen');">Einstellungen</a>
-                    <a href="#" onclick="happening_area('Sonstige');">Sonstige</a>
+        <!-- The div that gets Displayed, when an functional error is being reported -->
+        <div id="error">
+            <div id="wherehappens" class="dropdown-menu-div">
+                <div class="dropdown">
+                    <button id="error_in_button" class="dropbtn">In welchem Teil passiert es?</button>
+                    <div id="error_in_dropdown" class="dropdown-content">
+                        <a href="#" onclick="error_in('app');">App</a>
+                        <a href="#" onclick="error_in('home');">Startseite</a>
+                    </div>
                 </div>
             </div>
+            <!-- The dropdown to choose, where it happened -->
+            <div id="app_error_area" class="dropdown-menu-div">
+                <div class="dropdown">
+                    <button id="app_error_area_button" class="dropbtn">Wo passiert es?</button>
+                    <div id="app_error_area_dropdown" class="dropdown-content">
+                        <a href="#" onclick="app_error_area('voice');">Sprachkanal</a>
+                        <a href="#" onclick="app_error_area('text');">Textkanal</a>
+                        <a href="#" onclick="app_error_area('settings');">Einstellungen</a>
+                        <a href="#" onclick="app_error_area('other');">Sonstige</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <div id="user">
+            <div id="user_type_div" class="dropdown-menu-div">
+                <div class="dropdown">
+                    <button id="user_type_button" class="dropbtn">Welche art von Nutzer?</button>
+                    <div id="user_type_dropdown" class="dropdown-content">
+                        <a href="#" onclick="user_type('user');">Nutzer</a>
+                        <a href="#" onclick="user_type('team');">Wudsim-Team</a>
+                    </div>
+                </div>
+            </div>
+            <!-- The dropdown to choose, where it happened -->
+            <div id="app_error_area" class="dropdown-menu-div">
+                <div class="dropdown">
+                    <button id="app_error_area_button" class="dropbtn">Wo passiert es?</button>
+                    <div id="app_error_area_dropdown" class="dropdown-content">
+                        <a href="#" onclick="app_error_area('voice');">Sprachkanal</a>
+                        <a href="#" onclick="app_error_area('text');">Textkanal</a>
+                        <a href="#" onclick="app_error_area('settings');">Einstellungen</a>
+                        <a href="#" onclick="app_error_area('other');">Sonstige</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="server">
+
+        </div>
+        <div id="other">
+
+        </div>
+        <hr>
+        <form action="support.php" method="post">
+            <input type="text" name="errorcode" id="errorcode" class="hiddenFormField">
+            <input type="text" name="title" placeholder="Titel*" id="title" required>
+            <input type="text" name="mail" placeholder="E-Mail*" id="mail" required>
+            <input type="textarea" name="problem" placeholder="Das Problem*" id="problem" required>
+            <input type="textarea" name="sonstige" placeholder="Sonstige Informationen" id="sonstige">
+            <input type="submit" value="Absenden">
+        </form>
+
     </div>
     <script src="support.js"></script>
     <script src="formular_themes.js"></script>
