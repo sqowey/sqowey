@@ -1,3 +1,1 @@
-# Wudsim
-
-Dein Messenger aber in besser
+# Wudsim - Dein Messenger aber in besser
