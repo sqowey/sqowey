@@ -33,6 +33,7 @@
         <div class="chat">
             <div id="input-box">
                 <input placeholder="Nachricht" id="input_field"></input>
+                <img src="./images/send_icon.png">
             </div>
         </div>
         <div class="name"></div>

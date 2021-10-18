@@ -56,6 +56,10 @@ Chatbox
     border-width: 0px;
 }
 
+#input-box img {
+    display: ;
+}
+
 .chat input {
     width: 85%;
     height: 100%;
