@@ -1,0 +1,25 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background-image: url('image.png');
+    min-height: 100%;
+    object-fit: cover;
+    height: calc(100vh - 20px);
+}
+
+* {
+    text-align: center;
+    color: white;
+}
+
+hr {
+    margin: 1em;
+    border: dashed 2px;
+}
+
+.main {
+    place-content: center;
+    margin: auto;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
