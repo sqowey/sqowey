@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wudsim - Über</title>
+    <link rel="stylesheet" href="./about_style.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Content of the navigation-bar -->
+    <div id="sideNav" class="sidenav">
+        <span id="navCloseButton" class="navClosebtn" onclick="closeNav()">&times;</span>
+        <a href="./index.html">Startseite</a>
+        <a href="../app/login.html">Login</a>
+        <a href='./about.html?teil="about"'>Über Uns</a>
+        <a href='./about.html?teil="credits"'>Credits</a>
+        <a onclick="toTop()">Datenschutz</a>
+        <a href='./rechtliches.html?teil="Impressum"'>Impressum</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    <!-- Button to open the navigation-bar -->
+    <div id="navOpener">
+        <span id="navOpenerButton" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <div id="main">
+        <div id="about">
+            <div class="title_container">
+                <span class="title">&Uuml;ber uns</span>
+            </div>
+            <hr>
+            <div class="title-mintext">
+                Was ist Wudsim überhaupt?
+            </div>
+            <p>Wudsim ist ein Programm zum Chatten, also so etwas wie WhatsApp/Skype/Discord</p>
+            <hr>
+            <div class="title-mintext">
+                Seit wann gibt es Wudsim?
+            </div>
+            <p id="entwicklung">Wudsim gibt es seit 2021/09/07 um 19:05:58</p>
+            <hr>
+            <div class="title-mintext">
+                Wer sind wir?
+            </div>
+            <span>Wir sind:</span>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <hr>
+        <div id="credits">
+            <div class="title_container">
+                <span class="title">Credits</span>
+            </div>
+        </div>
+    </div>
+    <script src="./about_script.js"></script>
+    <script src="./credits_themes.js"></script>
+</body>
+
+</html>
