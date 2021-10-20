@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+</head>
+<title>Wudsim</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div>
+            <h1>WUDSIM</h1>
+            <h1>KOMMT BALD</h1>
+            <hr style="margin:auto;width:40%">
+            <p id="entwicklung">Wudsim gibt es seit 2021/09/07 um 19:05:58</p>
+        </div>
+    </div>
+    <script>
+        var timer_message_1 = "An Wudsim wird seit ";
+        var timer_message_2 = " Sekunden gearbeitet.";
+
+        function wudsimTimer() {
+            var created = new Date(2021, 09, 07, 19, 05, 58, 0);
+            var now = new Date();
+            var dif = created.getTime() - now.getTime();
+
+            var Seconds_from_T1_to_T2 = dif / 1000;
+            var Seconds_Between_Dates = Math.round(Math.abs(Seconds_from_T1_to_T2));
+            document.getElementById("entwicklung").innerHTML = timer_message_1 + Seconds_Between_Dates + timer_message_2;
+            window.setTimeout("wudsimTimer();", 10);
+        }
+        wudsimTimer();
+    </script>
+</body>
+
+</html>
