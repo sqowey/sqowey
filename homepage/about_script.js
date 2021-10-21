@@ -12,12 +12,12 @@ function closeNav() {
     resizeClouds("400");
 }
 
-// Timer
+// Second-Counter
 var timer_message_1 = "An Wudsim wird seit ";
 var timer_message_2 = " Sekunden gearbeitet.";
 
 function wudsimTimer() {
-    var created = new Date(2021, 09, 07, 19, 05, 58, 0);
+    var created = new Date(2021, 08, 07, 19, 05, 58, 0);
     var now = new Date();
     var dif = created.getTime() - now.getTime();
 
@@ -35,3 +35,22 @@ function scrollImpressum() {
     }
 }
 setTimeout(scrollImpressum, 500);
+
+// Dropdowns
+function dropdown() {
+    document.getElementById("inner_dropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
