@@ -28,20 +28,24 @@
                 </p>
             </div>
         </div>
-        <div class="people"></div>
-        <div class="servers"></div>
+        <div class="people">
+            <i class="plusicon far fa-plus-square"></i>
+        </div>
+        <div class="servers">
+            <i class="plusicon far fa-plus-square"></i>
+        </div>
         <div class="chat">
             <div id="input-box">
                 <input placeholder="Nachricht" id="input_field"></input>
-                <img src="./images/send_icon.png">
+                <!-- <img src="./images/send_icon.png"> -->
             </div>
         </div>
         <div class="name"></div>
         <div class="channels"></div>
         <div class="status">
-            <span id="online"><i class="fas fa-bullseye"></i></span>
-            <span id="away"><i class="fas fa-bullseye"></i></span>
-            <span id="notDisturb"><i class="fas fa-bullseye"></i></span>
+            <span id="online"><i onclick="changeStatus('online');" class="far fa-circle"></i></span>
+            <span id="away"><i onclick="changeStatus('away');" class="far fa-circle"></i></span>
+            <span id="notDisturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
         </div>
     </div>
     <!-- <div id="topbar">
@@ -52,6 +56,7 @@
         </div>
     </div>
     -->
+    <script src="./app_script.js"></script>
 </body>
 
 </html>
