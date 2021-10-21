@@ -40,10 +40,15 @@
                 <!-- <img src="./images/send_icon.png"> -->
             </div>
         </div>
-        <div class="name"></div>
+        <div class="name">
+            <span>Test</span>
+            <div id="personal_actions">
+                <i class="fas fa-phone"></i>
+            </div>
+        </div>
         <div class="channels"></div>
         <div class="status">
-            <span id="online"><i onclick="changeStatus('online');" class="far fa-circle"></i></span>
+            <span id="online"><i onclick="changeStatus('online');" class="fas fa-circle"></i></span>
             <span id="away"><i onclick="changeStatus('away');" class="far fa-circle"></i></span>
             <span id="notDisturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
         </div>

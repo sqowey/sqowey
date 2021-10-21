@@ -29,6 +29,7 @@ html {
 .name {
     grid-area: name;
     background-color: #1e232b;
+    text-align: center;
 }
 
 .main {
@@ -130,4 +131,24 @@ People-icons
     text-align: center;
     font-size: 50px;
     color: white;
+}
+
+
+/*
+Name bar
+*/
+
+.name span {
+    color: #c7e1f0;
+    text-align: center;
+    margin: auto;
+    font-size: 50px;
+}
+
+#personal_actions i {
+    right: 10px;
+    color: #c7e1f0;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
 }
