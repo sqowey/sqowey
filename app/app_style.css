@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
 body {
     background-color: #282c36;
-    height: 100vh;
+    height: calc(100vh - 20px);
 }
 
 html {
-    height: 100vh;
+    height: calc(100vh - 20px);
 }
 
 * {
@@ -18,7 +18,7 @@ html {
 
 .container {
     display: grid;
-    grid-template-columns: 0.4fr 0.4fr 2.6fr 0.6fr;
+    grid-template-columns: 75px 75px 2.6fr 0.6fr;
     grid-template-rows: 0.2fr 2.6fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -26,15 +26,22 @@ html {
     grid-template-areas: "people servers name channels" "people servers main channels" "people servers chat status";
 }
 
+.name {
+    grid-area: name;
+    background-color: #1e232b;
+}
+
 .main {
     grid-area: main;
 }
 
 .people {
+    background-color: #364055;
     grid-area: people;
 }
 
 .servers {
+    background-color: #363e55;
     grid-area: servers;
 }
 
@@ -56,9 +63,10 @@ Chatbox
     border-width: 0px;
 }
 
-#input-box img {
+
+/* #input-box img {
     display: ;
-}
+} */
 
 .chat input {
     width: 85%;
@@ -105,4 +113,21 @@ Statusknoepfe
 
 #notDisturb {
     color: #ff0000;
+}
+
+
+/* 
+People-icons
+*/
+
+.plusicon {
+    background-color: #1c301c;
+    width: 75px;
+    height: 75px;
+    position: relative;
+    top: calc(100vh - 65px);
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    color: white;
 }
