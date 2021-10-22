@@ -48,6 +48,7 @@ Chatbox
 
 .chat {
     grid-area: chat;
+    background-color: #1e232b;
 }
 
 #input-box {
