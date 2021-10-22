@@ -27,23 +27,17 @@ html {
     grid-template-areas: "people servers name channels" "people servers main channels" "people servers chat status";
 }
 
-.name {
-    grid-area: name;
-    background-color: #1e232b;
-    text-align: center;
-}
-
 .main {
     grid-area: main;
 }
 
 .people {
-    background-color: #364055;
+    background-color: #384250;
     grid-area: people;
 }
 
 .servers {
-    background-color: #363e55;
+    background-color: #384250;
     grid-area: servers;
 }
 
@@ -82,10 +76,6 @@ Chatbox
     font-size: 20px;
 }
 
-.name {
-    grid-area: name;
-}
-
 .channels {
     grid-area: channels;
 }
@@ -103,6 +93,10 @@ Statusknoepfe
     height: 100%;
     display: block;
     text-align: center;
+}
+
+.status i:hover {
+    font-size: 105%;
 }
 
 #online {
@@ -123,7 +117,7 @@ People-icons
 */
 
 .plusicon {
-    background-color: #1c301c;
+    background-color: #1e232b;
     width: 75px;
     height: 75px;
     position: relative;
@@ -131,13 +125,23 @@ People-icons
     margin: auto;
     text-align: center;
     font-size: 50px;
-    color: white;
+    color: #c7e1f0;
+}
+
+.plusicon:hover {
+    color: #8bbbd4;
 }
 
 
 /*
 Name bar
 */
+
+.name {
+    grid-area: name;
+    background-color: #1e232b;
+    text-align: center;
+}
 
 .name span {
     color: #c7e1f0;
@@ -155,8 +159,22 @@ Name bar
     padding-left: 5px;
 }
 
+#personal_actions i:hover {
+    color: #8bbbd4;
+}
+
 #personal_actions {
     position: absolute;
     top: 15px;
     left: calc(100vw - 375px);
+}
+
+
+/* 
+Channels
+*/
+
+.channels {
+    grid-area: channels;
+    background-color: #384250;
 }
