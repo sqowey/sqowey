@@ -4,6 +4,7 @@
 body {
     background-color: #282c36;
     height: calc(100vh - 20px);
+    overflow: hidden;
 }
 
 html {
@@ -18,7 +19,7 @@ html {
 
 .container {
     display: grid;
-    grid-template-columns: 75px 75px 2.6fr 0.6fr;
+    grid-template-columns: 75px 75px 2.6fr 240px;
     grid-template-rows: 0.2fr 2.6fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -151,4 +152,11 @@ Name bar
     text-align: center;
     margin: auto;
     font-size: 30px;
+    padding-left: 5px;
+}
+
+#personal_actions {
+    position: absolute;
+    top: 15px;
+    left: calc(100vw - 375px);
 }
