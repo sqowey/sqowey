@@ -44,6 +44,8 @@
             <span>Test</span>
             <div id="personal_actions">
                 <i class="fas fa-phone"></i>
+                <i class="fas fa-video"></i>
+                <i class="fas fa-user-cog"></i>
             </div>
         </div>
         <div class="channels"></div>
