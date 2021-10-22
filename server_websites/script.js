@@ -11,9 +11,13 @@ function turnFabi() {
     document.getElementById("main").style.display = "none";
 }
 
-function back() {
-    background.stop();
-    document.getElementById("tv-screen").style.display = "none";
-    document.getElementById("backButtonDiv").style.display = "none";
-    document.getElementById("main").style.display = "inline";
-}
+
+
+
+
+
+
+
+
+
+
