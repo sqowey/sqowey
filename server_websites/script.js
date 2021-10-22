@@ -1,9 +1,5 @@
 var background = new Audio('error/aufzug.mp3');
 
-function portal() {
-    location.href = "../homepage/index.html"
-}
-
 function turnFabi() {
     background.addEventListener('ended', function() {
         this.currentTime = 0;
