@@ -26,7 +26,9 @@ a:visited {
 }
 
 
-/* Design for the start-button on the bottom of the page */
+/*
+Design for the start-button on the bottom of the page
+*/
 
 #start {
     border-radius: 20px;
@@ -61,7 +63,7 @@ a:visited {
 }
 
 
-/* Theme umschalter */
+/* Theme switch */
 
 #themeToggleButton {
     color: var(--font-color);
@@ -153,11 +155,17 @@ a:visited {
     }
 }
 
+
+/* The Title */
+
 .titles {
     font-size: 450%;
     text-align: center;
     margin: auto;
 }
+
+
+/* The text under the title */
 
 .mintexts {
     font-size: 123%;
@@ -165,10 +173,16 @@ a:visited {
     margin: auto;
 }
 
+
+/* All rules */
+
 hr {
     margin-top: 5em;
     margin-bottom: 5em;
 }
+
+
+/* darkLightDemo */
 
 #darkLightDemo {
     display: flex;

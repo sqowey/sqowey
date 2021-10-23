@@ -1,3 +1,4 @@
+// Resize clouds on opening the side menu
 function resizeClouds(size) {
     document.getElementById("clouds_light").style.width = size + "px";
     document.getElementById("clouds_light").style.height = size + "px";
@@ -6,14 +7,13 @@ function resizeClouds(size) {
 }
 
 
-//Funktion um das Menü zu öffnen
+// menu opening and closing
 function openNav() {
     document.getElementById("sideNav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     resizeClouds("300");
 }
 
-//Funktion um das Menü zu schliessen
 function closeNav() {
     document.getElementById("sideNav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
