@@ -13,14 +13,6 @@ function setErrorMessage() {
 }
 setErrorMessage();
 
-function login() {
-    location.replace("index.html");
-}
-
-function report() {
-    location.replace("support.html");
-}
-
 function showReportButton() {
     if (location.search.substring().includes("showReportButton=false")) {
         document.getElementById("reportButton").style.display = "none";
