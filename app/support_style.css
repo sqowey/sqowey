@@ -138,37 +138,23 @@ input {
 
 form input[type="textarea"],
 form input[type="text"] {
-    /* Set field-height */
     height: 50px;
-    /* Create a border */
     border: 1px solid #75a7a7;
-    /* Set space to bottom */
     margin-bottom: 20px;
-    /* Set padding */
     padding: 0 15px;
     border-radius: 15px;
 }
 
 form input[type="submit"] {
-    /* Set submit-button width */
     width: 95%;
-    /* Set space around the button */
     padding: 15px;
-    /* Set space to top */
     margin-top: 15px;
-    /* Set submit-button color */
     background-color: #254674;
-    /* Remove border */
     border: 0;
-    /* Change cursor on hovering */
     cursor: pointer;
-    /* Activate bold font */
     font-weight: bold;
-    /* Set submit-button-text-color  */
     color: #d7dbdb;
-    /* Activate */
     transition: background-color 0.2s;
-    /* Round the corners */
     border-radius: 15px;
     margin-bottom: 15px;
 }
