@@ -1,6 +1,9 @@
 /* Import the font "Dosis" that's used */
 
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* Settings for the whole page */
+
 body {
     background-color: #282c36;
     height: calc(100vh - 20px);
@@ -17,6 +20,9 @@ html {
     margin: 0px;
 }
 
+
+/* The container to set grid display property */
+
 .container {
     display: grid;
     grid-template-columns: 75px 75px 2.6fr 240px;
@@ -27,14 +33,23 @@ html {
     grid-template-areas: "people servers name channels" "people servers main channels" "people servers chat status";
 }
 
+
+/* main area */
+
 .main {
     grid-area: main;
 }
+
+
+/* the area where people are listet */
 
 .people {
     background-color: #384250;
     grid-area: people;
 }
+
+
+/* the area where servers are listet */
 
 .servers {
     background-color: #384250;
@@ -77,9 +92,7 @@ Chatbox
 }
 
 
-/*  
-Statusknoepfe
-*/
+/* Status-buttons */
 
 .status {
     grid-area: status;
@@ -108,9 +121,7 @@ Statusknoepfe
 }
 
 
-/* 
-People-icons
-*/
+/* People-icons */
 
 .plusicon {
     background-color: #2f3947;
@@ -129,9 +140,7 @@ People-icons
 }
 
 
-/*
-Name bar
-*/
+/* Name bar */
 
 .name {
     grid-area: name;
@@ -170,9 +179,7 @@ Name bar
 }
 
 
-/* 
-Channels
-*/
+/* Channels */
 
 .channels {
     grid-area: channels;

@@ -1,7 +1,9 @@
+// Get all needed elements
 onlineDiv = document.getElementById("online");
 awayDiv = document.getElementById("away");
 disturbDiv = document.getElementById("notDisturb");
 
+// The function to change the status when a button is clicked
 function changeStatus(status) {
     onlineDiv.innerHTML = '<i onclick="changeStatus(\'online\');" class="far fa-circle"></i>';
     awayDiv.innerHTML = '<i onclick="changeStatus(\'away\');" class="far fa-circle"></i>';

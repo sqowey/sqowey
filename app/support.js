@@ -17,6 +17,8 @@ user_type_dropdown = document.getElementById("user_type_dropdown");
 
 // The function to show or hide the support-type
 function error_type(param) {
+
+    // Hide the error type dropdown 
     error_type_dropdown.style.display = "none";
     switch (param) {
         case ("error"):

@@ -97,7 +97,7 @@ function passwordChanged() {
 
     }
 
-
+    // check if password passes all tests
     if (specialChars > 0 && upperChars > 0 && lowerChars > 0 && passwordLength >= 8 && passwordLength <= 100) {
         submitButton.disabled = false;
         submitButton.style.backgroundColor = "#3274d6";
@@ -105,8 +105,5 @@ function passwordChanged() {
         submitButton.disabled = true;
         submitButton.style.backgroundColor = "#254674";
     }
-
-
-    console.log(passwordField.value);
 }
 setInterval(passwordChanged, 100);
