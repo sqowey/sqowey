@@ -19,7 +19,10 @@
 </head>
 
 <body>
+    <!-- The container in which the full page is -->
     <div class="container">
+
+        <!-- main area -->
         <div class="main">
             <div id="main">
                 <h2>NOCH IM AUFBAU!</h2>
@@ -28,18 +31,25 @@
                 </p>
             </div>
         </div>
+
+        <!-- The area where people are listed -->
         <div class="people">
             <i class="plusicon far fa-plus-square"></i>
         </div>
+
+        <!-- The area where servers are listed -->
         <div class="servers">
             <i class="plusicon far fa-plus-square"></i>
         </div>
+
+        <!-- The chat input box -->
         <div class="chat">
             <div id="input-box">
                 <input placeholder="Nachricht" id="input_field"></input>
-                <!-- <img src="./images/send_icon.png"> -->
             </div>
         </div>
+
+        <!-- The Name thats on the top of the page -->
         <div class="name">
             <span>Test</span>
             <div id="personal_actions">
@@ -48,21 +58,21 @@
                 <i class="fas fa-user-cog"></i>
             </div>
         </div>
-        <div class="channels"></div>
+
+        <!-- The channel switcher -->
+        <div class="channels">
+
+        </div>
+
+        <!-- The status -->
         <div class="status">
             <span id="online"><i onclick="changeStatus('online');" class="fas fa-circle"></i></span>
             <span id="away"><i onclick="changeStatus('away');" class="far fa-circle"></i></span>
             <span id="notDisturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
         </div>
     </div>
-    <!-- <div id="topbar">
-        <div>
-            <h1>Wudsim</h1>
-            <a href="profile.php"><i class="fas fa-user-circle"></i>Profil</a>
-            <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Ausloggen</a>
-        </div>
-    </div>
-    -->
+
+    <!-- Load all needed scripts -->
     <script src="./app_script.js"></script>
 </body>
 

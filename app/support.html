@@ -51,6 +51,7 @@
             </div>
 
         </div>
+        <!-- The div that gets Displayed, when a user is being reported -->
         <div id="user">
             <div id="user_type_div" class="dropdown-menu-div">
                 <div class="dropdown">
@@ -75,13 +76,16 @@
             </div>
 
         </div>
+        <!-- The div that gets Displayed, when a server is being reported -->
         <div id="server">
 
         </div>
+        <!-- The div that gets Displayed, when something other is being reported -->
         <div id="other">
 
         </div>
         <hr>
+        <!-- The form that gets sent to the server -->
         <form action="support.php" method="post">
             <input type="text" name="errorcode" id="errorcode" class="hiddenFormField">
             <input type="text" name="title" placeholder="Titel*" id="title" required>

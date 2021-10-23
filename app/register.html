@@ -9,11 +9,16 @@
 </head>
 
 <body>
+    <!-- Theme button -->
     <div id="themeButton">
         <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
     </div>
     <div id="login">
+
+        <!-- Heading -->
         <h1>REGISTRIEREN</h1>
+
+        <!-- Formular -->
         <form action="register.php" method="post">
 
             <!-- E-Mail field -->
@@ -34,6 +39,7 @@
             </label>
             <input type="password" name="password" placeholder="Passwort" id="password" required>
 
+            <!-- Password requirements -->
             <div id="passwordRequirements">
                 <div id="passwordRequirement1">
                     <i id="passwordRequirement1icon" class="far fa-times-circle"></i> Sonderzeichen
@@ -56,6 +62,8 @@
             <span id="linkToOther" onclick='window.location.assign("login.html")'>Login</span>
         </form>
     </div>
+
+    <!-- Load all needed scripts -->
     <script src="formular_themes.js"></script>
     <script src="register_script.js"></script>
 </body>

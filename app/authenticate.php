@@ -66,6 +66,7 @@
             exit();
         }
 
+        // Close the mysql connection
         $stmt->close();
     }
 ?>
