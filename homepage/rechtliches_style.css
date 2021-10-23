@@ -25,13 +25,14 @@ a:visited {
     text-decoration: none;
 }
 
+
+/*
+The content
+*/
+
 div .inhalt {
     text-align: left;
     margin-left: 0px;
-}
-
-#linkToContact {
-    text-decoration: underline;
 }
 
 #datenschutz-inhalt,
@@ -54,7 +55,7 @@ div .inhalt {
 }
 
 
-/* Teil der Überschrift und dem Spruch */
+/* Title */
 
 .title {
     font-size: 500%;
@@ -77,7 +78,7 @@ div .inhalt {
 }
 
 
-/* Theme umschalter */
+/* Theme switch */
 
 #themeToggleButton {
     color: var(--font-color);
@@ -94,7 +95,7 @@ div .inhalt {
 }
 
 
-/* Menüknöpfe (auf/zu) einfärben */
+/* menu */
 
 #navOpener {
     color: #818181;
@@ -110,9 +111,6 @@ div .inhalt {
     cursor: pointer;
 }
 
-
-/*navigations-menu */
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -124,9 +122,6 @@ div .inhalt {
     padding-top: 60px;
     transition: 0.5s;
 }
-
-
-/* Design für die Links im Menü */
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
@@ -159,7 +154,7 @@ div .inhalt {
 }
 
 
-/* Bei kleinen bildschirmen Menü anpassen */
+/* on small screens change menu */
 
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -169,6 +164,9 @@ div .inhalt {
         font-size: 18px;
     }
 }
+
+
+/* Texts */
 
 .titles {
     font-size: 450%;
@@ -181,6 +179,9 @@ div .inhalt {
     text-align: center;
     margin: auto;
 }
+
+
+/* Rule settings */
 
 hr {
     margin-top: 5em;
