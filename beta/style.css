@@ -1,3 +1,9 @@
+/* Import the font */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+/* Settings for the whole site */
+
 body {
     font-family: "Raleway", sans-serif;
     background-image: url('image.png');
@@ -11,12 +17,18 @@ body {
     color: white;
 }
 
+
+/* Rule settings */
+
 hr {
     width: 100%;
     margin: 1em;
     border-radius: 5px;
     border: dashed 2px;
 }
+
+
+/* The main content */
 
 .main {
     place-content: center;
