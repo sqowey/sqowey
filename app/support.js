@@ -45,7 +45,6 @@ function error_type(param) {
 
             // Show the matching area
             user.style.display = "block";
-            user_happened_div.style.display = "block";
 
             // Hide other non matching areas
             error.style.display = "none";
@@ -140,6 +139,7 @@ function app_error_area(param) {
 
 function user_type(param) {
     user_type_dropdown.style.display = "none";
+    user_happened_div.style.display = "block";
     switch (param) {
         case ("user"):
             // Change the text on the button
