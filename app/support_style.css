@@ -167,7 +167,8 @@ form input[type="submit"] {
 #error,
 #user,
 #server,
-#other {
+#other,
+#user_happened {
     display: none;
 }
 
