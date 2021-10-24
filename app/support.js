@@ -14,6 +14,9 @@ app_error_area_dropdown = document.getElementById("app_error_area_dropdown");
 user_type_div = document.getElementById("user_type");
 user_type_button = document.getElementById("user_type_button");
 user_type_dropdown = document.getElementById("user_type_dropdown");
+user_happened_div = document.getElementById("user_happened");
+user_happened_button = document.getElementById("user_happened_button");
+user_happened_dropdown = document.getElementById("user_happened_dropdown");
 
 // The function to show or hide the support-type
 function error_type(param) {
@@ -42,6 +45,7 @@ function error_type(param) {
 
             // Show the matching area
             user.style.display = "block";
+            user_happened_div.style.display = "block";
 
             // Hide other non matching areas
             error.style.display = "none";
@@ -146,6 +150,49 @@ function user_type(param) {
         case ("team"):
             // Change the text on the button
             user_type_button.innerHTML = "Wudsim-Team";
+
+            // End the current case
+            break;
+    }
+
+}
+
+function user_happened(param) {
+    user_happened_dropdown.style.display = "none";
+    switch (param) {
+        case ("beleidigung"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Beleidigung";
+
+            // End the current case
+            break;
+        case ("drohung"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Drohung";
+
+            // End the current case
+            break;
+        case ("hacking"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Hacking";
+
+            // End the current case
+            break;
+        case ("scam"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Scam";
+
+            // End the current case
+            break;
+        case ("jung"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Zu Jung";
+
+            // End the current case
+            break;
+        case ("sonstige"):
+            // Change the text on the button
+            user_happened_button.innerHTML = "Sonstige";
 
             // End the current case
             break;
