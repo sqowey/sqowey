@@ -6,13 +6,8 @@
 }
 
 body {
-    /* set dark-mode as standart-background */
     background-color: #282C36;
-    /* set to "Dosis" as font */
-    font-family: Dosis;
-    /* Set Transition, that Themes can smoothly change */
     transition: 1s;
-    /* Maximalhöhe nutzen */
     height: 100%;
 }
 
