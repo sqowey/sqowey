@@ -196,6 +196,12 @@ function account_error(param) {
 
             // End the current case
             break;
+        case ("other"):
+            // Change the text on the button
+            account_error_button.innerHTML = "Sonstiges";
+
+            // End the current case
+            break;
     }
 }
 
