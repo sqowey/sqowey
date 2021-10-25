@@ -3,6 +3,7 @@ error_type_div = document.getElementById("error_type");
 error_type_button = document.getElementById("error_type_button");
 error_type_dropdown = document.getElementById("error_type_dropdown");
 error = document.getElementById("error");
+account = document.getElementById("account_error");
 user = document.getElementById("user");
 server = document.getElementById("server");
 other = document.getElementById("other");
@@ -11,6 +12,9 @@ error_in_dropdown = document.getElementById("error_in_dropdown");
 app_error_area_div = document.getElementById("app_error_area");
 app_error_area_button = document.getElementById("app_error_area_button");
 app_error_area_dropdown = document.getElementById("app_error_area_dropdown");
+account_error_div = document.getElementById("account_error");
+account_error_button = document.getElementById("account_error_button");
+account_error_dropdown = document.getElementById("account_error_dropdown");
 user_type_div = document.getElementById("user_type");
 user_type_button = document.getElementById("user_type_button");
 user_type_dropdown = document.getElementById("user_type_dropdown");
@@ -30,6 +34,21 @@ function error_type(param) {
 
             // Show the matching area
             error.style.display = "block";
+
+            // Hide other non matching areas
+            user.style.display = "none";
+            server.style.display = "none";
+            other.style.display = "none";
+
+            // End the current case
+            break;
+
+        case ("account"):
+            // Change the text on the button
+            error_type_button.innerHTML = "Kontoprobleme"
+
+            // Show the matching area
+            account.style.display = "block";
 
             // Hide other non matching areas
             user.style.display = "none";
@@ -131,6 +150,30 @@ function app_error_area(param) {
         case ("other"):
             // Change the text on the button
             app_error_area_button.innerHTML = "Sonstiges";
+
+            // End the current case
+            break;
+    }
+}
+
+function account_error(param) {
+    account_error_dropdown.style.display = "none";
+    switch (param) {
+        case ("email"):
+            // Change the text on the button
+            account_error_button.innerHTML = "Falsche E-Mail";
+
+            // End the current case
+            break;
+        case ("age"):
+            // Change the text on the button
+            account_error_button.innerHTML = "Falsches Alter";
+
+            // End the current case
+            break;
+        case ("password"):
+            // Change the text on the button
+            account_error_button.innerHTML = "Passwort vergessen";
 
             // End the current case
             break;

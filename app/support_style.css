@@ -165,13 +165,15 @@ form input[type="submit"] {
 /* Generally hide all options */
 
 #error,
+#account_error,
 #user,
 #server,
 #other,
-#user_happened {
+#user_happened,
+#app_error_area {
     display: none;
 }
 
-#app_error_area {
-    display: none;
+#problem {
+    height: 100px;
 }
