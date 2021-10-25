@@ -21,6 +21,7 @@ user_type_dropdown = document.getElementById("user_type_dropdown");
 user_happened_div = document.getElementById("user_happened");
 user_happened_button = document.getElementById("user_happened_button");
 user_happened_dropdown = document.getElementById("user_happened_dropdown");
+error_code_field = document.getElementById("errorcode");
 
 // The function to show or hide the support-type
 function error_type(param) {
@@ -85,6 +86,9 @@ function error_type(param) {
             user.style.display = "none";
             other.style.display = "none";
 
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "501";
+
             // End the current case
             break;
         case ("other"):
@@ -121,6 +125,9 @@ function error_in(param) {
             // Change the text on the button
             error_in_button.innerHTML = "Startseite";
 
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "201";
+
             // End the current case
             break;
     }
@@ -133,11 +140,17 @@ function app_error_area(param) {
             // Change the text on the button
             app_error_area_button.innerHTML = "Sprachkanal";
 
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "101";
+
             // End the current case
             break;
         case ("text"):
             // Change the text on the button
             app_error_area_button.innerHTML = "Textkanal";
+
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "102";
 
             // End the current case
             break;
@@ -145,11 +158,17 @@ function app_error_area(param) {
             // Change the text on the button
             app_error_area_button.innerHTML = "Einstellungen";
 
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "103";
+
             // End the current case
             break;
         case ("other"):
             // Change the text on the button
             app_error_area_button.innerHTML = "Sonstiges";
+
+            // Set the error code, so that it can be set to the database
+            error_code_field.value = "104";
 
             // End the current case
             break;
@@ -188,11 +207,17 @@ function user_type(param) {
             // Change the text on the button
             user_type_button.innerHTML = "Nutzer";
 
+            // Set the start of the error code, so that it can be set to the database
+            error_code_field.value = "3";
+
             // End the current case
             break;
         case ("team"):
             // Change the text on the button
             user_type_button.innerHTML = "Wudsim-Team";
+
+            // Set the start of the error code, so that it can be set to the database
+            error_code_field.value = "4";
 
             // End the current case
             break;
@@ -207,11 +232,17 @@ function user_happened(param) {
             // Change the text on the button
             user_happened_button.innerHTML = "Beleidigung";
 
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "01";
+
             // End the current case
             break;
         case ("drohung"):
             // Change the text on the button
             user_happened_button.innerHTML = "Drohung";
+
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "02";
 
             // End the current case
             break;
@@ -219,11 +250,17 @@ function user_happened(param) {
             // Change the text on the button
             user_happened_button.innerHTML = "Hacking";
 
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "03";
+
             // End the current case
             break;
         case ("scam"):
             // Change the text on the button
             user_happened_button.innerHTML = "Scam";
+
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "04";
 
             // End the current case
             break;
@@ -231,11 +268,17 @@ function user_happened(param) {
             // Change the text on the button
             user_happened_button.innerHTML = "Zu Jung";
 
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "05";
+
             // End the current case
             break;
         case ("sonstige"):
             // Change the text on the button
             user_happened_button.innerHTML = "Sonstige";
+
+            // Add the error code, so that it can be set to the database
+            error_code_field.value = error_code_field.value + "06";
 
             // End the current case
             break;
