@@ -21,7 +21,13 @@ user_type_dropdown = document.getElementById("user_type_dropdown");
 user_happened_div = document.getElementById("user_happened");
 user_happened_button = document.getElementById("user_happened_button");
 user_happened_dropdown = document.getElementById("user_happened_dropdown");
+
+// get the form fields
 error_code_field = document.getElementById("errorcode");
+title_field = document.getElementById("title");
+mail_field = document.getElementById("mail");
+problem_field = document.getElementById("problem");
+submit_button = document.getElementById("submit");
 
 // The function to show or hide the support-type
 function error_type(param) {
