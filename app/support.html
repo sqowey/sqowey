@@ -20,6 +20,7 @@
                 <button id="error_type_button" class="dropbtn">Was m&ouml;chtest du melden?</button>
                 <div id="error_type_dropdown" class="dropdown-content">
                     <a href="#" onclick="error_type('error');">Funktionsfehler</a>
+                    <a href="#" onclick="error_type('account');">Kontoprobleme</a>
                     <a href="#" onclick="error_type('user');">Nutzer melden</a>
                     <a href="#" onclick="error_type('server');">Server melden</a>
                     <a href="#" onclick="error_type('other');">Sonstiges</a>
@@ -50,6 +51,19 @@
                 </div>
             </div>
 
+        </div>
+        <!-- The div that gets Displayed, when an account error is being reported -->
+        <div id="account_error">
+            <div id="wherehappens" class="dropdown-menu-div">
+                <div class="dropdown">
+                    <button id="account_error_button" class="dropbtn">Was ist das Problem?</button>
+                    <div id="account_error_dropdown" class="dropdown-content">
+                        <a href="#" onclick="account_error('email');">Falsche E-Mail</a>
+                        <a href="#" onclick="account_error('age');">Falsches Alter</a>
+                        <a href="#" onclick="account_error('password');">Passwort vergessen</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- The div that gets Displayed, when a user is being reported -->
         <div id="user">
