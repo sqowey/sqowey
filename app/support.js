@@ -297,3 +297,13 @@ function user_happened(param) {
     }
 
 }
+
+function checkIfSendable() {
+    if (error_code_field != "" && title_field != "" && mail_field.value != "" && problem_field != "") {
+        submit_button.style.display == "block";
+    } else {
+        submit_button.style.background = "#254674";
+        submit_button.style.display == "none";
+    }
+}
+window.setInterval(checkIfSendable, 100);
