@@ -21,7 +21,7 @@ $sql = "INSERT INTO support (fehlercode, titel, email, problem, sonstiges)
 VALUES ('".$errorcode."', '".$title."', '".$mail."', '".$problem."', '".$sonstige."')";
 
 if (mysqli_query($conn, $sql)) {
-    header('Location: message.html?error=%22Dein%20Supportticket%20wurde%20erfolgreich%20erstellt!%22');
+    header('Location: message.html?error=%22Dein%20Supportticket%20wurde%20erfolgreich%20erstellt!%22&showReportButton=false');
 } else {
     header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
 }
