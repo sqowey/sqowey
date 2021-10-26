@@ -104,12 +104,12 @@
         <hr>
         <!-- The form that gets sent to the server -->
         <form action="support.php" method="post">
-            <input type="text" name="errorcode" id="errorcode" class="hiddenFormField" required>
+            <input type="text" name="errorcode" id="errorcode" class="hiddenFormField">
             <input type="text" name="title" placeholder="Titel*" id="title" required>
             <input type="text" name="mail" placeholder="E-Mail*" id="mail" required>
             <input type="textarea" name="problem" placeholder="Das Problem*" id="problem" required>
             <input type="textarea" name="sonstige" placeholder="Sonstige Informationen" id="sonstige">
-            <input type="submit" value="Absenden">
+            <input type="submit" id="submit" value="Absenden">
         </form>
 
     </div>
