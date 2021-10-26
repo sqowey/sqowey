@@ -116,6 +116,8 @@ function error_type(param) {
 }
 
 function error_in(param) {
+
+    // Hide the error in dropdown 
     error_in_dropdown.style.display = "none";
     switch (param) {
         case ("app"):
@@ -140,6 +142,8 @@ function error_in(param) {
 }
 
 function app_error_area(param) {
+
+    // Hide the app error area dropdown 
     app_error_area_dropdown.style.display = "none";
     switch (param) {
         case ("voice"):
@@ -182,6 +186,8 @@ function app_error_area(param) {
 }
 
 function account_error(param) {
+
+    // Hide the account error dropdown 
     account_error_dropdown.style.display = "none";
     switch (param) {
         case ("email"):
@@ -212,6 +218,8 @@ function account_error(param) {
 }
 
 function user_type(param) {
+
+    // Hide the user type dropdowns 
     user_type_dropdown.style.display = "none";
     user_happened_div.style.display = "block";
     switch (param) {
@@ -238,6 +246,8 @@ function user_type(param) {
 }
 
 function user_happened(param) {
+
+    // Hide the dropdown what happened with the user 
     user_happened_dropdown.style.display = "none";
     switch (param) {
         case ("beleidigung"):
@@ -298,6 +308,7 @@ function user_happened(param) {
 
 }
 
+// The function to look if all form fields are put in
 function checkIfSendable() {
     if (error_code_field != "" && title_field != "" && mail_field.value != "" && problem_field != "") {
         submit_button.style.display == "block";
