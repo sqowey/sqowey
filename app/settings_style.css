@@ -36,7 +36,7 @@ h1 {
 
 /* The setting parameters */
 .settings {
-    background-color: #222c33;
+    /* background-color: #222c33; */
     grid-area: settings; 
 }
 

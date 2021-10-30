@@ -1,3 +1,39 @@
+<?php
+    // Start the PHP_session
+    session_start();
+	// If the user is not logged in redirect to the index-page
+	if (!isset($_SESSION['loggedin'])) {
+		header('Location: index.html');
+		exit;
+	}
+
+    
+    // Variables with the login-credentials
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'accounts';
+    // Try to Connect with credentials
+    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    
+    // Get the mail
+    // Prepare the SQL
+        if ($stmt = $con->prepare('SELECT email, password, phone FROM accounts WHERE username = ?')) {
+
+            // Bind parameters (s = string, i = int, b = blob, etc)
+            $stmt->bind_param('s', $_SESSION['name']);
+            $stmt->execute();
+    
+            // Store the result so we can check if the account exists in the database.
+            $stmt->store_result();
+            $stmt->bind_result($mail, $password, $phone);
+            $stmt->fetch();
+            $_SESSION['mail'] = $mail;
+            $_SESSION['password'] = $password;
+            $_SESSION['phone'] = $phone;
+        }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -17,17 +53,17 @@
                     <div id="accountdata-inner">
                         <span>E-Mail</span>
                         <br>
-                        <input placeholder="">
+                        <input placeholder="<?=$_SESSION['mail']?>">
                         <br><br>
                         <span>Nutzername</span>
                         <br>
-                        <input placeholder="">
+                        <input placeholder="<?=$_SESSION['name']?>">
                         <br><br>
                         <span>Telefonnumer</span>
                         <br>
-                        <input placeholder="">
+                        <input placeholder="<?=$_SESSION['phone']?>">
                         <br><br>
-                        <span class="submit" onclick=''>Submit</span>
+                        <span class="submit" onclick=''>Verändern</span>
                     </div>
                 </div>
             </div>
