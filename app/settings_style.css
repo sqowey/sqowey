@@ -14,16 +14,16 @@ body {
 
 h1 {
     text-align: center;
-    color: #5b6574;
-    font-size: 24px;
+    color: #727b8a;
+    font-size: 45px;
     padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+    /* border-bottom: 1px solid #dee0e4; */
 }
 
 /* grid */
 .container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -39,9 +39,57 @@ h1 {
     background-color: #222c33;
     grid-area: settings; 
 }
-  
+
+#acountdata{
+    margin-left: 100px;
+    border-radius: 25px;
+    background-color: #2f3442;
+    color: #727b8a;
+    font-size: 25px;
+    width: 500px;
+    height: 500px;
+}
+
+#accountdata-inner{
+    padding-top: 35px;
+    margin-left: 15px;
+}
+
+input,
+#accountdata-inner .submit{
+    border-radius: 15px;
+    width: 310px;
+    height: 50px;
+    background-color: #dee0e4;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+#accountdata-inner .submit{
+    cursor: pointer;
+}
 /* Settings area choose list */
 .list {
     grid-area: list;
 }
+
+.vertical-menu {
+    padding-top: 25px;
+}
   
+.vertical-menu a {
+    text-align: center;
+    padding-left: 10px;
+    font-size: 30px;
+    color: #ffffff; 
+    border-radius: 15px;
+    background-color: #522c33;
+    display: block; 
+    padding: 12px; 
+    margin-top: 5px;
+    text-decoration: none; 
+}
+  
+.vertical-menu a.active {
+    color: #ffffff;
+}
