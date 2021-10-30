@@ -18,7 +18,7 @@
     
     // Get the mail
     // Prepare the SQL
-        if ($stmt = $con->prepare('SELECT email, password, phone FROM accounts WHERE username = ?')) {
+        if ($stmt = $con->prepare('SELECT email, password, phone, avatar FROM accounts WHERE username = ?')) {
 
             // Bind parameters (s = string, i = int, b = blob, etc)
             $stmt->bind_param('s', $_SESSION['name']);
@@ -26,11 +26,12 @@
     
             // Store the result so we can check if the account exists in the database.
             $stmt->store_result();
-            $stmt->bind_result($mail, $password, $phone);
+            $stmt->bind_result($mail, $password, $phone, $avatar);
             $stmt->fetch();
             $_SESSION['mail'] = $mail;
             $_SESSION['password'] = $password;
             $_SESSION['phone'] = $phone;
+            $_SESSION['avatar'] = $avatar;
         }
 ?>
 
@@ -49,19 +50,34 @@
         <div class="settings">
             <div id="account">
                 <h1>Account</h1>
-                <div id="acountdata">
+                <div id="accountdata">
+                    <div id="avatarchanger">
+                        <img src="<?=$_SESSION['avatar']?>"></img>
+                        <div>
+                            <i class="fas fa-pen"></i>
+                        </div>
+                    </div>
                     <div id="accountdata-inner">
                         <span>E-Mail</span>
                         <br>
                         <input placeholder="<?=$_SESSION['mail']?>">
+                        <div>
+                            <i class="fas fa-pen"></i>
+                        </div>
                         <br><br>
                         <span>Nutzername</span>
                         <br>
                         <input placeholder="<?=$_SESSION['name']?>">
+                        <div>
+                            <i class="fas fa-pen"></i>
+                        </div>
                         <br><br>
                         <span>Telefonnumer</span>
                         <br>
                         <input placeholder="<?=$_SESSION['phone']?>">
+                        <div>
+                            <i class="fas fa-pen"></i>
+                        </div>
                         <br><br>
                         <span class="submit" onclick=''>Verändern</span>
                     </div>
