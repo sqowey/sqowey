@@ -176,6 +176,24 @@ Chatbox
     left: calc(100vw - 375px);
 }
 
+#actions i {
+    right: 10px;
+    color: #c7e1f0;
+    text-align: center;
+    margin: auto;
+    font-size: 40px
+}
+
+#actions i:hover {
+    color: #8bbbd4;
+}
+
+#actions {
+    position: absolute;
+    top: 15px;
+    right: calc(100vw - 200px);
+}
+
 .fa-phone {
     rotate: 135deg;
 }
