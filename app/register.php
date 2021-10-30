@@ -1,4 +1,7 @@
 <?php
+
+    $standart_img = "../files/avatars/standart.jpg";
+
     // Database credentials
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'root';
@@ -113,10 +116,10 @@
         } else {
 
             // Username doesnt exists, insert new account
-            if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email) VALUES (?, ?, ?)')) {
+            if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, avatar) VALUES (?, ?, ?, ?)')) {
                 // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
+                $stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $standart_img);
                 $stmt->execute();
                 header('Location: message.html?message=%22Erfolgreich%20registriert%22&showReportButton=false');
                 exit();
