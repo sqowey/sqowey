@@ -1,0 +1,47 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+body {
+    font-family: Dosis;
+    background-color: #282c36;
+    width: 100%;
+    height: calc(100vh - 20px);
+    overflow: hidden;
+}
+
+
+/* header */
+
+h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+/* grid */
+.container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "list settings";
+    width: 100%;
+    height: calc(100vh - 20px);
+}
+  
+
+/* The setting parameters */
+.settings {
+    background-color: #222c33;
+    grid-area: settings; 
+}
+  
+/* Settings area choose list */
+.list {
+    grid-area: list;
+}
+  
