@@ -43,16 +43,43 @@ h1 {
     grid-area: settings; 
 }
 
-#acountdata{
+#accountdata{
     margin-left: 100px;
     border-radius: 25px;
     background-color: #2f3442;
     color: #727b8a;
     font-size: 25px;
-    width: 500px;
+    width: 65vw;
     height: 500px;
 }
 
+#avatarchanger{
+    margin-left: 500px;
+    margin-top: 100px;
+    position: absolute;
+}
+#avatarchanger div{
+    position: absolute;
+    margin-left: 220px;
+    margin-top: 220px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #ffff00;
+    cursor: pointer;
+}
+#avatarchanger div i{
+    padding-top: 9px;
+}
+#avatarchanger img{
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+    display:inline;
+    position: absolute;
+}
 #accountdata-inner{
     padding-top: 35px;
     margin-left: 15px;
@@ -61,16 +88,27 @@ h1 {
 input,
 #accountdata-inner .submit{
     border-radius: 15px;
-    width: 310px;
+    width: 350px;
     height: 50px;
     background-color: #dee0e4;
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
 }
+#accountdata-inner div{
+    cursor: pointer;
+    top:5px;
+    background-color: #ffff00;
+    width: 70px;
+    height: 75px;
+    border-radius: 5px;
+    position: relative;
+    display: inline;
+}
 #accountdata-inner .submit{
     cursor: pointer;
 }
+
 /* Settings area choose list */
 .list {
     grid-area: list;
