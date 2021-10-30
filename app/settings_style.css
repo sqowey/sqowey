@@ -9,6 +9,9 @@ body {
     overflow: hidden;
 }
 
+span{
+    cursor: default;
+}
 
 /* header */
 
