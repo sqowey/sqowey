@@ -38,6 +38,8 @@ html {
 
 .main {
     grid-area: main;
+    color: white;
+    text-align: center;
 }
 
 
