@@ -23,6 +23,8 @@ $id = $_SESSION['id'];
 $sql = "UPDATE `accounts` SET `username`='$new_username',`email`='$new_mail',`phone`='$new_phone' WHERE id = '$id'";
 
 if ($con->query($sql) === TRUE) {
+    // destroy the session
+    session_destroy();
     // Incorrect password
     header('Location: message.html?error=%22Daten%20wurden%20veraendert%22');
     exit();
