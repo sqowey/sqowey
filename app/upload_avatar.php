@@ -89,6 +89,9 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
 
                     // destroy the session
                     session_destroy();
+
+                    // close database connection
+                    $con->close();
                     
                     // redirect
                     header('Location: message.html?error=%22Avatar%20wurde%20erfolgreich%20veraendert%22');
@@ -98,9 +101,6 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
                     // Output the error
                     echo "Error updating record: " . $con->error;
                 }
-
-                // close database connection
-                $con->close();
 			}
 		}
 		
