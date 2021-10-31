@@ -58,8 +58,12 @@
                     <div id="avatarchanger">
                         <img src="<?=$_SESSION['avatar']?>"></img>
                         <div>
-                            <i class="fas fa-pen"></i>
+                            <i onclick="document.getElementById('uploadform').style.display = 'block';" class="fas fa-pen"></i>
                         </div>
+                        <form id="uploadform" method="post" enctype="multipart/form-data">	
+                            <input id="files" type="file" name="files[]" multiple>
+                            <input type="submit" value="Hochladen" name="submit">
+                        </form>
                     </div>
                     <form action="setaccountinfo.php" method="post" id="accountdata-inner">
                         <span>E-Mail</span>
