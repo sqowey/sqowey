@@ -18,21 +18,25 @@
     
     // Get the mail
     // Prepare the SQL
-        if ($stmt = $con->prepare('SELECT email, password, phone, avatar FROM accounts WHERE username = ?')) {
+    if ($stmt = $con->prepare('SELECT email, password, phone, avatar, id FROM accounts WHERE username = ?')) {
 
-            // Bind parameters (s = string, i = int, b = blob, etc)
-            $stmt->bind_param('s', $_SESSION['name']);
-            $stmt->execute();
-    
-            // Store the result so we can check if the account exists in the database.
-            $stmt->store_result();
-            $stmt->bind_result($mail, $password, $phone, $avatar);
-            $stmt->fetch();
-            $_SESSION['mail'] = $mail;
-            $_SESSION['password'] = $password;
-            $_SESSION['phone'] = $phone;
-            $_SESSION['avatar'] = $avatar;
-        }
+        // Bind parameters (s = string, i = int, b = blob, etc)
+        $stmt->bind_param('s', $_SESSION['name']);
+        $stmt->execute();
+
+        // Store the result so we can check if the account exists in the database.
+        $stmt->store_result();
+        $stmt->bind_result($mail, $password, $phone, $avatar, $id);
+        $stmt->fetch();
+        $_SESSION['mail'] = $mail;
+        $_SESSION['password'] = $password;
+        $_SESSION['phone'] = $phone;
+        $_SESSION['avatar'] = $avatar;
+        $_SESSION['id'] = $id;
+    }
+
+    // close the database-connection
+    mysqli_close($con);
 ?>
 
 <!DOCTYPE html>
@@ -57,30 +61,21 @@
                             <i class="fas fa-pen"></i>
                         </div>
                     </div>
-                    <div id="accountdata-inner">
+                    <form action="setaccountinfo.php" method="post" id="accountdata-inner">
                         <span>E-Mail</span>
                         <br>
-                        <input placeholder="<?=$_SESSION['mail']?>">
-                        <div>
-                            <i class="fas fa-pen"></i>
-                        </div>
+                        <input name="email" value="<?=$_SESSION['mail']?>">
                         <br><br>
                         <span>Nutzername</span>
                         <br>
-                        <input placeholder="<?=$_SESSION['name']?>">
-                        <div>
-                            <i class="fas fa-pen"></i>
-                        </div>
+                        <input name="username" value="<?=$_SESSION['name']?>">
                         <br><br>
                         <span>Telefonnumer</span>
                         <br>
-                        <input placeholder="<?=$_SESSION['phone']?>">
-                        <div>
-                            <i class="fas fa-pen"></i>
-                        </div>
+                        <input name="phone" value="<?=$_SESSION['phone']?>">
                         <br><br>
-                        <span class="submit" onclick=''>Verändern</span>
-                    </div>
+                        <input type="submit" class="submit" value="Absenden" onclick=''></input>
+                    </form>
                 </div>
             </div>
         </div>

@@ -95,16 +95,6 @@ input,
     margin-bottom: 20px;
     padding: 0 15px;
 }
-#accountdata-inner div{
-    cursor: pointer;
-    top:5px;
-    background-color: #ffff00;
-    width: 70px;
-    height: 75px;
-    border-radius: 5px;
-    position: relative;
-    display: inline;
-}
 #accountdata-inner .submit{
     cursor: pointer;
 }
