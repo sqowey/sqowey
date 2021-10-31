@@ -1,6 +1,8 @@
 <?php
 // Start the PHP_session
 session_start();
+
+// Database login credentials
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -32,5 +34,6 @@ if ($con->query($sql) === TRUE) {
     echo "Error updating record: " . $con->error;
 }
 
+// close database connection
 $con->close();
 ?> 
