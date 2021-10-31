@@ -52,7 +52,7 @@
         <!-- The Name thats on the top of the page -->
         <div class="name">
             <div id="actions">
-                <i class="fas fa-cog" onclick='location.href = "./settings.html";'></i>
+                <i class="fas fa-cog" onclick='location.href = "./settings.php";'></i>
             </div>
             <span>Test</span>
             <div id="personal_actions">
