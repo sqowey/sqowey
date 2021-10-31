@@ -3,7 +3,7 @@
 // 
 
 // Get the file upload script
-const php_script = "upload_file.php";
+const php_script = "upload_avatar.php";
 
 // Get the upload formular
 const uploadform = document.getElementById("uploadform");
