@@ -64,15 +64,15 @@
                     <form action="setaccountinfo.php" method="post" id="accountdata-inner">
                         <span>E-Mail</span>
                         <br>
-                        <input name="email" value="<?=$_SESSION['mail']?>">
+                        <input id="account_mail" name="email" value="<?=$_SESSION['mail']?>">
                         <br><br>
                         <span>Nutzername</span>
                         <br>
-                        <input name="username" value="<?=$_SESSION['name']?>">
+                        <input id="account_username" name="username" value="<?=$_SESSION['name']?>">
                         <br><br>
                         <span>Telefonnumer</span>
                         <br>
-                        <input name="phone" value="<?=$_SESSION['phone']?>">
+                        <input id="account_phone" name="phone" value="<?=$_SESSION['phone']?>">
                         <br><br>
                         <input type="submit" class="submit" value="Absenden" onclick=''></input>
                     </form>
@@ -95,6 +95,7 @@
               </div> 
         </div>
       </div>
+      <script src="settings_script.js"></script>
 </body>
 
 </html>
