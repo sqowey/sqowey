@@ -50,25 +50,35 @@ setInterval(accountDetailsColor, 10);
 
 
 // 
-// 
+// Avatar upload
 // 
 
 
 // eventlistener is waiting for submits
 uploadform.addEventListener ("submit", function (evt) {
+
+    // prevent default
 	evt.preventDefault();
+
+    // get the files
 	const files = document.querySelector('[type=file]').files;
+
+    // create a form
     const formData = new FormData();
     
+    // repeat it for every file
 	for (let i = 0; i < files.length; i++) {
+
+        // pick the right file
 		let file = files[i];
+
+        // append the file to the form
 		formData.append('files[]', file)
 	}
 	
+    // send everything to the php script
 	fetch (php_script, {
 		method: "POST",
 		body: formData,
-	}).then ((response) => {
-		console.log (response);
 	});
 });
