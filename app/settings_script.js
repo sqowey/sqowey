@@ -1,3 +1,9 @@
+// 
+// Get all needed elements
+// 
+
+
+// Get all account formular items
 mail = document.getElementById("account_mail");
 username = document.getElementById("account_username");
 phone = document.getElementById("account_phone");
