@@ -121,17 +121,17 @@
         </div>
         <div class="list">
             <div class="vertical-menu">
-                <a href="#" class="active">Account</a>
-                <a href="#">Profil</a>
-                <a href="#">Sicherheit</a>
+                <a onclick="changeToTab('account')" href="#">Account</a>
+                <a onclick="changeToTab('profile')" href="#">Profil</a>
+                <a onclick="changeToTab('security')" href="#">Sicherheit</a>
                 <hr>
-                <a href="#">Sprache</a>
-                <a href="#">Aussehen</a>
-                <a href="#">Barrierefreiheit</a>
+                <a onclick="changeToTab('language')" href="#">Sprache</a>
+                <a onclick="changeToTab('look')" href="#">Aussehen</a>
+                <a onclick="changeToTab('access')" href="#">Barrierefreiheit</a>
                 <hr>
-                <a href="#">Hilfe</a>
-                <a href="#">Credits</a>
-                <a href="#">Support</a>
+                <a onclick="changeToTab('help')" href="#">Hilfe</a>
+                <a onclick="changeToTab('credits')" href="#">Credits</a>
+                <a onclick="changeToTab('support')" href="#">Support</a>
               </div> 
         </div>
       </div>

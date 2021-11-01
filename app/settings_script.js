@@ -13,6 +13,17 @@ mail = document.getElementById("account_mail");
 username = document.getElementById("account_username");
 phone = document.getElementById("account_phone");
 
+// Get all tabs
+standart = document.getElementById("standart");
+account = document.getElementById("account");
+profile = document.getElementById("profile");
+security = document.getElementById("security");
+language = document.getElementById("language");
+look = document.getElementById("look");
+access = document.getElementById("access");
+help = document.getElementById("help");
+credits = document.getElementById("credits");
+support = document.getElementById("support");
 
 // 
 // Background color changer on value change
@@ -82,3 +93,55 @@ uploadform.addEventListener ("submit", function (evt) {
 		body: formData,
 	});
 });
+
+
+
+
+// 
+// Change settings tab
+// 
+function changeToTab(tab){
+
+    // close all tabs
+    standart.style.display = "none";
+    account.style.display = "none";
+    profile.style.display = "none";
+    security.style.display = "none";
+    language.style.display = "none";
+    look.style.display = "none";
+    access.style.display = "none";
+    help.style.display = "none";
+    credits.style.display = "none";
+    support.style.display = "none";
+
+    // open the needed tab
+    switch(tab){
+        case('account'):
+            account.style.display = "block";
+            break;
+        case('profile'):
+            profile.style.display = "block";
+            break;
+        case('security'):
+            security.style.display = "block";
+            break;
+        case('language'):
+            language.style.display = "block";
+            break;
+        case('look'):
+            look.style.display = "block";
+            break;
+        case('access'):
+            access.style.display = "block";
+            break;
+        case('help'):
+            help.style.display = "block";
+            break;
+        case('credits'):
+            credits.style.display = "block";
+            break;
+        case('support'):
+            support.style.display = "block";
+            break;
+    }
+}
