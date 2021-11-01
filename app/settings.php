@@ -52,6 +52,10 @@
 <body>
     <div class="container">
         <div class="settings">
+            <div id="standart">
+                <h1>Einstellungen</h1>
+
+            </div>
             <div id="account">
                 <h1>Account</h1>
                 <div id="accountdata">
@@ -81,6 +85,38 @@
                         <input type="submit" class="submit" value="Absenden" onclick=''></input>
                     </form>
                 </div>
+            </div>
+            <div id="profile">
+                <h1>Profil</h1>
+
+            </div>
+            <div id="security">
+                <h1>Sicherheit</h1>
+
+            </div>
+            <div id="language">
+                <h1>Sprache</h1>
+
+            </div>
+            <div id="look">
+                <h1>Aussehen</h1>
+
+            </div>
+            <div id="access">
+                <h1>Barrierefreiheit</h1>
+
+            </div>
+            <div id="help">
+                <h1>Hilfe</h1>
+
+            </div>
+            <div id="credits">
+                <h1>Danke an</h1>
+
+            </div>
+            <div id="support">
+                <h1>Support</h1>
+
             </div>
         </div>
         <div class="list">
