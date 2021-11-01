@@ -43,6 +43,10 @@ h1 {
     grid-area: settings; 
 }
 
+/*
+Hide all settings generally
+*/
+
 #account,
 #profile,
 #security,
@@ -54,6 +58,10 @@ h1 {
 #support{
     display: none;
 }
+
+/*
+All the account settings
+*/
 #accountdata{
     margin-left: 100px;
     border-radius: 25px;
