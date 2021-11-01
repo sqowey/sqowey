@@ -43,6 +43,21 @@ h1 {
     grid-area: settings; 
 }
 
+/* 
+The settings close button
+*/
+.fa-times{
+    color: #5a353a;
+    font-size: 30px;
+    position: absolute;
+    display: block;
+    padding-left: calc(100vw - 50px);
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+
+
 /*
 Hide all settings generally
 */

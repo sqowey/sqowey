@@ -50,6 +50,7 @@
 </head>
 
 <body>
+    <i onclick='location.href = "./app.php";' id="closebutton" class="fas fa-times"></i>
     <div class="container">
         <div class="settings">
             <div id="standart">
