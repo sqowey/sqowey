@@ -43,6 +43,17 @@ h1 {
     grid-area: settings; 
 }
 
+#account,
+#profile,
+#security,
+#language,
+#look,
+#accessibility,
+#help,
+#credits,
+#support{
+    display: none;
+}
 #accountdata{
     margin-left: 100px;
     border-radius: 25px;
