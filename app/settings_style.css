@@ -74,6 +74,24 @@ Hide all settings generally
     display: none;
 }
 
+
+/* 
+Settings for the startpage
+*/
+
+#standart{
+    text-align: center;
+    color: #727b8a;
+}
+#standart i{
+    padding-top: 10vw;
+    font-size: 55px;
+}
+#standart span{
+    font-size: 45px;
+}
+
+
 /*
 All the account settings
 */
