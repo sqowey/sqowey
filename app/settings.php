@@ -55,7 +55,9 @@
         <div class="settings">
             <div id="standart">
                 <h1>Einstellungen</h1>
-
+                <i class="fas fa-arrow-left"></i>
+                <br>
+                <span>W&auml;hle bitte eine Kategorie aus!</span>
             </div>
             <div id="account">
                 <h1>Account</h1>
@@ -135,8 +137,8 @@
                 <a onclick="changeToTab('support')" href="#">Support</a>
               </div> 
         </div>
-      </div>
-      <script src="settings_script.js"></script>
+    </div>
+    <script src="settings_script.js"></script>
 </body>
 
 </html>
