@@ -16,7 +16,7 @@ phone = document.getElementById("account_phone");
 // Get all tabs
 standart = document.getElementById("standart");
 account = document.getElementById("account");
-profile = document.getElementById("profile");
+privacy = document.getElementById("privacy");
 security = document.getElementById("security");
 language = document.getElementById("language");
 look = document.getElementById("look");
@@ -105,7 +105,7 @@ function changeToTab(tab){
     // close all tabs
     standart.style.display = "none";
     account.style.display = "none";
-    profile.style.display = "none";
+    privacy.style.display = "none";
     security.style.display = "none";
     language.style.display = "none";
     look.style.display = "none";
@@ -119,8 +119,8 @@ function changeToTab(tab){
         case('account'):
             account.style.display = "block";
             break;
-        case('profile'):
-            profile.style.display = "block";
+        case('privacy'):
+            privacy.style.display = "block";
             break;
         case('security'):
             security.style.display = "block";
@@ -145,3 +145,18 @@ function changeToTab(tab){
             break;
     }
 }
+
+
+
+// 
+// set privacy
+// 
+
+// $.ajax({  
+//     type: 'POST',  
+//     url: 'setprivacy.php', 
+//     data: { changecode: this.title },
+//     success: function(response) {
+//         content.html(response);
+//     }
+// });

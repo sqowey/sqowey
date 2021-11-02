@@ -13,10 +13,10 @@
     $DATABASE_USER = 'root';
     $DATABASE_PASS = '';
     $DATABASE_NAME = 'accounts';
+    
     // Try to Connect with credentials
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
     
-    // Get the mail
     // Prepare the SQL
     if ($stmt = $con->prepare('SELECT email, password, phone, avatar, id FROM accounts WHERE username = ?')) {
 
@@ -35,7 +35,7 @@
         $_SESSION['id'] = $id;
     }
 
-    // close the database-connection
+    // Close the Database connection
     mysqli_close($con);
 ?>
 
@@ -89,9 +89,34 @@
                     </form>
                 </div>
             </div>
-            <div id="profile">
-                <h1>Profil</h1>
-
+            <div id="privacy">
+                <h1>Privatsph&auml;re</h1>
+                <div class="privacy_container">
+                    <div class="privacy_stats">
+                        <span class="privacy_title">Anonyme Statistiken</span>
+                        <p>Wir d&uuml;rfen anonym Nutzungsdaten sammeln<br>und diese in Statistiken zusammenfassen.</p>
+                        <br>
+                        <?=$_SESSION['privacy_statistics']?>
+                    </div>
+                    <div class="privacy_enhance">
+                        <span class="privacy_title">Nutzbarkeit verbessern</span>
+                        <p>Wir d&uuml;rfen Nutzungsdaten sammeln,<br>um die Nutzbarkeit zu verbessern.</p>
+                        <br>
+                        <?=$enhance_button?>
+                    </div>
+                    <div class="privacy_ads">
+                        <span class="privacy_title">Werbung</span>
+                        <p>Wir d&uuml;rfen deine Nachrichten, ohne deinen Namen,<br>zu Werbezwecken nutzen.</p>
+                        <br>
+                        <?=$ads_button?>
+                    </div>
+                    <div class="privacy_all">
+                        <span class="privacy_title">Alle AN/AUS</span>
+                        <p>Hier kannst du alle oben genannten Privatsph&auml;reeinstellungen<br>AN oder AUS schalten</p>
+                        <br>
+                        <?=$all_button?>
+                    </div>
+                </div>
             </div>
             <div id="security">
                 <h1>Sicherheit</h1>
@@ -125,7 +150,7 @@
         <div class="list">
             <div class="vertical-menu">
                 <a onclick="changeToTab('account')" href="#">Account</a>
-                <a onclick="changeToTab('profile')" href="#">Profil</a>
+                <a onclick="changeToTab('privacy')" href="#">Privatsph&auml;re</a>
                 <a onclick="changeToTab('security')" href="#">Sicherheit</a>
                 <hr>
                 <a onclick="changeToTab('language')" href="#">Sprache</a>
