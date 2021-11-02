@@ -232,6 +232,101 @@ Privacy
     grid-area: privacy_all;
 }
 
+/* 
+Security
+*/
+
+
+/* 
+Language
+*/
+.language_container {
+    height: calc(50vh - 150px);
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 40px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 34% 33%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "language_german language_english"
+        "language_francais language_italiano"
+        "language_swissgerman language_swabian";
+}
+
+.language_german { 
+    grid-area: language_german; 
+}
+
+.language_english { 
+    grid-area: language_english; 
+}
+
+.language_francais { 
+    grid-area: language_francais; 
+}
+
+.language_italiano { 
+    grid-area: language_italiano; 
+}
+
+.language_swissgerman { 
+    grid-area: language_swissgerman; 
+}
+
+.language_swabian { 
+    grid-area: language_swabian; 
+}
+  
+.language_german,
+.language_english,
+.language_francais,
+.language_italiano,
+.language_swissgerman,
+.language_swabian{
+    background-color: #2f3442;
+    margin: 7.5px;
+    border-radius: 10px;
+}
+
+
+.language {
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "language_check language_name language_flag";
+}
+  
+.language *{
+    margin: auto;
+}
+
+.language_flag { 
+    grid-area: language_flag; 
+    margin-top: 10%;
+}
+
+.language_name { 
+    grid-area: language_name;
+    font-size: 45px;
+}
+
+.language_check { 
+    grid-area: language_check; 
+    margin-top: 10%;
+}
+
+.language_flag img{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+  
 
 
 
