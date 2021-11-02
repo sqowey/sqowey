@@ -124,7 +124,86 @@
             </div>
             <div id="language">
                 <h1>Sprache</h1>
-
+                <div class="language_container">
+                    <div class="language_german">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                Deutsch
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_de.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language_english">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                English
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_gb.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language_francais">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                Français
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_fr.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language_italiano">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                Italiano
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_it.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language_swissgerman">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                Schwyz
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_ch.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language_swabian">
+                        <div class="language">
+                            <div class="language_check">
+                                <i class="far fa-circle"></i>
+                            </div>
+                            <div class="language_name">
+                                Schw&auml;bsch
+                            </div>
+                            <div class="language_flag">
+                                <img src="images/flag_sw.svg">
+                            </div>
+                        </div>              
+                    </div>
+                </div>
             </div>
             <div id="look">
                 <h1>Aussehen</h1>
