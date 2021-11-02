@@ -1,5 +1,6 @@
 <?php
 
+    // Standart image variable
     $standart_img = "../files/avatars/standart.jpg";
 
     // Database credentials
