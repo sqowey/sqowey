@@ -120,7 +120,38 @@
             </div>
             <div id="security">
                 <h1>Sicherheit</h1>
-
+                <div class="security_friends_title">
+                    Wer kann dich als Freund hinzuf&uuml;gen?
+                </div>
+                <div class="security_container">
+                    <div class="toggle_element security_friends_everyone">
+                        <p>Jeder</p>
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <div class="toggle_element security_friends_server">
+                        <p>von gleichen Servern</p>
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <div class="toggle_element security_friends_noone">
+                        <p>Niemand</p>
+                        <i class="fas fa-toggle-off"></i>
+                    </div>
+                    <div class="security_messages_title">
+                        Wer kann dich anschreiben?
+                    </div>
+                    <div class="toggle_element security_messages_everyone">
+                        <p>Jeder</p>
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <div class="toggle_element security_messages_server">
+                        <p>von gleichen Servern</p>
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <div class="toggle_element security_messages_friends">
+                        <p>Freunde</p>
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                </div>
             </div>
             <div id="language">
                 <h1>Sprache</h1>
@@ -224,16 +255,16 @@
         </div>
         <div class="list">
             <div class="vertical-menu">
-                <a onclick="changeToTab('account')" href="#">Account</a>
-                <a onclick="changeToTab('privacy')" href="#">Privatsph&auml;re</a>
-                <a onclick="changeToTab('security')" href="#">Sicherheit</a>
+                <a onclick="changeToTab('account')">Account</a>
+                <a onclick="changeToTab('privacy')">Privatsph&auml;re</a>
+                <a onclick="changeToTab('security')">Sicherheit</a>
                 <hr>
-                <a onclick="changeToTab('language')" href="#">Sprache</a>
-                <a onclick="changeToTab('look')" href="#">Aussehen</a>
-                <a onclick="changeToTab('access')" href="#">Barrierefreiheit</a>
+                <a onclick="changeToTab('language')">Sprache</a>
+                <a onclick="changeToTab('look')">Aussehen</a>
+                <a onclick="changeToTab('access')">Barrierefreiheit</a>
                 <hr>
-                <a onclick="changeToTab('help')" href="#">Hilfe</a>
-                <a onclick="changeToTab('credits')" href="#">Credits</a>
+                <a onclick="changeToTab('help')">Hilfe</a>
+                <a onclick="changeToTab('credits')">Credits</a>
                 <a href="support.html" target="_blank">Support</a>
               </div> 
         </div>
