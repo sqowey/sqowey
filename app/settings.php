@@ -221,10 +221,6 @@
                 <h1>Danke an</h1>
 
             </div>
-            <div id="support">
-                <h1>Support</h1>
-
-            </div>
         </div>
         <div class="list">
             <div class="vertical-menu">
@@ -238,7 +234,7 @@
                 <hr>
                 <a onclick="changeToTab('help')" href="#">Hilfe</a>
                 <a onclick="changeToTab('credits')" href="#">Credits</a>
-                <a onclick="changeToTab('support')" href="#">Support</a>
+                <a href="support.html" target="_blank">Support</a>
               </div> 
         </div>
     </div>
