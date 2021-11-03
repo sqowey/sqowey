@@ -238,7 +238,22 @@
             </div>
             <div id="look">
                 <h1>Aussehen</h1>
+                <div class="theme_container">
+                    <div class="theme_title">
+                        Welches Aussehen willst du?
+                    </div>
+                    <div onclick='toggleTheme("hell")' class="theme_dark themes">
+                        <div class="center">Dunkel</div>
+                        Wenn es abend ist,<br>oder du deine Augen schonen willst.
+                    </div>
+                    <div onclick='toggleTheme("dark")' class="theme_light themes">
+                        <div class="center">Hell</div>
+                        Entweder du bist verrückt<br>oder hast deine Augen schon verloren.
+                    </div>
+                    <div class="theme_example">
 
+                    </div>
+                </div>
             </div>
             <div id="access">
                 <h1>Barrierefreiheit</h1>
@@ -258,17 +273,18 @@
                 <a onclick="changeToTab('account')">Account</a>
                 <a onclick="changeToTab('privacy')">Privatsph&auml;re</a>
                 <a onclick="changeToTab('security')">Sicherheit</a>
-                <hr>
+                <br>
                 <a onclick="changeToTab('language')">Sprache</a>
                 <a onclick="changeToTab('look')">Aussehen</a>
                 <a onclick="changeToTab('access')">Barrierefreiheit</a>
-                <hr>
+                <br>
                 <a onclick="changeToTab('help')">Hilfe</a>
                 <a onclick="changeToTab('credits')">Credits</a>
                 <a href="support.html" target="_blank">Support</a>
               </div> 
         </div>
     </div>
+    <script src="themes.js"></script>
     <script src="settings_script.js"></script>
 </body>
 
