@@ -341,7 +341,9 @@ Settings area choose list
 .vertical-menu {
     padding-top: 25px;
 }
-  
+.vertical-menu *{
+    cursor: pointer;
+}
 .vertical-menu a {
     text-align: center;
     padding-left: 10px;
