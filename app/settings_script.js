@@ -118,7 +118,6 @@ function changeToTab(tab){
     access.style.display = "none";
     help.style.display = "none";
     credits.style.display = "none";
-    support.style.display = "none";
 
     // open the needed tab
     switch(tab){
