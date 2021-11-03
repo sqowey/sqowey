@@ -73,8 +73,7 @@ Hide all settings generally
 #look,
 #access,
 #help,
-#credits,
-#support{
+#credits{
     display: none;
 }
 

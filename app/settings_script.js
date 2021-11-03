@@ -140,9 +140,6 @@ function changeToTab(tab){
         case('credits'):
             credits.style.display = "block";
             break;
-        case('support'):
-            support.style.display = "block";
-            break;
     }
 }
 
