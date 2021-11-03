@@ -135,11 +135,17 @@
                 exit();
             }
         }
+
+        // close the dabase connection
         $stmt->close();
     } else {
+
+        // The error log procedure for an error with the database connection
         error_log("Error()-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".$password,0);
         header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
         exit();
     }
+
+    // close the database connection
     $con->close();
 ?>
