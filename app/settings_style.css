@@ -195,7 +195,12 @@ Privacy
         "privacy_stats privacy_enhance"
         "privacy_ads privacy_all";
 }
-
+.privacy_container div{
+    height: 230px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #2f3442;
+}
 .privacy_container i{
     font-size: 50px;
     color: #008000;
