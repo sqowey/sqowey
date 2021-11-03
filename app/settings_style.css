@@ -239,7 +239,78 @@ Privacy
 /* 
 Security
 */
+#security{
+    height: calc(100vh - 50px);
+}
+.security_container {
+    text-align: center;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 33% 34% 34%;
+    grid-template-rows: 40% 10% 40%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "security_friends_everyone security_friends_server security_friends_noone"
+        "security_messages_title security_messages_title security_messages_title"
+        "security_messages_everyone security_messages_server security_messages_friends";
+}
 
+.security_container *{
+    font-size: 150%
+}
+
+.toggle_element{
+    background-color: #2f3442;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.security_friends_title{
+    font-size: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.security_friends_everyone { 
+    grid-area: security_friends_everyone; 
+}
+
+.security_friends_server { 
+    grid-area: security_friends_server; 
+}
+
+.security_friends_noone { 
+    grid-area: security_friends_noone;
+}
+
+.security_messages_title { 
+    grid-area: security_messages_title; 
+    font-size: 35px;
+    text-align: center;
+}
+
+.security_messages_everyone { 
+    grid-area: security_messages_everyone; 
+}
+
+.security_messages_server { 
+    grid-area: security_messages_server; 
+}
+
+.security_messages_friends { 
+    grid-area: security_messages_friends; 
+}
+  
+.fa-toggle-off{
+    color: #b46821;
+    cursor: pointer;
+}
+
+.fa-toggle-on{
+    color: #008000;
+    cursor: pointer;
+}
 
 /* 
 Language
