@@ -23,7 +23,13 @@ look = document.getElementById("look");
 access = document.getElementById("access");
 help = document.getElementById("help");
 credits = document.getElementById("credits");
-support = document.getElementById("support");
+
+// Create a function to get sepcific cookies
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
 // 
 // Background color changer on value change
