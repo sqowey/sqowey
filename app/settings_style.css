@@ -254,7 +254,9 @@ Language
         "language_francais language_italiano"
         "language_swissgerman language_swabian";
 }
-
+.language_container * {
+    cursor: pointer;
+}
 .language_german { 
     grid-area: language_german; 
 }
