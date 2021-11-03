@@ -162,3 +162,32 @@ function changeToTab(tab){
 //         content.html(response);
 //     }
 // });
+
+
+
+// 
+// set language
+// 
+function setLanguage(lang){
+    document.cookie = "language="+lang+"; expires=Sat, 25 Jan 2025 08:18:00 UTC";
+    lang_checks = document.getElementsByClassName("language_check");
+    for (i = 0; i < lang_checks.length; i++) {
+        lang_checks[i].innerHTML = '<i class="far fa-circle"></i>'
+    }
+    document.getElementById("language_check_"+lang).innerHTML = '<i class="fas fa-circle"></i>';
+}
+if(getCookie("language") == null){
+    switch(navigator.language){
+        // case("de"):
+        case("en"):
+        case("fr"):
+        case("it"):
+            setLanguage(navigator.language);
+            break;
+        default:
+            setLanguage("en");
+            break;
+    }
+}else{
+    setLanguage(getCookie("language"));
+}
