@@ -343,6 +343,7 @@
                 <a onclick="changeToTab('help')">Hilfe</a>
                 <a onclick="changeToTab('credits')">Credits</a>
                 <a href="support.html" target="_blank">Support</a>
+                <a href="logout.php">Ausloggen</a>
               </div> 
         </div>
     </div>
