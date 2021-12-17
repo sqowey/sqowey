@@ -1,0 +1,141 @@
+/* Import the font "Dosis" that's used */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+/* everything on the page */
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #282C36;
+    font-family: Dosis;
+    transition: 1s;
+}
+
+hr {
+    margin: 25px 0px 25px 0px;
+}
+
+
+/* Theme switch */
+
+#themeToggleButton {
+    color: var(--font-color);
+    background: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#themeButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+
+/* Teil der Überschrift und dem Spruch */
+
+.title {
+    font-size: 500%;
+    text-align: center;
+    margin: auto;
+    color: #508038;
+    margin-top: 1em;
+}
+
+.title-mintext {
+    font-size: 123%;
+    text-align: center;
+    margin: auto;
+    color: #508038;
+}
+
+
+/* text */
+
+span {
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+/* Menüknöpfe (auf/zu) einfärben */
+
+#navOpener {
+    color: #818181;
+    position: fixed;
+}
+
+#navOpenerButton {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#navCloseButton {
+    cursor: pointer;
+}
+
+
+/*navigations-menu */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+
+/* Design für die Links im Menü */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .navClosebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/* Einstellungen, für den Inhalt der seite (ausgenommen Menü) */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+/* Bei kleinen bildschirmen Menü anpassen */
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
