@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wudsim</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./help_style.css">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<!-- This is the Help page from the login -->
+
+<body>
+    <!-- Theme button -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Content of the navigation-bar -->
+    <div id="sideNav" class="sidenav">
+        <span id="navCloseButton" class="navClosebtn" onclick="closeNav()">&times;</span>
+        <a href="#login">Login</a>
+        <a href="#register">Registrieren</a>
+        <a href="#messages">Nachrichten</a>
+        <a href="#settings">Einstellungen</a>
+    </div>
+
+    <!-- Button to open the navigation-bar -->
+    <div id="navOpener">
+        <span id="navOpenerButton" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <!-- Main content of the site -->
+    <div id="main">
+
+        <!-- Title -->
+        <div class="title">
+            Hilfe
+        </div>
+
+        <!-- Text under the Titel -->
+        <div class="title-mintext">
+            Hier kannst du Hilfe zu Wudsim bekommen.
+        </div>
+
+        <!-- Add a rule -->
+        <hr>
+
+
+
+
+        <!-- The script themes.js -->
+        <script src="./themes.js"></script>
+
+        <!-- The script script.js -->
+        <script src="./help_script.js"></script>
+</body>
+
+</html>
