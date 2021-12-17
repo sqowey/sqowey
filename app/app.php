@@ -44,9 +44,9 @@
 
         <!-- The chat input box -->
         <div class="chat">
-            <div id="input-box">
-                <input placeholder="Nachricht" id="input_field"></input>
-            </div>
+            <form action="sendmessage.php" method="post" id="input-box">
+                <input autocomplete="off" placeholder="Nachricht" id="input_field"></input>
+            </form>
         </div>
 
         <!-- The Name thats on the top of the page -->
