@@ -2,48 +2,56 @@
 //https://github.com/CuzImBisonratte/themes.js
 
 // Hier kannst du die Farbcodes umstellen
+ThemeColorNavLight = "#cccccc";
+ThemeColorNavDark = "#35393f";
 ThemeColorBackLight = "#f1f1f1";
 ThemeColorBackDark = "#282C36";
-ThemeColorTextLight = "#282C36";
-ThemeColorTextDark = "#818181";
+ThemeColorTextLight = "#508038";
+ThemeColorTextDark = "#d9e7d2";
 ThemeButtonNameLight = "Hell";
 ThemeButtonNameDark = "Dunkel";
 
-// Initialize the Themes-variable
-var theme;
+// Get all article class elements
+var article_mintext_all = document.getElementsByClassName('article-mintext');
+var article_title_all = document.getElementsByClassName('article-title');
 
 // Funktion, die die Farbänderungen auführt
-function changeToTheme(backgroundColor,textColor,themeName){
+function changeToTheme(backgroundColor, navColor, textColor, themeName) {
     document.body.style.backgroundColor = backgroundColor;
+    document.getElementById("sideNav").style.backgroundColor = navColor;
     document.body.style.color = textColor;
+    document.getElementById("themeToggleButton").innerHTML = themeName;
+    for (var i = 0; i < article_mintext_all.length; i++) {
+        article_mintext_all[i].style.color = textColor;
+    }
+    for (var i = 0; i < article_title_all.length; i++) {
+        article_title_all[i].style.color = textColor;
+    }
 }
 
 
 
 // Die funktion, die beim aufrufen der Website automatisch gestartet wird
-function initializeTheme(){
+function initializeTheme() {
 
     // Aktuelles Theme abrufen
-    try{
+    try {
         theme = localStorage.getItem("theme");
-    }
-    catch(e) {
-        if(e.name == "NS_ERROR_FILE_CORRUPTED") {
+    } catch (e) {
+        if (e.name == "NS_ERROR_FILE_CORRUPTED") {
             localStorage.clear();
             theme = localStorage.getItem("theme");
         }
     }
-    
     //Theme auf gespeichertes Theme setzen
-    if(theme=="light"){
+    if (theme == "light") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight,ThemeColorTextLight,ThemeButtonNameLight);
-    }
-    else{
+        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
+    } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark,ThemeColorTextDark,ThemeButtonNameDark);
+        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
     }
 }
 
@@ -53,23 +61,32 @@ initializeTheme();
 
 
 // Funktion, die bei Knopfdruck ausgeführt wird
-function toggleTheme(theme){
+function toggleTheme() {
+
+    // Aktuelles Theme abrufen
+    try {
+        theme = localStorage.getItem("theme");
+    } catch (e) {
+        if (e.name == "NS_ERROR_FILE_CORRUPTED") {
+            localStorage.clear();
+            theme = localStorage.getItem("theme");
+        }
+    }
 
     // Theme basierend auf Aktuellem theme ändern
-    if(theme=="dark"){
+    if (theme == "dark") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight,ThemeColorTextLight,ThemeButtonNameLight);
+        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
 
         // Theme-Speicher auf "Hell" setzen
-        localStorage.setItem("theme","light");
-    }
-    else{
+        localStorage.setItem("theme", "light");
+    } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark,ThemeColorTextDark,ThemeButtonNameDark);
+        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
 
         // Theme-Speicher auf "Dunkel" setzen
         localStorage.setItem("theme", "dark");
-    }  
+    }
 }
