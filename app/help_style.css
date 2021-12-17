@@ -56,6 +56,24 @@ hr {
 }
 
 
+/* Article settings */
+
+.article-title {
+    font-size: 350%;
+    text-align: center;
+    margin: auto;
+    color: #a1c091;
+    margin-top: 1em;
+}
+
+.article-mintext {
+    font-size: 123%;
+    text-align: center;
+    margin: auto;
+    color: #d9e7d2;
+}
+
+
 /* text */
 
 span {
