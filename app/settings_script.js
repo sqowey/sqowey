@@ -106,7 +106,22 @@ uploadform.addEventListener("submit", function(evt) {
 // 
 // Change settings tab
 // 
-function changeToTab(tab){
+
+// Get the tab and show it if it`s in the header
+function getToTab() {
+    tab_nameSub = location.search.substring(1);
+    tab_name = tab_nameSub.split("&")[0];
+    tab_name = tab_name.split("=")[1];
+
+    // check if the tab is in the url
+    // do this by checking if "tab_name" is in the url and is not null
+    if (tab_name != null) {
+        changeToTab(tab_name);
+    }
+}
+getToTab();
+
+function changeToTab(tab) {
 
     // close all tabs
     standart.style.display = "none";
