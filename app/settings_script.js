@@ -168,14 +168,22 @@ function changeToTab(tab){
 // 
 // set language
 // 
+function setLanguage(lang) {
+
     // Set the cookie
+    document.cookie = "language=" + lang + "; expires=Sat, 25 Jan 2025 08:18:00 UTC";
+
     // Get all needed elements
     lang_checks = document.getElementsByClassName("language_check");
     for (i = 0; i < lang_checks.length; i++) {
+
         // Set all checkboxes to unchecked
         lang_checks[i].innerHTML = '<i class="far fa-circle"></i>'
     }
+
     // Set the checked checkbox to the selected language
+    document.getElementById("language_check_" + lang).innerHTML = '<i class="fas fa-circle"></i>';
+
     // Post the new language to setlanguage.php
     $.ajax({
         type: 'POST',
@@ -186,18 +194,18 @@ function changeToTab(tab){
         }
     });
 }
-if(getCookie("language") == null){
-    switch(navigator.language){
-        // case("de"):
-        case("en"):
-        case("fr"):
-        case("it"):
+if (getCookie("language") == null) {
+    switch (navigator.language) {
+        case ("de"):
+        case ("en"):
+        case ("fr"):
+        case ("it"):
             setLanguage(navigator.language);
             break;
         default:
             setLanguage("en");
             break;
     }
-}else{
+} else {
     setLanguage(getCookie("language"));
 }
