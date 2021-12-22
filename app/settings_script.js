@@ -41,22 +41,22 @@ old_username = username.value;
 old_phone = phone.value;
 
 // The function that get's called repeatedly
-function accountDetailsColor(){
+function accountDetailsColor() {
 
     // Check if value has changed and if so set new background color
-    if(mail.value!=old_mail){
+    if (mail.value != old_mail) {
         mail.style.background = "#4e8fc2"
-    }else{
+    } else {
         mail.style.background = "#dee0e4"
     }
-    if(username.value!=old_username){
+    if (username.value != old_username) {
         username.style.background = "#4e8fc2"
-    }else{
+    } else {
         username.style.background = "#dee0e4"
     }
-    if(phone.value!=old_phone){
+    if (phone.value != old_phone) {
         phone.style.background = "#4e8fc2"
-    }else{
+    } else {
         phone.style.background = "#dee0e4"
     }
 }
@@ -72,32 +72,32 @@ setInterval(accountDetailsColor, 10);
 
 
 // eventlistener is waiting for submits
-uploadform.addEventListener ("submit", function (evt) {
+uploadform.addEventListener("submit", function(evt) {
 
     // prevent default
-	evt.preventDefault();
+    evt.preventDefault();
 
     // get the files
-	const files = document.querySelector('[type=file]').files;
+    const files = document.querySelector('[type=file]').files;
 
     // create a form
     const formData = new FormData();
-    
+
     // repeat it for every file
-	for (let i = 0; i < files.length; i++) {
+    for (let i = 0; i < files.length; i++) {
 
         // pick the right file
-		let file = files[i];
+        let file = files[i];
 
         // append the file to the form
-		formData.append('files[]', file)
-	}
-	
+        formData.append('files[]', file)
+    }
+
     // send everything to the php script
-	fetch (php_script, {
-		method: "POST",
-		body: formData,
-	});
+    fetch(php_script, {
+        method: "POST",
+        body: formData,
+    });
 });
 
 
@@ -120,28 +120,29 @@ function changeToTab(tab){
     credits.style.display = "none";
 
     // open the needed tab
-    switch(tab){
-        case('account'):
+    switch (tab) {
+        case ('account'):
             account.style.display = "block";
             break;
+        case ('privacy'):
             privacy_div.style.display = "block";
             break;
-        case('security'):
+        case ('security'):
             security.style.display = "block";
             break;
-        case('language'):
+        case ('language'):
             language.style.display = "block";
             break;
-        case('look'):
+        case ('look'):
             look.style.display = "block";
             break;
-        case('access'):
+        case ('access'):
             access.style.display = "block";
             break;
-        case('help'):
+        case ('help'):
             help.style.display = "block";
             break;
-        case('credits'):
+        case ('credits'):
             credits.style.display = "block";
             break;
     }
