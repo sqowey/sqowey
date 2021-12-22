@@ -153,14 +153,40 @@ function changeToTab(tab){
 // set privacy
 // 
 
-// $.ajax({  
-//     type: 'POST',  
-//     url: 'setprivacy.php', 
-//     data: { changecode: this.title },
-//     success: function(response) {
-//         content.html(response);
-//     }
-// });
+// The function that get's called when a button is pressed
+function privacy(arg) {
+
+
+
+    // Send the arg to setprivacy.php
+    $.ajax({
+        url: "setprivacy.php",
+        type: "POST",
+        data: {
+            privacy: arg
+        },
+        success: function(data) {
+
+            // If the backcoming data is "success"
+            if (data == "success-reload") {
+
+                // Reload the page to get the new privacy
+                // This is done by setting the url to the current page with "?tab_name=privacy" at the end
+                location.href = location.href + "?tab_name=privacy";
+
+                // Write log to console
+                console.log("success");
+
+            } else {
+
+                // Log the backcoming data
+                console.log(data);
+            }
+
+        }
+    });
+
+}
 
 
 

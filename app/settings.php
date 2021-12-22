@@ -32,7 +32,118 @@
         $_SESSION['password'] = $password;
         $_SESSION['phone'] = $phone;
         $_SESSION['avatar'] = $avatar;
-        $_SESSION['id'] = $id;
+
+        // close the statement
+        $stmt->close();
+        
+            // Prepare the SQL
+            if ($stmt = $con->prepare('SELECT privacy_statistics, privacy_enhance, privacy_ads, language FROM settings WHERE user_id = ?')) {
+
+                // Bind parameters (s = string, i = int, b = blob, etc)
+                $stmt->bind_param('s', $id);
+                $stmt->execute();
+
+                // Store the result to check if the account exists in the database.
+                $stmt->store_result();
+                $stmt->bind_result($w1, $w2, $w3, $w4);
+                $stmt->fetch();
+
+                // Check if any of the variables is unset
+                if (!isset($w1) || !isset($w2) || !isset($w3) || !isset($w4)) {
+
+                    // Prepare the SQL
+                    if ($stmt = $con->prepare('INSERT INTO accounts (user_id, privacy_statistics, privacy_enhance, privacy_ads, language) VALUES (?, ?, ?, ?, ?)')) {
+
+                        // Bind parameters (s = string, i = int, b = blob, etc)
+                        $stmt->bind_param('sssss', $_SESSION['name'], '1', '1', '1', 'en');
+                        $stmt->execute();
+
+                        // close the statement
+                        $stmt->close();
+
+                        // Reload the page
+                        header('Location: settings.php');
+                        exit;
+
+                    } else {
+
+                        // Log the error
+                        exit("Error-aaaa".mysqli_error($con));
+                    }
+
+                } else {
+
+                    // close the statement
+                    $stmt->close();
+                }
+
+                
+                // Check all variables
+                // Session var used here: privacy_all
+                // If they are true then set the session variable to 1
+                // If they are false then set the session variable to 0
+                // If they are mixed then set the session variable to 2
+                if ($w1 == '1' && $w2 == '1' && $w3 == '1' && $w4 == '1') {
+                    $_SESSION['privacy_all'] = '1';
+                } elseif ($w1 == '0' && $w2 == '0' && $w3 == '0' && $w4 == '0') {
+                    $_SESSION['privacy_all'] = '0';
+                } else {
+                    $_SESSION['privacy_all'] = '2';
+                }
+
+                // Give the local variable privacy all the associated values
+                // If Session: 1 then local: <i class="fas fa-check-circle"></i>
+                // If Session: 2 then local: <i class="fas far-circle"></i>
+                // If Session: 0 then local: <i class="fas fa-times-circle"></i>
+                if ($_SESSION['privacy_all'] == '1') {
+                    $privacy_all = '<i onclick=\'privacy(""all_switch"");\' class="fas fa-check-circle"></i>';
+                } elseif ($_SESSION['privacy_all'] == '2') {
+                    $privacy_all = '<i onclick=\'privacy("all_switch");\' class="far fa-circle"></i>';
+                } else {
+                    $privacy_all = '<i onclick=\'privacy("all_switch");\' class="fas fa-times-circle"></i>';
+                }
+
+
+
+                // Check every variable if it is true or false
+                // If it is true, set the associated session-variable to '<i class="fas fa-check-circle"></i>'
+                // If it is false, set the associated session-variable to '<i class="fas fa-times-circle"></i>'
+                if ($w1 == 1) {
+                    $_SESSION['privacy_statistics'] = '<i onclick=\'privacy("stats_switch");\' class="fas fa-check-circle"></i>';
+                } else {
+                    $_SESSION['privacy_statistics'] = '<i onclick=\'privacy("stats_switch");\' class="fas fa-times-circle"></i>';
+                }
+                if($w2 == 1) {
+                    $_SESSION['privacy_enhance'] = '<i onclick=\'privacy("enhance_switch");\' class="fas fa-check-circle"></i>';
+                } else {
+                    $_SESSION['privacy_enhance'] = '<i onclick=\'privacy("enhance_switch");\' class="fas fa-times-circle"></i>';
+                }
+                if($w3 == 1) {
+                    $_SESSION['privacy_ads'] = '<i onclick=\'privacy("ads_switch");\' class="fas fa-check-circle"></i>';
+                } else {
+                    $_SESSION['privacy_ads'] = '<i onclick=\'privacy("ads_switch");\' class="fas fa-times-circle"></i>';
+                }
+                 
+                // Copy all session variables to the local variables
+                $privacy_statistics = $_SESSION['privacy_statistics'];
+                $privacy_enhance = $_SESSION['privacy_enhance'];
+                $privacy_ads = $_SESSION['privacy_ads'];
+                $language = $_SESSION['language'];
+
+
+
+                // Set the language to the session-variable
+                $_SESSION['language'] = $w4;
+                
+            }
+            else{
+                // Log the error
+                exit("Error-".mysqli_error($con));
+
+                // Display an error.
+                header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
+                exit();
+            }
     }
 
     // Close the Database connection
