@@ -174,7 +174,14 @@ function setLanguage(lang){
     for (i = 0; i < lang_checks.length; i++) {
         lang_checks[i].innerHTML = '<i class="far fa-circle"></i>'
     }
-    document.getElementById("language_check_"+lang).innerHTML = '<i class="fas fa-circle"></i>';
+    $.ajax({
+        type: 'POST',
+        url: 'setlanguage.php',
+        data: { language: lang },
+        success: function(response) {
+            content.html(response);
+        }
+    });
 }
 if(getCookie("language") == null){
     switch(navigator.language){
