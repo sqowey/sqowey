@@ -168,12 +168,15 @@ function changeToTab(tab){
 // 
 // set language
 // 
-function setLanguage(lang){
-    document.cookie = "language="+lang+"; expires=Sat, 25 Jan 2025 08:18:00 UTC";
+    // Set the cookie
+    // Get all needed elements
     lang_checks = document.getElementsByClassName("language_check");
     for (i = 0; i < lang_checks.length; i++) {
+        // Set all checkboxes to unchecked
         lang_checks[i].innerHTML = '<i class="far fa-circle"></i>'
     }
+    // Set the checked checkbox to the selected language
+    // Post the new language to setlanguage.php
     $.ajax({
         type: 'POST',
         url: 'setlanguage.php',
