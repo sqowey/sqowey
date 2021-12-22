@@ -16,7 +16,7 @@ phone = document.getElementById("account_phone");
 // Get all tabs
 standart = document.getElementById("standart");
 account = document.getElementById("account");
-privacy = document.getElementById("privacy");
+privacy_div = document.getElementById("privacy");
 security = document.getElementById("security");
 language = document.getElementById("language");
 look = document.getElementById("look");
@@ -111,7 +111,7 @@ function changeToTab(tab){
     // close all tabs
     standart.style.display = "none";
     account.style.display = "none";
-    privacy.style.display = "none";
+    privacy_div.style.display = "none";
     security.style.display = "none";
     language.style.display = "none";
     look.style.display = "none";
@@ -124,8 +124,7 @@ function changeToTab(tab){
         case('account'):
             account.style.display = "block";
             break;
-        case('privacy'):
-            privacy.style.display = "block";
+            privacy_div.style.display = "block";
             break;
         case('security'):
             security.style.display = "block";
