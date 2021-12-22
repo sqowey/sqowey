@@ -186,9 +186,17 @@ function privacy(arg) {
             // If the backcoming data is "success"
             if (data == "success-reload") {
 
-                // Reload the page to get the new privacy
-                // This is done by setting the url to the current page with "?tab_name=privacy" at the end
-                location.href = location.href + "?tab_name=privacy";
+
+                // Check if the url includes "tab_name"
+                if (location.search.includes("tab_name")) {
+
+                    // Reload the page
+                    location.reload();
+                } else {
+
+                    // Reload the page within the privacy tab
+                    location.href = location.href + "?tab_name=privacy";
+                }
 
                 // Write log to console
                 console.log("success");
