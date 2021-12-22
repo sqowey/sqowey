@@ -18,7 +18,7 @@
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
     
     // Prepare the SQL
-    if ($stmt = $con->prepare('SELECT email, password, phone, avatar, id FROM accounts WHERE username = ?')) {
+    if ($stmt = $con->prepare('SELECT id, email, password, phone, avatar FROM accounts WHERE username = ?')) {
 
         // Bind parameters (s = string, i = int, b = blob, etc)
         $stmt->bind_param('s', $_SESSION['name']);
@@ -26,8 +26,9 @@
 
         // Store the result so we can check if the account exists in the database.
         $stmt->store_result();
-        $stmt->bind_result($mail, $password, $phone, $avatar, $id);
+        $stmt->bind_result($id, $mail, $password, $phone, $avatar);
         $stmt->fetch();
+        $_SESSION['id'] = $id;
         $_SESSION['mail'] = $mail;
         $_SESSION['password'] = $password;
         $_SESSION['phone'] = $phone;
