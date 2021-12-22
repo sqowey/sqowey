@@ -241,7 +241,7 @@
                         <span class="privacy_title">Anonyme Statistiken</span>
                         <p>Wir d&uuml;rfen anonym Nutzungsdaten sammeln<br>und diese in Statistiken zusammenfassen.</p>
                         <br>
-                        <?=$_SESSION['privacy_statistics']?>
+                        <?=$privacy_statistics?>
                     </div>
 
                     <!-- The container with everything that has to do with taking data to enhance experience -->
@@ -249,7 +249,7 @@
                         <span class="privacy_title">Nutzbarkeit verbessern</span>
                         <p>Wir d&uuml;rfen Nutzungsdaten sammeln,<br>um die Nutzbarkeit zu verbessern.</p>
                         <br>
-                        <?=$enhance_button?>
+                        <?=$privacy_enhance?>
                     </div>
                     
                     <!-- The container with everything that has to do with taking messages for ads -->
@@ -257,7 +257,7 @@
                         <span class="privacy_title">Werbung</span>
                         <p>Wir d&uuml;rfen deine Nachrichten, ohne deinen Namen,<br>zu Werbezwecken nutzen.</p>
                         <br>
-                        <?=$ads_button?>
+                        <?=$privacy_ads?>
                     </div>
                     
                     <!-- The container with the button to toggle all settings -->
@@ -265,7 +265,7 @@
                         <span class="privacy_title">Alle AN/AUS</span>
                         <p>Hier kannst du alle oben genannten Privatsph&auml;reeinstellungen<br>AN oder AUS schalten</p>
                         <br>
-                        <?=$all_button?>
+                        <?=$privacy_all?>
                     </div>
                 </div>
             </div>
