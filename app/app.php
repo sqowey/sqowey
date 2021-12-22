@@ -45,7 +45,7 @@
         <!-- The chat input box -->
         <div class="chat">
             <form action="sendmessage.php" method="post" id="input-box">
-                <input autocomplete="off" placeholder="Nachricht" id="input_field"></input>
+                <input name="message" autocomplete="off" placeholder="Nachricht" id="input_field"></input>
             </form>
         </div>
 
