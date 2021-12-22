@@ -102,6 +102,13 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
                     echo "Error updating record: " . $con->error;
                 }
 			}
+
+            // Look if the file "." is in the upload_dir
+            if (file_exists($upload_dir . ".")) {
+
+                // delete the file
+                unlink($upload_dir . ".");
+            }
 		}
 		
         // If there are errors, print them
