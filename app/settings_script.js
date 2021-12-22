@@ -231,7 +231,7 @@ function setLanguage(lang) {
         url: 'setlanguage.php',
         data: { language: lang },
         success: function(response) {
-            content.html(response);
+            console.log(response);
         }
     });
 }
