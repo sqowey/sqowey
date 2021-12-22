@@ -213,14 +213,22 @@ Privacy
     border-radius: 10px;
     background-color: #2f3442;
 }
-.privacy_container i{
+
+.privacy_container p {
+    padding: 0 25px;
+}
+
+.privacy_container i {
     font-size: 50px;
-    color: #008000;
     cursor: pointer;
 }
 
-.privacy_container p{
-    padding: 0 25px;
+.fa-times-circle {
+    color: #008000;
+}
+
+.fa-circle {
+    color: #ddcd3c;
 }
 
 .fa-check-circle {
