@@ -463,7 +463,6 @@
     </div>
 
     <!-- Import all needed scripts -->
-    <script src="themes.js"></script>
     <script src="settings_script.js"></script>
 </body>
 
