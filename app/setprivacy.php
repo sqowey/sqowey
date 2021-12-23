@@ -43,47 +43,48 @@
         // If its all_switch, change all values to false and only if all are false, change all to true
         if ($arg == 'all_switch') {
 
-            // Check if all are the same
-            if ($priv_stats == $priv_enhance && $priv_stats == $priv_ads) {
 
-                // Change all to false
-                if ($priv_stats == 'true') {
-                    $priv_stats = 'false';
-                    $priv_enhance = 'false';
-                    $priv_ads = 'false';
-                }
-
-                // Change all to true
-                else {
-                    $priv_stats = 'true';
-                    $priv_enhance = 'true';
-                    $priv_ads = 'true';
-                }
+            // Check if all are the true and change them to false
+            // Else check if all are the false and change all to true
+            // If not all are true or false, set all to true
+            if ($priv_stats == '0' && $priv_enhance == '0' && $priv_ads == '0') {
+                $priv_stats = '1';
+                $priv_enhance = '1';
+                $priv_ads = '1';
+            } else {
+                $priv_stats = '0';
+                $priv_enhance = '0';
+                $priv_ads = '0';
             }
+
         } else if ($arg == 'stats_switch') {
 
+
             // Change the value to the opposite
-            if ($priv_stats == 'true') {
-                $priv_stats = 'false';
+            if ($priv_stats == '1') {
+                $priv_stats = '0';
             } else {
-                $priv_stats = 'true';
+                $priv_stats = '1';
             }
+
         } else if ($arg == 'enhance_switch') {
 
             // Change the value to the opposite
-            if ($priv_enhance == 'true') {
-                $priv_enhance = 'false';
+            if ($priv_enhance == '1') {
+                $priv_enhance = '0';
             } else {
-                $priv_enhance = 'true';
+                $priv_enhance = '1';
             }
+
         } else if ($arg == 'ads_switch') {
 
             // Change the value to the opposite
-            if ($priv_ads == 'true') {
-                $priv_ads = 'false';
+            if ($priv_ads == '1') {
+                $priv_ads = '0';
             } else {
-                $priv_ads = 'true';
+                $priv_ads = '1';
             }
+            
         }
 
         // Close the statement
@@ -94,7 +95,7 @@
         if ($stmt = $con->prepare('UPDATE '.$DATABASE_TABLE.' SET privacy_statistics = ?, privacy_enhance = ?, privacy_ads = ? WHERE user_id = ?')) {
 
             // Bind parameters
-            $stmt->bind_param('ssss', $priv_stats, $priv_enhance, $priv_ads, $_SESSION['id']);
+            $stmt->bind_param('iiii', $priv_stats, $priv_enhance, $priv_ads, $_SESSION['id']);
 
             // Execute the statement
             $stmt->execute();
