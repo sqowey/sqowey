@@ -85,9 +85,9 @@
                 // If they are true then set the session variable to 1
                 // If they are false then set the session variable to 0
                 // If they are mixed then set the session variable to 2
-                if ($w1 == '1' && $w2 == '1' && $w3 == '1' && $w4 == '1') {
+                if ($w1 == '1' && $w2 == '1' && $w3 == '1') {
                     $_SESSION['privacy_all'] = '1';
-                } elseif ($w1 == '0' && $w2 == '0' && $w3 == '0' && $w4 == '0') {
+                } elseif ($w1 == '0' && $w2 == '0' && $w3 == '0') {
                     $_SESSION['privacy_all'] = '0';
                 } else {
                     $_SESSION['privacy_all'] = '2';
@@ -98,7 +98,7 @@
                 // If Session: 2 then local: <i class="fas far-circle"></i>
                 // If Session: 0 then local: <i class="fas fa-times-circle"></i>
                 if ($_SESSION['privacy_all'] == '1') {
-                    $privacy_all = '<i onclick=\'privacy(""all_switch"");\' class="fas fa-check-circle"></i>';
+                    $privacy_all = '<i onclick=\'privacy("all_switch");\' class="fas fa-check-circle"></i>';
                 } elseif ($_SESSION['privacy_all'] == '2') {
                     $privacy_all = '<i onclick=\'privacy("all_switch");\' class="far fa-circle"></i>';
                 } else {
