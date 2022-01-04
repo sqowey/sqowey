@@ -1,15 +1,39 @@
 //themes.js von CuzImBisonratte
 //https://github.com/CuzImBisonratte/themes.js
 
-// Hier kannst du die Farbcodes umstellen
-ThemeColorNavLight = "#cccccc";
-ThemeColorNavDark = "#35393f";
-ThemeColorBackLight = "#f1f1f1";
-ThemeColorBackDark = "#282C36";
-ThemeColorTextLight = "#282C36";
-ThemeColorTextDark = "#818181";
-ThemeButtonNameLight = "Hell";
-ThemeButtonNameDark = "Dunkel";
+// 
+// Farbcodes
+// 
+
+// Navigation - Hintergrund
+ThemeDarkNavBackground = "#111111";
+ThemeLightNavBackground = "#000000";
+
+// Navigation - Text
+ThemeDarkNavText = "#ffffff";
+ThemeLightNavText = "#000000";
+
+// Seite - Hintergrund
+ThemeDarkBackground = "#000000";
+ThemeLightBackground = "#ffffff";
+
+// Seite - Normaler Text
+ThemeDarkText = "#ffffff";
+ThemeLightText = "#000000";
+
+// Seite - Überschriften
+ThemeDarkTitles = "#ffffff";
+ThemeLightTitles = "#000000"
+
+// Besonderheiten
+
+
+// Theme - Name
+ThemeDarkName = "Dunkel";
+ThemeLightName = "Hell";
+
+
+varset = document.documentElement;
 
 
 
