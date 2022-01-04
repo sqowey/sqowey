@@ -45,6 +45,16 @@ function changeToTheme(backgroundColor, navColor, textColor, themeName) {
     document.getElementById("themeToggleButton").innerHTML = themeName;
 }
 
+// The function to change to the light Theme
+function toLight() {
+    changeToTheme(ThemeLightBackground, ThemeLightNavBackground, ThemeLightText, ThemeLightName);
+}
+
+
+// The function to change to the dark theme
+function toDark() {
+    changeToTheme(ThemeDarkBackground, ThemeDarkNavBackground, ThemeDarkText, ThemeDarkName)
+}
 
 
 // Die funktion, die beim aufrufen der Website automatisch gestartet wird
@@ -63,11 +73,11 @@ function initializeTheme() {
     if (theme == "light") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
+        toLight();
     } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
+        toDark();
     }
 }
 
@@ -93,14 +103,14 @@ function toggleTheme() {
     if (theme == "dark") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
+        toLight();
 
         // Theme-Speicher auf "Hell" setzen
         localStorage.setItem("theme", "light");
     } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
+        toDark();
 
         // Theme-Speicher auf "Dunkel" setzen
         localStorage.setItem("theme", "dark");
