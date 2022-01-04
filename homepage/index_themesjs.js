@@ -7,7 +7,7 @@
 
 // Navigation - Hintergrund
 ThemeDarkNavBackground = "#111111";
-ThemeLightNavBackground = "#000000";
+ThemeLightNavBackground = "#ffffff";
 
 // Navigation - Text
 ThemeDarkNavText = "#ffffff";
@@ -15,23 +15,24 @@ ThemeLightNavText = "#000000";
 
 // Seite - Hintergrund
 ThemeDarkBackground = "#000000";
-ThemeLightBackground = "#ffffff";
+ThemeLightBackground = "#eff1d0";
 
 // Seite - Normaler Text
 ThemeDarkText = "#ffffff";
 ThemeLightText = "#000000";
 
 // Seite - Überschriften
-ThemeDarkTitles = "#ffffff";
-ThemeLightTitles = "#000000"
+ThemeDarkTitles = "#6aaa4b";
+ThemeLightTitles = "#355525";
 
 // Besonderheiten
+ThemeLightExtra = "#22aacc";
+ThemeDarkExtra = "#ffccaa";
 
 
 // Theme - Name
 ThemeDarkName = "Dunkel";
 ThemeLightName = "Hell";
-
 
 varset = document.documentElement;
 
