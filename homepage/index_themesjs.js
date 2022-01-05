@@ -48,13 +48,25 @@ function changeToTheme(backgroundColor, navColor, textColor, themeName) {
 
 // The function to change to the light Theme
 function toLight() {
-    changeToTheme(ThemeLightBackground, ThemeLightNavBackground, ThemeLightText, ThemeLightName);
+    varset.style.setProperty('--body-background-color', ThemeLightBackground);
+    varset.style.setProperty('--nav-background-color', ThemeLightNavBackground);
+    varset.style.setProperty('--text-color', ThemeLightText);
+    varset.style.setProperty('--title-color', ThemeLightTitles);
+    varset.style.setProperty('--nav-text-color', ThemeLightNavText);
+    varset.style.setProperty('--extra-color', ThemeLightExtra);
+    document.getElementById("themeToggleButton").innerHTML = ThemeLightName;
 }
 
 
 // The function to change to the dark theme
 function toDark() {
-    changeToTheme(ThemeDarkBackground, ThemeDarkNavBackground, ThemeDarkText, ThemeDarkName)
+    varset.style.setProperty('--body-background-color', ThemeDarkBackground);
+    varset.style.setProperty('--nav-background-color', ThemeDarkNavBackground);
+    varset.style.setProperty('--text-color', ThemeDarkText);
+    varset.style.setProperty('--title-color', ThemeDarkTitles);
+    varset.style.setProperty('--nav-text-color', ThemeDarkNavText);
+    varset.style.setProperty('--extra-color', ThemeDarkExtra);
+    document.getElementById("themeToggleButton").innerHTML = ThemeDarkName;
 }
 
 
