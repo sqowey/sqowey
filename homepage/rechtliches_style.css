@@ -4,13 +4,24 @@
 
 /* settings for the whole page */
 
+:root {
+    --body-background-color: #000000;
+    --nav-background-color: #000000;
+    --text-color: #ffffff;
+    --title-color: #ffffff;
+    --nav-text-color: #ffffff;
+    --extra-color: #ffffff;
+}
+
 * {
     transition: 0.5s;
 }
 
 body {
+    color: var(--text-color);
     font-family: Dosis;
-    background-color: #282C36;
+    transition: 0.5s;
+    background-color: var(--body-background-color);
 }
 
 
@@ -61,7 +72,7 @@ div .inhalt {
     font-size: 500%;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
     margin-top: 1em;
 }
 
@@ -74,15 +85,15 @@ div .inhalt {
     font-size: 123%;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
 }
 
 
 /* Theme switch */
 
 #themeToggleButton {
-    color: var(--font-color);
-    background: var(--color-primary);
+    color: var(--text-color);
+    background: var(--body-background-color);
     padding: 10px 20px;
     /* border: 10px; */
     border-radius: 5px;
@@ -98,7 +109,7 @@ div .inhalt {
 /* menu */
 
 #navOpener {
-    color: #818181;
+    color: var(--text-color);
     position: fixed;
 }
 
@@ -121,19 +132,20 @@ div .inhalt {
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
+    background-color: var(--nav-background-color);
 }
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: var(--nav-text-color);
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: var(--extra-color);
 }
 
 .sidenav .navClosebtn {
