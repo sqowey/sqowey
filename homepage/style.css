@@ -5,9 +5,12 @@
 /* settings for the whole page */
 
 :root {
-    --text-color: #000000;
     --body-background-color: #000000;
     --nav-background-color: #000000;
+    --text-color: #ffffff;
+    --title-color: #ffffff;
+    --nav-text-color: #ffffff;
+    --extra-color: #ffffff;
 }
 
 * {
@@ -52,6 +55,10 @@ Design for the start-button on the bottom of the page
     font-size: 40px;
 }
 
+#start_open:hover {
+    color: var(--extra-color);
+}
+
 
 /* Teil der Überschrift und dem Spruch */
 
@@ -59,7 +66,7 @@ Design for the start-button on the bottom of the page
     font-size: 500%;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
     margin-top: 1em;
 }
 
@@ -67,7 +74,7 @@ Design for the start-button on the bottom of the page
     font-size: 123%;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
 }
 
 
@@ -91,7 +98,7 @@ Design for the start-button on the bottom of the page
 /* Menüknöpfe (auf/zu) einfärben */
 
 #navOpener {
-    color: #818181;
+    color: var(--text-color);
     position: fixed;
 }
 
@@ -127,13 +134,13 @@ Design for the start-button on the bottom of the page
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: var(--nav-text-color);
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: var(--extra-color);
 }
 
 .sidenav .navClosebtn {
