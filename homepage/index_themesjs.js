@@ -36,15 +36,9 @@ ThemeLightName = "Hell";
 
 varset = document.documentElement;
 
-
-
-// Funktion, die die Farbänderungen auführt
-function changeToTheme(backgroundColor, navColor, textColor, themeName) {
-    varset.style.setProperty('--body-background-color', backgroundColor);
-    varset.style.setProperty('--nav-background-color', navColor);
-    varset.style.setProperty('--text-color', textColor);
-    document.getElementById("themeToggleButton").innerHTML = themeName;
-}
+// 
+// The functions
+// 
 
 // The function to change to the light Theme
 function toLight() {
