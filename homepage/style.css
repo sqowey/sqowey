@@ -81,8 +81,8 @@ Design for the start-button on the bottom of the page
 /* Theme switch */
 
 #themeToggleButton {
-    color: var(--font-color);
-    background: var(--color-primary);
+    color: var(--text-color);
+    background: var(--body-background-color);
     padding: 10px 20px;
     /* border: 10px; */
     border-radius: 5px;
