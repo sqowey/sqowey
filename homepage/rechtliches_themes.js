@@ -22,8 +22,8 @@ ThemeDarkText = "#ffffff";
 ThemeLightText = "#000000";
 
 // Seite - Überschriften
-ThemeDarkTitles = "#6aaa4b";
-ThemeLightTitles = "#355525";
+ThemeDarkTitle = "#6aaa4b";
+ThemeLightTitle = "#355525";
 
 // Besonderheiten
 ThemeLightExtra = "#22aacc";
@@ -45,7 +45,7 @@ function toLight() {
     varset.style.setProperty('--body-background-color', ThemeLightBackground);
     varset.style.setProperty('--nav-background-color', ThemeLightNavBackground);
     varset.style.setProperty('--text-color', ThemeLightText);
-    varset.style.setProperty('--title-color', ThemeLightTitles);
+    varset.style.setProperty('--title-color', ThemeLightTitle);
     varset.style.setProperty('--nav-text-color', ThemeLightNavText);
     varset.style.setProperty('--extra-color', ThemeLightExtra);
     document.getElementById("themeToggleButton").innerHTML = ThemeLightName;
@@ -57,7 +57,7 @@ function toDark() {
     varset.style.setProperty('--body-background-color', ThemeDarkBackground);
     varset.style.setProperty('--nav-background-color', ThemeDarkNavBackground);
     varset.style.setProperty('--text-color', ThemeDarkText);
-    varset.style.setProperty('--title-color', ThemeDarkTitles);
+    varset.style.setProperty('--title-color', ThemeDarkTitle);
     varset.style.setProperty('--nav-text-color', ThemeDarkNavText);
     varset.style.setProperty('--extra-color', ThemeDarkExtra);
     document.getElementById("themeToggleButton").innerHTML = ThemeDarkName;
