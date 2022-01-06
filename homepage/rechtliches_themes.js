@@ -1,44 +1,90 @@
 //themes.js von CuzImBisonratte
 //https://github.com/CuzImBisonratte/themes.js
 
-// Hier kannst du die Farbcodes umstellen
-ThemeColorNavLight = "#cccccc";
-ThemeColorNavDark = "#35393f";
-ThemeColorBackLight = "#f1f1f1";
-ThemeColorBackDark = "#282C36";
-ThemeColorTextLight = "#282C36";
-ThemeColorTextDark = "#818181";
-ThemeButtonNameLight = "Hell";
-ThemeButtonNameDark = "Dunkel";
+// 
+// Farbcodes
+// 
+
+// Navigation - Hintergrund
+ThemeDarkNavBackground = "#111111";
+ThemeLightNavBackground = "#ffffff";
+
+// Navigation - Text
+ThemeDarkNavText = "#ffffff";
+ThemeLightNavText = "#000000";
+
+// Seite - Hintergrund
+ThemeDarkBackground = "#000000";
+ThemeLightBackground = "#eff1d0";
+
+// Seite - Normaler Text
+ThemeDarkText = "#ffffff";
+ThemeLightText = "#000000";
+
+// Seite - Überschriften
+ThemeDarkTitle = "#6aaa4b";
+ThemeLightTitle = "#355525";
+
+// Besonderheiten
+ThemeLightExtra = "#22aacc";
+ThemeDarkExtra = "#ffccaa";
 
 
+// Theme - Name
+ThemeDarkName = "Dunkel";
+ThemeLightName = "Hell";
 
-// Funktion, die die Farbänderungen auführt
-function changeToTheme(backgroundColor, navColor, textColor, themeName) {
-    document.body.style.backgroundColor = backgroundColor;
-    document.getElementById("sideNav").style.backgroundColor = navColor;
-    document.body.style.color = textColor;
-    document.getElementById("linkToContact").style.color = textColor;
-    document.getElementById("themeToggleButton").innerHTML = themeName;
+varset = document.documentElement;
+
+// 
+// The functions
+// 
+
+// The function to change to the light Theme
+function toLight() {
+    varset.style.setProperty('--body-background-color', ThemeLightBackground);
+    varset.style.setProperty('--nav-background-color', ThemeLightNavBackground);
+    varset.style.setProperty('--text-color', ThemeLightText);
+    varset.style.setProperty('--title-color', ThemeLightTitle);
+    varset.style.setProperty('--nav-text-color', ThemeLightNavText);
+    varset.style.setProperty('--extra-color', ThemeLightExtra);
+    document.getElementById("themeToggleButton").innerHTML = ThemeLightName;
 }
 
+
+// The function to change to the dark theme
+function toDark() {
+    varset.style.setProperty('--body-background-color', ThemeDarkBackground);
+    varset.style.setProperty('--nav-background-color', ThemeDarkNavBackground);
+    varset.style.setProperty('--text-color', ThemeDarkText);
+    varset.style.setProperty('--title-color', ThemeDarkTitle);
+    varset.style.setProperty('--nav-text-color', ThemeDarkNavText);
+    varset.style.setProperty('--extra-color', ThemeDarkExtra);
+    document.getElementById("themeToggleButton").innerHTML = ThemeDarkName;
+}
 
 
 // Die funktion, die beim aufrufen der Website automatisch gestartet wird
 function initializeTheme() {
 
     // Aktuelles Theme abrufen
-    theme = localStorage.getItem("theme");
-
+    try {
+        theme = localStorage.getItem("theme");
+    } catch (e) {
+        if (e.name == "NS_ERROR_FILE_CORRUPTED") {
+            localStorage.clear();
+            theme = localStorage.getItem("theme");
+        }
+    }
     //Theme auf gespeichertes Theme setzen
     if (theme == "light") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
+        toLight();
     } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
+        toDark();
     }
 }
 
@@ -51,20 +97,27 @@ initializeTheme();
 function toggleTheme() {
 
     // Aktuelles Theme abrufen
-    theme = localStorage.getItem("theme");
+    try {
+        theme = localStorage.getItem("theme");
+    } catch (e) {
+        if (e.name == "NS_ERROR_FILE_CORRUPTED") {
+            localStorage.clear();
+            theme = localStorage.getItem("theme");
+        }
+    }
 
     // Theme basierend auf Aktuellem theme ändern
     if (theme == "dark") {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackLight, ThemeColorNavLight, ThemeColorTextLight, ThemeButtonNameLight);
+        toLight();
 
         // Theme-Speicher auf "Hell" setzen
         localStorage.setItem("theme", "light");
     } else {
 
         // Theme ändern
-        changeToTheme(ThemeColorBackDark, ThemeColorNavDark, ThemeColorTextDark, ThemeButtonNameDark);
+        toDark();
 
         // Theme-Speicher auf "Dunkel" setzen
         localStorage.setItem("theme", "dark");
