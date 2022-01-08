@@ -343,15 +343,25 @@ Security
 Language
 */
 
+
+/* The element in which all the elements for the language are */
+
 .language_container {
+    /* Set it to the right height */
     height: calc(50vh - 150px);
+    /* Add a space around the element */
     margin-left: 10%;
     margin-right: 10%;
+    /* Set the font size inside the element */
     font-size: 40px;
+    /* Changed display property to be a grid */
     display: grid;
+    /* Set grid row and column settings */
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
+    /* Remove the gap around the grid elements */
     gap: 0px 0px;
+    /* Add the grid areas */
     grid-auto-flow: row;
     grid-template-areas: "language_german language_english" "language_francais language_italiano";
 }
@@ -359,6 +369,9 @@ Language
 .language_container * {
     cursor: pointer;
 }
+
+
+/* Add the grid areas to the right classes */
 
 .language_german {
     grid-area: language_german;
@@ -376,9 +389,15 @@ Language
     grid-area: language_italiano;
 }
 
+
+/* Class for every language element */
+
 .language_container>div {
+    /* Set the background color */
     background-color: #2f3442;
+    /* Add a space around the div */
     margin: 7.5px;
+    /* Round the corners */
     border-radius: 10px;
     /* Center all elements horizontally and vertically*/
     display: flex;
@@ -386,39 +405,68 @@ Language
     justify-content: center;
 }
 
+
+/* The inner element of an language button */
+
 .language {
-    display: grid;
+    /* Let the element fill out the full button */
     height: 100%;
     width: 100%;
+    /* Set display property to grid */
+    display: grid;
+    /* Create columns */
     grid-template-columns: 20% 55% 25%;
+    /* Only one row needed bc. grid is only here for positioning elements to the left and right */
     grid-template-rows: 1fr;
+    /* Remove the gap around the grid areas */
     gap: 0px 0px;
+    /* Set the grid areas */
     grid-auto-flow: row;
     grid-template-areas: "language_check language_name language_flag";
 }
 
+
+/* All child elements of the inner language element */
+
 .language * {
+    /* Center the elements */
     margin: auto;
 }
 
+
+/* The parent element of the language flag indicators */
+
 .language_flag {
+    /* Set the grid area */
     grid-area: language_flag;
-    /* margin-top: 10%; */
 }
 
+
+/* The language name */
+
 .language_name {
+    /* Set the grid area */
     grid-area: language_name;
+    /* Add a font size */
     font-size: 45px;
 }
 
+
+/* The buttons that shows which language is used */
+
 .language_check {
+    /* Set the grid area */
     grid-area: language_check;
-    /* margin-top: 10%; */
 }
 
+
+/* The language flags */
+
 .language_flag img {
+    /* Set the width and height */
     width: 40px;
     height: 40px;
+    /* Smooth the corners */
     border-radius: 10px;
 }
 
