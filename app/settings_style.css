@@ -343,12 +343,16 @@ Security
 Language
 */
 
+#language {
+    height: 100%;
+}
+
 
 /* The element in which all the elements for the language are */
 
 .language_container {
     /* Set it to the right height */
-    height: calc(50vh - 150px);
+    height: 30%;
     /* Add a space around the element */
     margin-left: 10%;
     margin-right: 10%;
@@ -358,7 +362,7 @@ Language
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     /* Remove the gap around the grid elements */
-    gap: 0px 0px;
+    gap: 0% 0%;
     /* Add the grid areas */
     grid-auto-flow: row;
     grid-template-areas: "language_german language_english" "language_francais language_italiano";
@@ -391,12 +395,8 @@ Language
 /* Class for every language element */
 
 .language_container>div {
-    /* Set the background color */
-    background-color: #2f3442;
     /* Add a space around the div */
-    margin: 7.5px;
-    /* Round the corners */
-    border-radius: 10px;
+    margin: 1.5%;
     /* Center all elements horizontally and vertically*/
     display: flex;
     align-items: center;
@@ -407,6 +407,8 @@ Language
 /* The inner element of an language button */
 
 .language {
+    /* Set the background color */
+    background-color: #2f3442;
     /* Let the element fill out the full button */
     height: 100%;
     width: 100%;
@@ -417,7 +419,7 @@ Language
     /* Only one row needed bc. grid is only here for positioning elements to the left and right */
     grid-template-rows: 1fr;
     /* Remove the gap around the grid areas */
-    gap: 0px 0px;
+    gap: 0% 0%;
     /* Set the grid areas */
     grid-auto-flow: row;
     grid-template-areas: "language_check language_name language_flag";
@@ -437,6 +439,11 @@ Language
 .language_flag {
     /* Set the grid area */
     grid-area: language_flag;
+    /* Set the height and width to fill out the whole parent element */
+    height: min-content;
+    width: 100%;
+    /* Center the element */
+    margin: auto;
 }
 
 
@@ -446,7 +453,7 @@ Language
     /* Set the grid area */
     grid-area: language_name;
     /* Add a font size */
-    font-size: 45px;
+    font-size: 250%;
 }
 
 
@@ -455,6 +462,8 @@ Language
 .language_check {
     /* Set the grid area */
     grid-area: language_check;
+    /* Set the size relative to the element */
+    font-size: 250%;
 }
 
 
@@ -462,10 +471,13 @@ Language
 
 .language_flag img {
     /* Set the width and height */
-    width: 40px;
-    height: 40px;
+    width: 80%;
     /* Smooth the corners */
-    border-radius: 10px;
+    border-radius: 15%;
+    /* Center all elements horizontally and vertically*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
