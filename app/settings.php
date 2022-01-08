@@ -168,9 +168,6 @@
 
     <!-- Get the stylesheet -->
     <link href="settings_style.css" rel="stylesheet" type="text/css">
-
-    <!-- Get the ajax library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -472,7 +469,12 @@
         </div>
     </div>
 
-    <!-- Import all needed scripts -->
+    
+
+    <!-- Get the ajax library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Import the settings script -->
     <script src="settings_script.js"></script>
 </body>
 
