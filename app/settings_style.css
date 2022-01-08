@@ -106,7 +106,8 @@ Settings for the startpage
 /*
 All the account settings
 */
-#accountdata{
+
+#accountdata {
     margin-left: 100px;
     border-radius: 25px;
     background-color: #2f3442;
@@ -116,12 +117,13 @@ All the account settings
     height: 500px;
 }
 
-#avatarchanger{
+#avatarchanger {
     margin-left: 500px;
     margin-top: 50px;
     position: absolute;
 }
-#avatarchanger div{
+
+#avatarchanger div {
     position: absolute;
     margin-left: 245px;
     margin-top: 220px;
@@ -133,15 +135,17 @@ All the account settings
     background-color: #ffff00;
     cursor: pointer;
 }
-#avatarchanger div i{
+
+#avatarchanger div i {
     padding-top: 9px;
 }
-#avatarchanger img{
+
+#avatarchanger img {
     width: 250px;
     height: 250px;
     margin-left: 25px;
     border-radius: 30px;
-    display:inline;
+    display: inline;
     position: absolute;
 }
 
@@ -157,7 +161,8 @@ All the account settings
     height: 50px;
     padding: 0px;
 }
-#files{
+
+#files {
     border-radius: 15px;
     transform: 5s;
     width: 300px;
@@ -166,7 +171,8 @@ All the account settings
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
 }
-#accountdata-inner{
+
+#accountdata-inner {
     padding-top: 35px;
     margin-left: 15px;
 }
@@ -344,10 +350,10 @@ Language
     font-size: 40px;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
     gap: 0px 0px;
     grid-auto-flow: row;
-    grid-template-areas: "language_german language_english" "language_francais language_italiano" "language_swissgerman language_swabian";
+    grid-template-areas: "language_german language_english" "language_francais language_italiano";
 }
 
 .language_container * {
@@ -370,27 +376,20 @@ Language
     grid-area: language_italiano;
 }
 
-.language_swissgerman {
-    grid-area: language_swissgerman;
-}
-
-.language_swabian {
-    grid-area: language_swabian;
-}
-
-.language_german,
-.language_english,
-.language_francais,
-.language_italiano,
-.language_swissgerman,
-.language_swabian {
+.language_container>div {
     background-color: #2f3442;
     margin: 7.5px;
     border-radius: 10px;
+    /* Center all elements horizontally and vertically*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language {
     display: grid;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 20% 55% 25%;
     grid-template-rows: 1fr;
     gap: 0px 0px;
@@ -404,7 +403,7 @@ Language
 
 .language_flag {
     grid-area: language_flag;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 .language_name {
@@ -414,7 +413,7 @@ Language
 
 .language_check {
     grid-area: language_check;
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 
 .language_flag img {
