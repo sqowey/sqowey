@@ -352,8 +352,6 @@ Language
     /* Add a space around the element */
     margin-left: 10%;
     margin-right: 10%;
-    /* Set the font size inside the element */
-    font-size: 40px;
     /* Changed display property to be a grid */
     display: grid;
     /* Set grid row and column settings */
