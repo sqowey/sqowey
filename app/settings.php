@@ -400,32 +400,6 @@
                             </div>
                         </div>
                     </div>
-                    <div onclick='setLanguage("ch");' class="language_swissgerman">
-                        <div class="language">
-                            <div id="language_check_ch" class="language_check">
-                                <i class="far fa-circle"></i>
-                            </div>
-                            <div class="language_name">
-                                Schweiz
-                            </div>
-                            <div class="language_flag">
-                                <img src="images/flag_ch.svg">
-                            </div>
-                        </div>
-                    </div>
-                    <div onclick='setLanguage("sw");' class="language_swabian">
-                        <div class="language">
-                            <div id="language_check_sw" class="language_check">
-                                <i class="far fa-circle"></i>
-                            </div>
-                            <div class="language_name">
-                                Schw&auml;bisch
-                            </div>
-                            <div class="language_flag">
-                                <img src="images/flag_sw.svg">
-                            </div>
-                        </div>              
-                    </div>
                 </div>
             </div>
 
