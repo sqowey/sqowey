@@ -156,10 +156,20 @@
 <html>
 
 <head>
+
+    <!-- Set Charset for compatibility -->
     <meta charset="utf-8">
+
+    <!-- Set the title -->
     <title>Wudsim</title>
+
+    <!-- Get connextion to fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+    <!-- Get the stylesheet -->
     <link href="settings_style.css" rel="stylesheet" type="text/css">
+
+    <!-- Get the ajax library -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
