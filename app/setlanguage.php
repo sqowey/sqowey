@@ -26,16 +26,21 @@
         exit();
     }
 
-    // Prepare the SQL statement
-    if ($stmt = $con->prepare('INSERT INTO '.$DATABASE_TABLE.' (language) VALUES (?)')) {
+    $user_id = $_SESSION['id'];
+
+    // Prepare the SQL statement to update the language
+    
+// $sql = "UPDATE `accounts` SET `username`='$new_username',`email`='$new_mail',`phone`='$new_phone' WHERE id = '$id'";
+
+    if ($stmt = $con->prepare('UPDATE `'.$DATABASE_TABLE.'` SET `language`=? WHERE user_id = ?')) {
 
         // Bind parameters
-        $stmt->bind_param('s', $_POST['language']);
+        $stmt->bind_param('ss', $_POST['language'], $user_id);
 
         // Execute the statement
         $stmt->execute();
 
-        exit();
+        exit("success");
 
         // close the statement
         $stmt->close();

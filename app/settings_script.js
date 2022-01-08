@@ -219,42 +219,34 @@ function privacy(arg) {
 // 
 function setLanguage(lang) {
 
-    // Set the cookie
-    document.cookie = "language=" + lang + "; expires=Sat, 25 Jan 2025 08:18:00 UTC";
-
-    // Get all needed elements
-    lang_checks = document.getElementsByClassName("language_check");
-    for (i = 0; i < lang_checks.length; i++) {
-
-        // Set all checkboxes to unchecked
-        lang_checks[i].innerHTML = '<i class="far fa-circle"></i>'
-    }
-
-    // Set the checked checkbox to the selected language
-    document.getElementById("language_check_" + lang).innerHTML = '<i class="fas fa-circle"></i>';
-
-    // Post the new language to setlanguage.php
+    // Send the arg to setprivacy.php
     $.ajax({
-        type: 'POST',
-        url: 'setlanguage.php',
+        url: "setlanguage.php",
+        type: "POST",
         data: { language: lang },
-        success: function(response) {
-            console.log(response);
+        success: function(data) {
+
+            // If the backcoming data is "success"
+            if (data == "success") {
+
+
+                // Check if the url includes "tab_name"
+                if (location.search.includes("tab_name")) {
+
+                    // Reload the page
+                    location.reload();
+                } else {
+
+                    // Reload the page within the privacy tab
+                    location.href = location.href + "?tab_name=language";
+                }
+
+            } else {
+
+                // Log the backcoming data
+                console.log(data);
+            }
+
         }
     });
-}
-if (getCookie("language") == null) {
-    switch (navigator.language) {
-        case ("de"):
-        case ("en"):
-        case ("fr"):
-        case ("it"):
-            setLanguage(navigator.language);
-            break;
-        default:
-            setLanguage("en");
-            break;
-    }
-} else {
-    setLanguage(getCookie("language"));
 }

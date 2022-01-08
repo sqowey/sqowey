@@ -130,12 +130,35 @@
                 $privacy_statistics = $_SESSION['privacy_statistics'];
                 $privacy_enhance = $_SESSION['privacy_enhance'];
                 $privacy_ads = $_SESSION['privacy_ads'];
-                $language = $_SESSION['language'];
 
-
-
+                
                 // Set the language to the session-variable
-                $_SESSION['language'] = $w4;
+                $language = $w4;
+
+                // Set $lang_de, $lang_en, $lang_fr and $lang_it
+                if($language == "de"){
+                    $lang_de = '<i class="fas fa-circle"></i>';
+                } else {
+                    $lang_de = '<i class="far fa-circle"></i>';
+                }
+                if($language == "en"){
+                    $lang_en = '<i class="fas fa-circle"></i>';
+                } else {
+                    $lang_en = '<i class="far fa-circle"></i>';
+                }
+                if($language == "fr"){
+                    $lang_fr = '<i class="fas fa-circle"></i>';
+                } else {
+                    $lang_fr = '<i class="far fa-circle"></i>';
+                }
+                if($language == "it"){
+                    $lang_it = '<i class="fas fa-circle"></i>';
+                } else {
+                    $lang_it = '<i class="far fa-circle"></i>';
+                }
+
+
+
                 
             }
             else{
@@ -328,7 +351,7 @@
                     <div onclick='setLanguage("de");' class="language_german">
                         <div class="language">
                             <div id="language_check_de" class="language_check">
-                                <i class="fas fa-circle"></i>
+                                <?=$lang_de?>
                             </div>
                             <div class="language_name">
                                 Deutsch
@@ -341,7 +364,7 @@
                     <div onclick='setLanguage("en");' class="language_english">
                         <div class="language">
                             <div id="language_check_en" class="language_check">
-                                <i class="far fa-circle"></i>
+                                <?=$lang_en?>
                             </div>
                             <div class="language_name">
                                 English
@@ -354,7 +377,7 @@
                     <div onclick='setLanguage("fr");' class="language_francais">
                         <div class="language">
                             <div id="language_check_fr" class="language_check">
-                                <i class="far fa-circle"></i>
+                                <?=$lang_fr?>
                             </div>
                             <div class="language_name">
                                 Français
@@ -367,7 +390,7 @@
                     <div onclick='setLanguage("it");' class="language_italiano">
                         <div class="language">
                             <div id="language_check_it" class="language_check">
-                                <i class="far fa-circle"></i>
+                                <?=$lang_it?>
                             </div>
                             <div class="language_name">
                                 Italiano
