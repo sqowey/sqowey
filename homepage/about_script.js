@@ -13,10 +13,10 @@ function closeNav() {
 }
 
 // Second-Counter
-var timer_message_1 = "An Wudsim wird seit ";
+var timer_message_1 = "An Sqowey wird seit ";
 var timer_message_2 = " Sekunden gearbeitet.";
 
-function wudsimTimer() {
+function sqoweyTimer() {
     var created = new Date(2021, 08, 07, 19, 05, 58, 0);
     var now = new Date();
     var dif = created.getTime() - now.getTime();
@@ -24,9 +24,9 @@ function wudsimTimer() {
     var Seconds_from_T1_to_T2 = dif / 1000;
     var Seconds_Between_Dates = Math.round(Math.abs(Seconds_from_T1_to_T2));
     document.getElementById("entwicklung").innerHTML = timer_message_1 + Seconds_Between_Dates + timer_message_2;
-    window.setTimeout("wudsimTimer();", 10);
+    window.setTimeout("sqoweyTimer();", 10);
 }
-wudsimTimer();
+sqoweyTimer();
 
 // Scroll to the imprint if wanted
 function scrollImpressum() {

@@ -184,7 +184,7 @@
     <meta charset="utf-8">
 
     <!-- Set the title -->
-    <title>Wudsim</title>
+    <title>Sqowey</title>
 
     <!-- Get connextion to fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">

@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "wudsim";
+$dbname = "sqowey";
 
 // Get the form values
 $errorcode = $_POST["errorcode"];
