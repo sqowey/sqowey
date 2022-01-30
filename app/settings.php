@@ -191,6 +191,8 @@
 
     <!-- Get the stylesheet -->
     <link href="settings_style.css" rel="stylesheet" type="text/css">
+    <!-- Set tab icon -->
+    <link rel="icon" href="../contents/icon.svg">
 </head>
 
 <body>

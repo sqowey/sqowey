@@ -16,6 +16,8 @@
     <title>Home Page</title>
     <link href="app_style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <!-- Set tab icon -->
+    <link rel="icon" href="../contents/icon.svg">
 </head>
 
 <body>
