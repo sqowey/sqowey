@@ -4,7 +4,7 @@
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
-$DATABASE_NAME = 'wudsim';
+$DATABASE_NAME = 'sqowey';
 $DATABASE_TABLE = 'messages';
 
 // Start the PHP_session

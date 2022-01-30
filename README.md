@@ -1,1 +1,1 @@
-# Wudsim - Dein Messenger aber in besser
+# Sqowey - Dein Messenger aber in besser

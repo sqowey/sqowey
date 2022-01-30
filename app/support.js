@@ -234,7 +234,7 @@ function user_type(param) {
             break;
         case ("team"):
             // Change the text on the button
-            user_type_button.innerHTML = "Wudsim-Team";
+            user_type_button.innerHTML = "Sqowey-Team";
 
             // Set the start of the error code, so that it can be set to the database
             error_code_field.value = "4";
