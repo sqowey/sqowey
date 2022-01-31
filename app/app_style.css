@@ -16,8 +16,8 @@ html {
 
 * {
     font-family: Dosis;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -27,7 +27,7 @@ html {
     display: grid;
     grid-template-columns: 75px 75px 2.6fr 240px;
     grid-template-rows: 0.2fr 2.6fr 0.2fr;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     height: 100vh;
     grid-template-areas: "people servers name channels" "people servers main channels" "people servers chat status";
@@ -74,7 +74,7 @@ Chatbox
     border-radius: 10px;
     margin: auto;
     background-color: #2f3947;
-    border-width: 0px;
+    border-width: 0;
 }
 
 .chat input {
@@ -83,7 +83,7 @@ Chatbox
     border-radius: 10px;
     margin: auto;
     background-color: #8792af;
-    border-width: 0px;
+    border-width: 0;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 20px;
