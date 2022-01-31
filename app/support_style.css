@@ -24,33 +24,33 @@ h1 {
 #themeToggleButton {
     color: var(--font-color);
     background: var(--color-primary);
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 2vh 2vw;
+    border-radius: 1vh;
 }
 
 #themeButton {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 2vh;
+    right: 2vh;
 }
 
 
 /* form */
 
 #container {
-    width: 400px;
+    width: 60vw;
     background-color: #ffffff;
-    box-shadow: 0 0 10px 0 #000;
-    margin: 100px auto;
-    border-radius: 15px;
+    box-shadow: 0 0 1vh 0 #000;
+    margin: 5vh auto;
+    border-radius: 5vh;
 }
 
 #container h1 {
     text-align: center;
     color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+    font-size: 4vh;
+    padding: 2vh 0 2vh 0;
+    border-bottom: 0.5vh solid #dee0e4;
 }
 
 
@@ -65,12 +65,12 @@ The Dropdowns
 .dropbtn {
     background-color: #296b5e;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 2vh;
+    font-size: 2vh;
     border: none;
     cursor: pointer;
     margin: auto;
-    width: 400px;
+    width: 60vw;
 }
 
 
@@ -90,15 +90,14 @@ The Dropdowns
     display: none;
     position: absolute;
     background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 10vw;
     z-index: 1;
-    width: 400px;
+    width: 60vw;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 2vh 2.5vh;
     text-decoration: none;
     display: block;
 }
@@ -112,7 +111,7 @@ The Dropdowns
 }
 
 .dropdown-menu-div {
-    margin-top: 5px;
+    margin-top: 1vh;
 }
 
 
@@ -137,7 +136,7 @@ form input[type="text"] {
     border: 1px solid #75a7a7;
     margin-bottom: 20px;
     padding: 0 15px;
-    border-radius: 15px;
+    border-radius: 1vw;
 }
 
 form input[type="submit"] {
@@ -150,7 +149,7 @@ form input[type="submit"] {
     font-weight: bold;
     color: #d7dbdb;
     transition: background-color 0.2s;
-    border-radius: 15px;
+    border-radius: 1vw;
     margin-bottom: 15px;
 }
 
@@ -158,7 +157,7 @@ form input[type="submit"] {
 /* Title */
 
 #title {
-    margin-top: 15px;
+    margin-top: 1.5vh;
 }
 
 
@@ -175,5 +174,5 @@ form input[type="submit"] {
 }
 
 #problem {
-    height: 100px;
+    height: 15vh;
 }
