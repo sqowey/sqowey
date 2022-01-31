@@ -37,8 +37,8 @@ p {
 
 canvas {
     animation: rotation 600s infinite linear;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     display: none;
 }
 

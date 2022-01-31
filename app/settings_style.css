@@ -32,7 +32,7 @@ h1 {
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     grid-template-areas: "list settings";
     width: 100%;
@@ -159,7 +159,7 @@ All the account settings
     transform: 5s;
     width: 300px;
     height: 50px;
-    padding: 0px;
+    padding: 0;
 }
 
 #files {
@@ -208,7 +208,7 @@ Privacy
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 40% 50%;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     grid-template-areas: "privacy_stats privacy_enhance" "privacy_ads privacy_all";
 }
@@ -277,7 +277,7 @@ Security
     display: grid;
     grid-template-columns: 33% 34% 34%;
     grid-template-rows: 40% 10% 40%;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     grid-template-areas: "security_friends_everyone security_friends_server security_friends_noone" "security_messages_title security_messages_title security_messages_title" "security_messages_everyone security_messages_server security_messages_friends";
 }
@@ -493,7 +493,7 @@ theme settings
     background-color: #2f3442;
     grid-template-columns: 50% 50%;
     grid-template-rows: 20% 40% 40%;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     grid-template-areas: "theme_title theme_title" "theme_dark theme_light" "theme_example theme_example";
 }
