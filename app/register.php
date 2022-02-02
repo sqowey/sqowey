@@ -9,6 +9,10 @@
     $DATABASE_PASS = '';
     $DATABASE_NAME = 'accounts';
 
+    // Default settings
+    $DEFAULT_privacy = 0;
+    $DEFAULT_language = 'de';
+
     // Connect with the Credentials
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
@@ -126,8 +130,38 @@
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $random_img);
                 $stmt->execute();
-                header('Location: message.html?message=%22Erfolgreich%20registriert%22&showReportButton=false');
-                exit();
+
+
+                // get the insert_id of the last inserted row
+                $insert_id = $con->insert_id;
+
+                // Prepare statement to create the entry in the settings table
+                if($stmt = $con->prepare('INSERT INTO settings (user_id, privacy_statistics, privacy_enhance, privacy_ads, language) VALUES (?, ?, ?, ?, ?)')){
+
+                    // Set the default settings
+                    $stmt->bind_param('iiiis', $insert_id, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_language);
+                    $stmt->execute();
+
+                    // Log the success
+                    error_log("Success(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+
+                    // Show success
+                    header('Location: message.html?success=%22Erfolgreich%20registriert%22');
+
+                    // Beende das script
+                    exit();
+
+                } else {
+
+                    // Log the error
+                    error_log("Error(110)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+
+                    // Show error
+                    header('Location: message.html?message=%22Fehler%20mit%20der%20Datenbank%22');
+
+                    // Beende das script
+                    exit();
+                }
             } else {
                 // Something is wrong with the sql statement, make sure accounts table exists with all 3 fields.
 
