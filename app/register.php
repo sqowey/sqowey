@@ -12,6 +12,7 @@
     // Default settings
     $DEFAULT_privacy = 0;
     $DEFAULT_language = 'de';
+    $DEFAULT_status = 2;
 
     // Connect with the Credentials
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
@@ -136,10 +137,10 @@
                 $insert_id = $con->insert_id;
 
                 // Prepare statement to create the entry in the settings table
-                if($stmt = $con->prepare('INSERT INTO settings (user_id, privacy_statistics, privacy_enhance, privacy_ads, language) VALUES (?, ?, ?, ?, ?)')){
+                if($stmt = $con->prepare('INSERT INTO settings (user_id, privacy_statistics, privacy_enhance, privacy_ads, language, status) VALUES (?, ?, ?, ?, ?)')){
 
                     // Set the default settings
-                    $stmt->bind_param('iiiis', $insert_id, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_language);
+                    $stmt->bind_param('iiiis', $insert_id, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_language, $DEFAULT_status);
                     $stmt->execute();
 
                     // Log the success
