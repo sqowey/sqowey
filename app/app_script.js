@@ -32,3 +32,14 @@ function changeStatus(status) {
         }
     });
 }
+
+function init_status() {
+    $.ajax({
+        url: "getStatus.php",
+        type: "GET",
+        success: function(data) {
+            changeStatus(data);
+        }
+    });
+}
+init_status();
