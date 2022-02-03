@@ -4,7 +4,7 @@
 
 	// If the user is not logged in redirect to the index-page
     // Also if the session variable id is unset
-	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin'])) {
+	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])){
 		header('Location: app.html');
 		exit;
 	}
