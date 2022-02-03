@@ -71,7 +71,9 @@
 
         <!-- The status -->
         <div class="status">
-            <span id="disturb"><?=$status_disturb?></span>
+            <span id="online"><i onclick="changeStatus('online');" class="far fa-circle"></i></span>
+            <span id="away"><i onclick="changeStatus('away');" class="far fa-circle"></i></span>
+            <span id="disturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
         </div>
     </div>
 
