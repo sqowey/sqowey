@@ -25,9 +25,9 @@
 
     if($status == "online"){
         $status_id = 0;
-    } else if ($status == "disturb"){
-        $status_id = 1;
     } else if ($status == "away"){
+        $status_id = 1;
+    } else if ($status == "disturb"){
         $status_id = 2;
     } else {
         exit("Error(102) - Status ist nicht definiert | Status: ".$status);
