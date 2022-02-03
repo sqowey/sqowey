@@ -118,6 +118,7 @@ function getToTab() {
     if (tab_name != null) {
         changeToTab(tab_name);
     }
+
 }
 getToTab();
 
@@ -186,17 +187,8 @@ function privacy(arg) {
             // If the backcoming data is "success"
             if (data == "success-reload") {
 
-
-                // Check if the url includes "tab_name"
-                if (location.search.includes("tab_name")) {
-
-                    // Reload the page
-                    location.reload();
-                } else {
-
-                    // Reload the page within the privacy tab
-                    location.href = location.href + "?tab_name=privacy";
-                }
+                // Redirect to the same page
+                location.href = "settings.php?tab_name=language";
 
                 // Write log to console
                 console.log("success");
@@ -229,17 +221,8 @@ function setLanguage(lang) {
             // If the backcoming data is "success"
             if (data == "success") {
 
-
-                // Check if the url includes "tab_name"
-                if (location.search.includes("tab_name")) {
-
-                    // Reload the page
-                    location.reload();
-                } else {
-
-                    // Reload the page within the privacy tab
-                    location.href = location.href + "?tab_name=language";
-                }
+                // Redirect to the same page
+                location.href = "settings.php?tab_name=language";
 
             } else {
 
