@@ -20,8 +20,6 @@ function changeStatus(status) {
             break;
     }
 
-    console.log(status);
-
     // Send the status to ajax "setStatus.php" 
     $.ajax({
         url: "setStatus.php",
