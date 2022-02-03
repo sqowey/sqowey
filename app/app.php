@@ -75,6 +75,9 @@
         </div>
     </div>
 
+    <!-- Get the ajax library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- Load all needed scripts -->
     <script src="./app_script.js"></script>
 </body>
