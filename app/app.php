@@ -71,11 +71,14 @@
 
         <!-- The status -->
         <div class="status">
-            <span id="online"><i onclick="changeStatus('online');" class="fas fa-circle"></i></span>
+            <span id="online"><i onclick="changeStatus('online');" class="far fa-circle"></i></span>
             <span id="away"><i onclick="changeStatus('away');" class="far fa-circle"></i></span>
-            <span id="notDisturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
+            <span id="disturb"><i onclick="changeStatus('disturb');" class="far fa-circle"></i></span>
         </div>
     </div>
+
+    <!-- Get the ajax library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Load all needed scripts -->
     <script src="./app_script.js"></script>
