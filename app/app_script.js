@@ -1,7 +1,7 @@
 // Get all needed elements
 onlineDiv = document.getElementById("online");
 awayDiv = document.getElementById("away");
-disturbDiv = document.getElementById("notDisturb");
+disturbDiv = document.getElementById("disturb");
 
 // The function to change the status when a button is clicked
 function changeStatus(status) {
@@ -18,6 +18,19 @@ function changeStatus(status) {
         case ("disturb"):
             disturbDiv.innerHTML = '<i class="fas fa-circle"></i>';
             break;
-
     }
+
+    console.log(status);
+
+    // Send the status to ajax "setStatus.php" 
+    $.ajax({
+        url: "setStatus.php",
+        type: "POST",
+        data: {
+            status: status
+        },
+        success: function(data) {
+            console.log(data);
+        }
+    });
 }
