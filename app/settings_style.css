@@ -533,6 +533,16 @@ theme settings
 }
 
 
+/* 
+Help
+*/
+
+#help_text {
+    margin: auto;
+    text-align: center;
+}
+
+
 /*
 Settings area choose list
 */
