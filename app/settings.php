@@ -439,7 +439,10 @@
             <!-- The area where help can be found -->
             <div id="help">
                 <h1>Hilfe</h1>
-
+                <div id="help_text">
+                    <p>Es gibt noch keine offizielle Hilfe-Dokumentation.</p>
+                    <p>Nutze gerne das Formular unter <a href="./support.html">Support</a>.</p>
+                </div>
             </div>
 
             <!-- The area in which credits of the app are placed -->
