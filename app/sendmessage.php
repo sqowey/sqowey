@@ -54,13 +54,15 @@ if (empty($_POST['message'])) {
 
         $stmt->bind_param('biibs', $channel_type, $reciever_id, $sender_id, $message_encrypted, $message);
         $stmt->execute();
-        exit();
 
         // close the statement
         $stmt->close();
 
         // Go back to the app
         header('Location: app.php');
+
+        // Exit the script
+        exit();
 
     } else {
 
