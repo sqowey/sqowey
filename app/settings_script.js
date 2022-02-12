@@ -188,7 +188,7 @@ function privacy(arg) {
             if (data == "success-reload") {
 
                 // Redirect to the same page
-                location.href = "settings.php?tab_name=language";
+                location.href = "settings.php?tab_name=privacy";
 
                 // Write log to console
                 console.log("success");
