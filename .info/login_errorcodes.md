@@ -1,3 +1,12 @@
+# General errorcodes
+
+Code | Description
+--- | ---
+0 | Success
+
+
+
+
 # Login errorcodes
 
 Code | Description
@@ -19,4 +28,3 @@ Code | Description
 705 | Invalid email
 706 | Invalid username
 707 | Not all fields are filled in
-708 | Success
