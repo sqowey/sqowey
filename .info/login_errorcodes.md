@@ -5,6 +5,7 @@ Code | Description
 601 | Invalid username or password
 602 | Cannot connect to database
 603 | Database error
+604 | Not all fields are filled in
 
 
 # Register errorcodes
@@ -17,3 +18,5 @@ Code | Description
 704 | Invalid password
 705 | Invalid email
 706 | Invalid username
+707 | Not all fields are filled in
+708 | Success
