@@ -76,6 +76,11 @@ function initializeTheme() {
             theme = localStorage.getItem("theme");
         }
     }
+
+    // show the switch button
+    document.getElementById("themeButton").style.display = "inherit";
+
+
     //Theme auf gespeichertes Theme setzen
     if (theme == "light") {
 
