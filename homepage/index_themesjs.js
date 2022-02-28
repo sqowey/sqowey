@@ -6,16 +6,16 @@
 // 
 
 // Navigation - Hintergrund
-ThemeDarkNavBackground = "#111111";
-ThemeLightNavBackground = "#ffffff";
+ThemeDarkNavBackground = "#20232d";
+ThemeLightNavBackground = "#eeeeff";
 
 // Navigation - Text
 ThemeDarkNavText = "#ffffff";
-ThemeLightNavText = "#000000";
+ThemeLightNavText = "#111111";
 
 // Seite - Hintergrund
-ThemeDarkBackground = "#000000";
-ThemeLightBackground = "#eff1d0";
+ThemeDarkBackground = "#282c36";
+ThemeLightBackground = "#ffffff";
 
 // Seite - Normaler Text
 ThemeDarkText = "#ffffff";
@@ -23,10 +23,10 @@ ThemeLightText = "#000000";
 
 // Seite - Überschriften
 ThemeDarkTitle = "#6aaa4b";
-ThemeLightTitle = "#355525";
+ThemeLightTitle = "#05386b";
 
 // Besonderheiten
-ThemeLightExtra = "#22aacc";
+ThemeLightExtra = "#ff8888";
 ThemeDarkExtra = "#ffccaa";
 
 
