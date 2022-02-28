@@ -92,6 +92,7 @@ Design for the start-button on the bottom of the page
     position: fixed;
     top: 10px;
     right: 10px;
+    display: none;
 }
 
 
