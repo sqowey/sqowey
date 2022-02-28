@@ -27,13 +27,13 @@ changed = false;
 function darkLightChange() {
     switch (changed) {
         case false:
-            document.getElementById("clouds_light").src = "clouds_dark.png";
-            document.getElementById("clouds_dark").src = "clouds_light.png";
+            document.getElementById("clouds_light").src = "./contents/clouds_dark.png";
+            document.getElementById("clouds_dark").src = "./contents/clouds_light.png";
             changed = true;
             break;
         case true:
-            document.getElementById("clouds_light").src = "clouds_light.png";
-            document.getElementById("clouds_dark").src = "clouds_dark.png";
+            document.getElementById("clouds_light").src = "./contents/clouds_light.png";
+            document.getElementById("clouds_dark").src = "./contents/clouds_dark.png";
             changed = false;
             break;
     }
