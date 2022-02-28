@@ -229,3 +229,21 @@ hr {
 #clouds_dark {
     right: 5%;
 }
+
+
+/* Imprint styles */
+
+#warning {
+    color: #ff0000
+}
+
+#datenschutz-inhalt,
+#impressum-inhalt {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.25rem;
+}
+
+#impressum {
+    margin-bottom: 2rem;
+}
