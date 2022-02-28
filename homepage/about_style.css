@@ -4,6 +4,15 @@
 
 /* settings for the whole page */
 
+:root {
+    --body-background-color: #282c36;
+    --nav-background-color: #20232d;
+    --text-color: #ffffff;
+    --title-color: #508038;
+    --nav-text-color: #ffffff;
+    --extra-color: #ffffff;
+}
+
 * {
     transition: 0.5s;
 }
@@ -11,7 +20,8 @@
 body {
     font-family: Dosis;
     transition: 0.5s;
-    background-color: #282C36;
+    background-color: var(--body-background-color);
+    color: var(--text-color);
 }
 
 h1 {
@@ -38,7 +48,6 @@ a:visited {
     height: 60px;
     margin: auto;
     text-align: center;
-    background-color: #282C36;
 }
 
 #start_open {
@@ -53,7 +62,7 @@ a:visited {
     font-size: 500%;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
     margin-top: 1em;
 }
 
@@ -66,7 +75,7 @@ a:visited {
     font-size: 30px;
     text-align: center;
     margin: auto;
-    color: #508038;
+    color: var(--title-color);
 }
 
 .titles {
@@ -104,7 +113,7 @@ menu
 */
 
 #navOpener {
-    color: #818181;
+    color: var(--text-color);
     position: fixed;
 }
 
