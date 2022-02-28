@@ -5,8 +5,8 @@
 /* settings for the whole page */
 
 :root {
-    --body-background-color: #000000;
-    --nav-background-color: #000000;
+    --body-background-color: #282c36;
+    --nav-background-color: #20232d;
     --text-color: #ffffff;
     --title-color: #ffffff;
     --nav-text-color: #ffffff;
