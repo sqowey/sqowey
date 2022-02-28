@@ -71,7 +71,7 @@ function initializeTheme() {
     try {
         theme = localStorage.getItem("theme");
     } catch (e) {
-        if (e.name == "NS_ERROR_FILE_CORRUPTED") {
+        if (e) {
             localStorage.clear();
             theme = localStorage.getItem("theme");
         }
