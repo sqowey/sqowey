@@ -1,17 +1,3 @@
-//Funktion um das Menü zu öffnen
-function openNav() {
-    document.getElementById("sideNav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    resizeClouds("300");
-}
-
-//Funktion um das Menü zu schliessen
-function closeNav() {
-    document.getElementById("sideNav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    resizeClouds("400");
-}
-
 // Second-Counter
 var timer_message_1 = "An Sqowey wird seit ";
 var timer_message_2 = " Sekunden gearbeitet.";
@@ -27,14 +13,6 @@ function sqoweyTimer() {
     window.setTimeout("sqoweyTimer();", 10);
 }
 sqoweyTimer();
-
-// Scroll to the imprint if wanted
-function scrollImpressum() {
-    if (location.search.substring(1).split("&")[0].split("=")[1].replace("%22", "").replace("%22", "").toLowerCase() == "credits") {
-        document.getElementById("credits").scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-setTimeout(scrollImpressum, 500);
 
 // Dropdowns
 function dropdown() {

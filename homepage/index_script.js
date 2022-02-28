@@ -19,3 +19,22 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
     resizeClouds("400");
 }
+
+// Set default for changed ( if dark/light comparison has changed ) to false
+changed = false;
+
+// Change dark/light comparison
+function darkLightChange() {
+    switch (changed) {
+        case false:
+            document.getElementById("clouds_light").src = "clouds_dark.png";
+            document.getElementById("clouds_dark").src = "clouds_light.png";
+            changed = true;
+            break;
+        case true:
+            document.getElementById("clouds_light").src = "clouds_light.png";
+            document.getElementById("clouds_dark").src = "clouds_dark.png";
+            changed = false;
+            break;
+    }
+}
