@@ -76,6 +76,14 @@ Design for the start-button on the bottom of the page
     color: var(--title-color);
 }
 
+.title_container {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
 
 /* Theme switch */
 
