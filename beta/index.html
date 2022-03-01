@@ -11,34 +11,36 @@
 
 <body>
 
-    <!-- Main content of the page -->
-    <div class="main">
-        <div>
-            <h1 id="countdown"></h1>
-            <hr style="margin:auto;">
-            <h1>Sqowey</h1>
-            <h1>KOMMT BALD</h1>
-            <hr style="margin:auto;">
-            <a href="../homepage/index.html">Closed-Beta</a>
-        </div>
+
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
     </div>
 
-    <!-- The script of the page -->
-    <script>
-        var countDownDate = new Date("Jan 01, 2023 00:00:00").getTime();
+    <!-- Buttons to change the language -->
+    <div id="languageButton">
+        <img class="languageButtonImage" src="contents/language_flag_english.svg" onclick="changeLanguage('en')" alt="Change language to english">
+        <img class="languageButtonImage" src="contents/language_flag_german.svg" onclick="changeLanguage('de')" alt="Change language to german">
+    </div>
 
-        var countdown = setInterval(function() {
-            var now = new Date().getTime();
-            var timeleft = countDownDate - now;
+    <!-- Main content -->
+    <header>Sqowey</header>
+    <main>
+        <h2 id="soon">Coming soon...</h2>
+        <p id="paragraph_one">
+            Sqowey is a Chat-Service, that is focused on privacy.
+        </p>
+        <p id="paragraph_two">
+            Sqowey is fully open-source and can be found on <a href="https://github.com/sqowey/" target="_blank">GitHub</a>.
+        </p>
+    </main>
+    <footer id="footer">
+        Made with ❤️ by <a href="https://github.com/cuzimbisonratte" target="_blank">CuzImBisonratte</a>
+    </footer>
 
-            var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = days + " Tage - " + hours + " Stunden - " + minutes + " Minuten - " + seconds + " Sekunden ";
-        }, 10)
-    </script>
+    <!-- Load needed scripts -->
+    <script src="./script.js"></script>
+    <script src="./themes.js"></script>
 </body>
 
 </html>
