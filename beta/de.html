@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+</head>
+<title>Sqowey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<!-- Set tab icon -->
+<link rel="icon" href="../contents/icon.svg">
+</head>
+
+<body>
+
+
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Buttons to change the language -->
+    <div id="languageButton">
+        <img class="languageButtonImage" src="contents/language_flag_english.svg" onclick="window.location.assign('en.html')" alt="Change language to english">
+        <img class="languageButtonImage" src="contents/language_flag_german.svg" onclick="window.location.assign('de.html')" alt="Change language to german">
+    </div>
+
+    <!-- Main content -->
+    <header>Sqowey</header>
+    <main>
+        <h2 id="soon">Kommt bald...</h2>
+        <p id="paragraph_one">
+            Sqowey ist ein Chat-Service, der auf Privatsphäre ausgelegt ist.
+        </p>
+        <p id="paragraph_two">
+            Sqowey ist komplett open-source und kann auf <a href="https://github.com/sqowey/" target="_blank">GitHub</a> gefunden werden.
+        </p>
+    </main>
+    <footer id="footer">
+        Programmiert mit ❤️ von <a href="https://github.com/cuzimbisonratte" target="_blank">CuzImBisonratte</a>
+    </footer>
+
+    <!-- Load needed scripts -->
+    <script src="./script.js"></script>
+    <script src="./themes.js"></script>
+</body>
+
+</html>
