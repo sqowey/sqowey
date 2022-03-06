@@ -43,3 +43,14 @@ function init_status() {
     });
 }
 init_status();
+
+// Check if there are any key combinations that are pressed
+// ctrl + s | go to settings.php
+// ctrl + l | go to logout.php
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key == "s") {
+        window.location.href = "settings.php";
+    } else if (event.ctrlKey && event.key == "l") {
+        window.location.href = "logout.php";
+    }
+});
