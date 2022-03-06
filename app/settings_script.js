@@ -233,3 +233,18 @@ function setLanguage(lang) {
         }
     });
 }
+
+// 
+// Escape leave
+// 
+
+// Add eventlistener keydown and go to app.php
+window.addEventListener("keydown", function(evt) {
+
+    // Check if the escape key is pressed
+    if (evt.code == "Escape") {
+
+        // Redirect to app.php
+        location.href = "app.html";
+    }
+});
