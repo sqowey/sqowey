@@ -2,3 +2,4 @@
 /app/.htaccess
 /.htpasswd
 /.additional-Info
+/tests.html
