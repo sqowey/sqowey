@@ -15,13 +15,13 @@
 
     // If there is an error whilst connecting, stop and display it
     if ( mysqli_connect_errno() ) {
-        header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
+        header('Location: login.html?message="Fehler mit<br>der Datenbank"');
         exit();
     }
 
     // Look, if there are inputs in the fields
     if ( !isset($_POST['username'], $_POST['password']) ) {
-        header('Location: message.html?error=%22Bitte%20nutze%20alle%20Felder%22');
+        header('Location: login.html?message=Bitte nutze<br>alle Felder');
         exit();
     }
 
@@ -56,13 +56,13 @@
             } else {
 
                 // Incorrect password
-                header('Location: message.html?error=%22Falscher%20Nutzername%20oder%20Passwort%22');
+                header('Location: login.html?message=Falscher Nutzername<br>oder Falsches Passwort');
                 exit();
             }
         } else {
 
             // Incorrect username
-            header('Location: message.html?error=%22Falscher%20Nutzername%20oder%20Passwort%22');
+            header('Location: login.html?message=Falscher Nutzername<br>oder Falsches Passwort');
             exit();
         }
 
