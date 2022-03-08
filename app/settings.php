@@ -166,7 +166,7 @@
                 exit("Error-".mysqli_error($con));
 
                 // Display an error.
-                header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
+                header('Location: settings.php?message=Fehler mit<br>der Datenbank!');
                 exit();
             }
     }
@@ -196,6 +196,10 @@
 </head>
 
 <body>
+
+    <!-- The Container in which the Error output is pasted -->
+    <div id="errorOutputContainer">
+    </div>
 
     <!-- The button to close the settings -->
     <i onclick='location.href = "./app.php";' id="closebutton" class="fas fa-times"></i>
@@ -478,6 +482,7 @@
 
     <!-- Import the settings script -->
     <script src="settings_script.js"></script>
+    <script src="message_script.js"></script>
 </body>
 
 </html>
