@@ -575,3 +575,40 @@ Settings area choose list
 .vertical-menu a.active {
     color: #ffffff;
 }
+
+
+/* Error output */
+
+#errorOutput {
+    background-color: #cc0605;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: fit-content;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    animation: animation_error 10s ease 0s 1 normal forwards;
+}
+
+@keyframes animation_error {
+    0% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: block;
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: none;
+    }
+}
