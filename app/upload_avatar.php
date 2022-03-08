@@ -94,7 +94,7 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
                     $con->close();
                     
                     // redirect
-                    header('Location: message.html?error=%22Avatar%20wurde%20erfolgreich%20veraendert%22');
+                    header('Location: settings.php?message=Avatar wurde<br>erfolgreich geändert.');
 
                 } else {
 

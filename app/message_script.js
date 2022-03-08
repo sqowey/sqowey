@@ -1,23 +1,20 @@
-// Get the error message and show it
-function setErrorMessage() {
-    errorMessageSub = location.search.substring(1);
-    errorMessage = errorMessageSub.split("&")[0];
-    errorMessage = errorMessage.split("=")[1];
-    while (errorMessage.includes("%22")) {
-        errorMessage = errorMessage.replace("%22", "");
-    }
-    while (errorMessage.includes("%20")) {
-        errorMessage = errorMessage.replace("%20", " ");
-    }
+// Get the message from the url
+// Its the string between the ?message= and the &
+// If there is no & in the url the message goes to the end of the url
 
-    document.getElementById("errorBox").innerHTML = errorMessage;
-}
-setErrorMessage();
+// Get the url
+var url = window.location.href;
 
-// Check if the report button should be shown
-function showReportButton() {
-    if (location.search.substring().includes("showReportButton=false")) {
-        document.getElementById("reportButton").style.display = "none";
+// Check if there is an ?message= in the url
+if (url.indexOf("?message=") > -1) {
+
+    var message = url.split('?message=')[1];
+    if (message == undefined) {
+        message = url.split('&')[0];
     }
+    // Replace all %20 with spaces
+    message = message.replace(/%20/g, ' ');
+    // Replace all %3cbr%3e with <br>
+    message = message.replace(/%3Cbr%3E/g, '<br>');
+    document.getElementById("errorOutputContainer").innerHTML = "<div id='errorOutput'>" + message + "</div>";
 }
-showReportButton();
