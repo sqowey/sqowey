@@ -25,7 +25,7 @@ $id = $_SESSION['id'];
 if (!isset($_POST['username'], $_POST['phone'], $_POST['email'])) {
 
     // Could not get the data that should have been sent.
-    header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
+    header('Location: settings.php?message=Bitte nutze<br>alle Felder!');
 
     // Beende das script
     exit();
@@ -35,7 +35,7 @@ if (!isset($_POST['username'], $_POST['phone'], $_POST['email'])) {
 if (empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone'])) {
 
     // One or more values are empty.
-    header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
+    header('Location: settings.php?message=Bitte nutze<br>alle Felder!');
 
     // Beende das script
     exit();
@@ -48,7 +48,7 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     error_log("Error(104)-E-Mail:".$_POST['email'],0);
 
     // Show error
-    header('Location: message.html?error=%22Das%20ist%20keine%20echte%20Mailadresse%22');
+    header('Location: settings.php?message=Das ist keine<br>echte Mailadresse');
 
     // Beende das script
     exit();
@@ -64,7 +64,7 @@ if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
         error_log("Error(105)-Nutzername:".$_POST['username'],0);    
 
         // show error
-        header('Location: message.html?error=%22Der%20Benutzername%20muss%20zwischen%204%20und%2018%20lang%20sein%22');
+        header('Location: settings.php?message=Dein Benutzername muss<br>zwischen 4 und 18<br>Zeichen lang sein');
 
         // Beende das script
         exit();
@@ -78,7 +78,7 @@ if ($con->query($sql) === TRUE) {
     // destroy the session
     session_destroy();
     // Incorrect password
-    header('Location: message.html?error=%22Daten%20wurden%20veraendert%22');
+    header('Location: settings.php?message=Deine Daten<br>wurden veraendert');
     exit();
 } else {
     echo "Error updating record: " . $con->error;
