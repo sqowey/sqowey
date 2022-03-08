@@ -25,7 +25,7 @@
         exit("Error(101)-".mysqli_connect_error());
 
         // Display an error.
-        header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
+        header('Location: register.html?message=Fehler mit<br>der Datenbank!');
         exit();
     }
 
@@ -36,7 +36,7 @@
         error_log("Error(102)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // Could not get the data that should have been sent.
-        header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
+        header('Location: register.html?message=Bitte nutze<br>alle Felder!');
 
         // Beende das script
         exit();
@@ -49,7 +49,7 @@
         error_log("Error(103)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // One or more values are empty.
-        header('Location: message.html?error=%22Bitte%20fuelle%20alle%20Felder%20aus%22');
+        header('Location: register.html?message=Bitte nutze<br>alle Felder!');
 
         // Beende das script
         exit();
@@ -66,7 +66,7 @@
         error_log("Error(104)-E-Mail:".$_POST['email'],0);
 
         // Show error
-        header('Location: message.html?error=%22Das%20ist%20keine%20echte%20Mailadresse%22');
+        header('Location: register.html?message=Das ist keine<br>echte Mailadresse');
 
         // Beende das script
         exit();
@@ -80,7 +80,7 @@
             error_log("Error(105)-Nutzername:".$_POST['username'],0);    
 
             // show error
-            header('Location: message.html?error=%22Der%20Benutzername%20muss%20zwischen%204%20und%2018%20lang%20sein%22');
+            header('Location: register.html?message=Dein Benutzername muss<br>zwischen 4 und 18<br>Zeichen lang sein');
 
             // Beende das script
             exit();
@@ -93,7 +93,7 @@
         error_log("Error(107)-Passwort:".$_POST['username'],0);    
 
         // Show error
-        header('Location: message.html?error=%22Das%20Passwort%20muss%20den%20Anforderungen%20entsprechen%22');
+        header('Location: register.html?message=Das Passwort muss<br>den Anforderungen entsprechen');
 
         // Beende das script
         exit();
@@ -114,7 +114,7 @@
             error_log("Error(108)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
     
             // Username exists already
-            header('Location: message.html?error=%22Nutzername%20existiert%20schon%22');
+            header('Location: register.html?message=Ein Nutzer mit diesem<br>Nutzernamen existiert schon');
 
             // Beende das script
             exit();
@@ -147,7 +147,7 @@
                     error_log("Success(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
                     // Show success
-                    header('Location: message.html?success=%22Erfolgreich%20registriert%22');
+                    header('Location: register.html?success=Erfolgreich registriert');
 
                     // Beende das script
                     exit();
@@ -158,7 +158,7 @@
                     error_log("Error(110)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
                     // Show error
-                    header('Location: message.html?message=%22Fehler%20mit%20der%20Datenbank%22');
+                    header('Location: register.html?message=Fehler mit<br>der Datenbank');
 
                     // Beende das script
                     exit();
@@ -170,7 +170,7 @@
                 error_log("Error(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
                 // Username exists already
-                header('Location: message.html?message=%22Fehler%20mit%20der%20Datenbank%22');
+                header('Location: register.html?message=Fehler mit<br>der Datenbank');
                 exit();
             }
         }
@@ -181,7 +181,7 @@
 
         // The error log procedure for an error with the database connection
         error_log("Error()-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".$password,0);
-        header('Location: message.html?error=%22Fehler%20mit%20der%20Datenbank%22');
+        header('Location: register.html?message=Fehler mit<br>der Datenbank');
         exit();
     }
 
