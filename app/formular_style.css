@@ -123,6 +123,7 @@ body {
 /* Error output */
 
 #errorOutput {
+    cursor: pointer;
     background-color: #cc0605;
     color: #ffffff;
     font-size: 1.5rem;
@@ -152,6 +153,17 @@ body {
     100% {
         opacity: 0;
         transform: translateX(5rem);
+        display: none;
+    }
+}
+
+@keyframes animation_close_error {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
         display: none;
     }
 }
