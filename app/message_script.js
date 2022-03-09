@@ -40,3 +40,18 @@ if (url.indexOf("?c=") > -1) {
 
     document.getElementById("errorOutputContainer").innerHTML = "<div id='errorOutput'>" + message + "</div>";
 }
+
+document.getElementById("errorOutputContainer").addEventListener("click", function() {
+
+    // Remove the error message
+    document.getElementById("errorOutputContainer").style.animation = "animation_close_error 0.5s";
+
+    // Remove the error message after the animation is done
+    setTimeout(function() {
+
+        // Remove the error message
+        document.getElementById("errorOutputContainer").style.display = "none";
+
+    }, 500);
+
+});
