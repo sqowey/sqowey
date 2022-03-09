@@ -166,7 +166,7 @@
                 exit("Error-".mysqli_error($con));
 
                 // Display an error.
-                header('Location: settings.php?message=Fehler mit<br>der Datenbank!');
+                header('Location: settings.php?c=Fehler mit<br>der Datenbank!');
                 exit();
             }
     }
