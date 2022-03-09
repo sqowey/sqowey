@@ -181,6 +181,7 @@ form input[type="submit"] {
 /* Error output */
 
 #errorOutput {
+    cursor: pointer;
     background-color: #cc0605;
     color: #ffffff;
     font-size: 1.5rem;
