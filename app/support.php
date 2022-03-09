@@ -25,9 +25,9 @@ VALUES ('".$errorcode."', '".$title."', '".$mail."', '".$problem."', '".$sonstig
 
 // run the mysql query
 if (mysqli_query($conn, $sql)) {
-    header('Location: support.php?message=Dein Supportticket<br>wurde erfolgreich erstellt.');
+    header('Location: support.php?c=Dein Supportticket<br>wurde erfolgreich erstellt.');
 } else {
-    header('Location: support.php?message=Fehler mit<br>der Datenbank!');
+    header('Location: support.php?c=Fehler mit<br>der Datenbank!');
 }
 
 // close the database-connection
