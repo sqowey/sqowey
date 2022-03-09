@@ -25,7 +25,7 @@
         exit("Error(101)-".mysqli_connect_error());
 
         // Display an error.
-        header('Location: register.html?message=Fehler mit<br>der Datenbank!');
+        header('Location: register.html?c=01');
         exit();
     }
 
@@ -36,7 +36,7 @@
         error_log("Error(102)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // Could not get the data that should have been sent.
-        header('Location: register.html?message=Bitte nutze<br>alle Felder!');
+        header('Location: register.html?c=02');
 
         // Beende das script
         exit();
@@ -49,7 +49,7 @@
         error_log("Error(103)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
         // One or more values are empty.
-        header('Location: register.html?message=Bitte nutze<br>alle Felder!');
+        header('Location: register.html?c=02');
 
         // Beende das script
         exit();
@@ -66,7 +66,7 @@
         error_log("Error(104)-E-Mail:".$_POST['email'],0);
 
         // Show error
-        header('Location: register.html?message=Das ist keine<br>echte Mailadresse');
+        header('Location: register.html?c=04');
 
         // Beende das script
         exit();
@@ -80,7 +80,7 @@
             error_log("Error(105)-Nutzername:".$_POST['username'],0);    
 
             // show error
-            header('Location: register.html?message=Dein Benutzername muss<br>zwischen 4 und 18<br>Zeichen lang sein');
+            header('Location: register.html?c=05');
 
             // Beende das script
             exit();
@@ -93,7 +93,7 @@
         error_log("Error(107)-Passwort:".$_POST['username'],0);    
 
         // Show error
-        header('Location: register.html?message=Das Passwort muss<br>den Anforderungen entsprechen');
+        header('Location: register.html?c=05');
 
         // Beende das script
         exit();
@@ -114,7 +114,7 @@
             error_log("Error(108)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
     
             // Username exists already
-            header('Location: register.html?message=Ein Nutzer mit diesem<br>Nutzernamen existiert schon');
+            header('Location: register.html?c=05');
 
             // Beende das script
             exit();
@@ -158,7 +158,7 @@
                     error_log("Error(110)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
                     // Show error
-                    header('Location: register.html?message=Fehler mit<br>der Datenbank');
+                    header('Location: register.html?c=01');
 
                     // Beende das script
                     exit();
@@ -170,7 +170,7 @@
                 error_log("Error(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
 
                 // Username exists already
-                header('Location: register.html?message=Fehler mit<br>der Datenbank');
+                header('Location: register.html?c=01');
                 exit();
             }
         }
@@ -181,7 +181,7 @@
 
         // The error log procedure for an error with the database connection
         error_log("Error()-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".$password,0);
-        header('Location: register.html?message=Fehler mit<br>der Datenbank');
+        header('Location: register.html?c=01');
         exit();
     }
 

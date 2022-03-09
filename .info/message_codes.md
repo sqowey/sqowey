@@ -28,3 +28,4 @@ Code | Description
 09 | Password changed
 10 | Username changed
 11 | Avatar changed
+12 | Please login again
