@@ -71,21 +71,20 @@
         // Beende das script
         exit();
     }
-    if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
 
-        // check username-length
-        if(strlen($_POST['username']) > 18 || strlen($_POST['username']) < 4){
+    // check if the username is valid
+    if (!preg_match('/^[a-zA-Z0-9_]{3,18}$/', $_POST['username'])) {
 
-            // Log the error
-            error_log("Error(105)-Nutzername:".$_POST['username'],0);    
+        // Log the error
+        error_log("Error(105)-Username:".$_POST['username'],0);
 
-            // show error
-            header('Location: register.html?c=05');
+        // Show error
+        header('Location: register.html?c=12');
 
-            // Beende das script
-            exit();
-        }
+        // Beende das script
+        exit();
     }
+
     // if password doesn't have the right length
     if (strlen($_POST['password']) > 50 || strlen($_POST['password']) < 8) {
 
