@@ -10,7 +10,10 @@ code_messages_en = {
     "08": "EMail changed",
     "09": "Password changed",
     "10": "Username changed",
-    "11": "Avatar changed"
+    "11": "Avatar changed",
+    "12": "username not valid",
+    "13": "password not valid",
+    "14": "EMail not valid"
 };
 
 
