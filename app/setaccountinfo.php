@@ -54,21 +54,17 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
-// check for unusual characters in the username
-if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
+// check if the username is valid
+if (!preg_match('/^[a-zA-Z0-9_]{3,18}$/', $_POST['username'])) {
 
-    // check username-length
-    if(strlen($_POST['username']) > 18 || strlen($_POST['username']) < 4){
+    // Log the error
+    error_log("Error(105)-Username:".$_POST['username'],0);
 
-        // Log the error
-        error_log("Error(105)-Nutzername:".$_POST['username'],0);    
+    // Show error
+    header('Location: register.html?c=12');
 
-        // show error
-        header('Location: settings.php?c=05');
-
-        // Beende das script
-        exit();
-    }
+    // Beende das script
+    exit();
 }
 
 // $sql = "UPDATE users SET username = '$username', password = '$password' WHERE id = '$id'"
