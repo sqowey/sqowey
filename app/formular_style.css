@@ -45,7 +45,8 @@ body {
 
 /* The form */
 
-#login {
+#login,
+#register {
     width: calc(60vw - 1px);
     /* height: 50vh; */
     background-color: #ffffff;
@@ -54,7 +55,8 @@ body {
     border-radius: 3vh;
 }
 
-#login h1 {
+#login h1,
+#register h1 {
     text-align: center;
     color: #5b6574;
     font-size: 4vh;
@@ -62,14 +64,16 @@ body {
     border-bottom: 0.5vh solid #dee0e4;
 }
 
-#login form {
+#login form,
+#register form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 2.5vh;
 }
 
-#login form label {
+#login form label,
+#register form label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,13 +83,16 @@ body {
     color: #ffffff;
 }
 
-#login form label:hover {
+#login form label:hover,
+#register form label:hover {
     background-color: #c300ff;
     color: #000000;
 }
 
 #login form input[type="password"],
-#login form input[type="text"] {
+#login form input[type="text"],
+#register form input[type="password"],
+#register form input[type="text"] {
     width: 50vw;
     height: 5vw;
     border: 0.5vh solid #dee0e4;
@@ -93,7 +100,8 @@ body {
     padding: 0 1vw;
 }
 
-#login form input[type="submit"] {
+#login form input[type="submit"],
+#register form input[type="submit"] {
     width: 97.5%;
     padding: 2vh;
     margin-top: 1vh;
@@ -107,7 +115,8 @@ body {
     margin-bottom: 1vh;
 }
 
-#login form input[type="submit"]:hover {
+#login form input[type="submit"]:hover,
+#register form input[type="submit"]:hover {
     background-color: #28c785;
     transition: background-color 0.5s;
 }
