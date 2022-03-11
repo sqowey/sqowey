@@ -468,7 +468,7 @@
                 <a onclick="changeToTab('access')">Barrierefreiheit</a>
                 <br>
                 <a onclick="changeToTab('help')">Hilfe</a>
-                <a onclick="changeToTab('credits')">Credits</a>
+                <a href="../homepage/about.html#credits" target="_blank">Credits</a>
                 <a href="support.html" target="_blank">Support</a>
                 <a href="logout.php">Ausloggen</a>
               </div> 
