@@ -188,7 +188,7 @@ Rules for mobile
     header {
         font-size: calc(80vw /6);
     }
-    #soon {
+    h2 {
         font-size: 8vmin;
     }
     p {
