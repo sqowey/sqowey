@@ -177,3 +177,28 @@ p {
 }
 
 
+/*
+Rules for mobile
+*/
+
+@media only screen and (max-width: 1000px) {
+    #themeButton {
+        display: none !important;
+    }
+    header {
+        font-size: calc(80vw /6);
+    }
+    #soon {
+        font-size: 8vmin;
+    }
+    p {
+        font-size: 150%;
+    }
+    #adminButton {
+        display: none;
+    }
+    .languageButtonImage {
+        width: 5vmax;
+        height: 5vmax;
+    }
+}
