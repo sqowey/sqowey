@@ -20,7 +20,7 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: max(25%, 250px) 75%;
     grid-template-rows: 100%;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -29,6 +29,29 @@ body {
 
 .navigation_bar {
     grid-area: navigation_bar;
+    text-align: right;
+    padding-right: 5%;
+    min-width: 260px;
+    position: relative;
+}
+
+.vertical-menu div {
+    text-align: left;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px red solid;
+    padding: 0.25rem;
+    width: 10rem;
+    position: relative;
+    right: 0;
+    margin-left: calc(max(25%, 250px) - 40%);
+    margin-top: 0.25rem;
+    cursor: pointer;
+}
+
+.vertical-menu div:hover {
+    background-color: #282c36;
+    color: #727b8a;
 }
 
 .navigation_main {
