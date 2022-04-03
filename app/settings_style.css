@@ -35,8 +35,157 @@ body {
     position: relative;
 }
 
-.vertical-menu div {
-    text-align: left;
+
+/* The parent element of the language flag indicators */
+
+.language_flag {
+    /* Set the grid area */
+    grid-area: language_flag;
+    /* Set the height and width to fill out the whole parent element */
+    height: min-content;
+    width: 100%;
+    /* Center the element */
+    margin: auto;
+}
+
+
+/* The language name */
+
+.language_name {
+    /* Set the grid area */
+    grid-area: language_name;
+    /* Add a font size */
+    font-size: 250%;
+}
+
+
+/* The buttons that shows which language is used */
+
+.language_check {
+    /* Set the grid area */
+    grid-area: language_check;
+    /* Set the size relative to the element */
+    font-size: 250%;
+}
+
+
+/* The language flags */
+
+.language_flag img {
+    /* Set the width and height */
+    width: 80%;
+    /* Smooth the corners */
+    border-radius: 15%;
+    /* Center all elements horizontally and vertically*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 
+theme settings
+*/
+
+.theme_container {
+    height: calc(75vh - 100px);
+    display: grid;
+    margin: 0 20px;
+    border-radius: 20px;
+    background-color: #2f3442;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 40% 40%;
+    gap: 0 0;
+    grid-auto-flow: row;
+    grid-template-areas: "theme_title theme_title" "theme_dark theme_light" "theme_example theme_example";
+}
+
+.theme_title {
+    padding-top: 2.5%;
+    grid-area: theme_title;
+    font-size: 35px;
+    text-align: center;
+}
+
+.theme_dark {
+    grid-area: theme_dark;
+    background-color: #282c36;
+}
+
+.theme_light {
+    grid-area: theme_light;
+    background-color: #f1f1f1;
+}
+
+.themes {
+    margin: 0 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.theme_example {
+    grid-area: theme_example;
+}
+
+.center {
+    text-align: center;
+    font-size: 400%;
+}
+
+
+/* 
+Help
+*/
+
+#help_text {
+    margin: auto;
+    text-align: center;
+}
+
+
+/*
+Settings area choose list
+*/
+
+.list {
+    grid-area: list;
+    overflow: auto;
+}
+
+.vertical-menu {
+    padding-top: 25px;
+}
+
+.vertical-menu * {
+    cursor: pointer;
+}
+
+.vertical-menu a {
+    text-align: center;
+    padding-left: 10px;
+    font-size: 30px;
+    color: #ffffff;
+    border-radius: 15px;
+    background-color: #522c33;
+    display: block;
+    padding: 12px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.vertical-menu a.active {
+    color: #ffffff;
+}
+
+
+/* Error output */
+
+#errorOutput {
+    cursor: pointer;
+    background-color: #cc0605;
+    color: #ffffff;
     font-size: 1.5rem;
     border-radius: 0.5rem;
     border: 1px red solid;
