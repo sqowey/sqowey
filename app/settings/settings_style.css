@@ -102,6 +102,31 @@ li i {
     margin-top: 5em;
 }
 
+#settings_details {
+    background-color: #484e52;
+    min-width: 50%;
+    width: min-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 0.1px;
+}
+
+#settings_details>p {
+    background-color: #383e42;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.warning_button {
+    background-color: #dd0012;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
 #links img {
     border-radius: 1em;
     margin: 0.5em;
