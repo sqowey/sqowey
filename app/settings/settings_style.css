@@ -105,7 +105,7 @@ li i {
 
 #settings_details {
     background-color: #484e52;
-    min-width: 50%;
+    min-width: 650px;
     width: min-content;
     border-radius: 1rem;
     padding: 1rem;
