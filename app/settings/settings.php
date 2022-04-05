@@ -246,8 +246,8 @@
                     <button class="warning_button">Passwort ändern</button>
                     <h3>Account löschen</h3>
                     <p>Wenn du deinen Account nur Deaktivierst, kannst du ihn jederzeit wieder Aktivieren!</p>
-                    <button class="warning_button">Passwort ändern</button>
-                    <button class="warning_button">Passwort ändern</button>
+                    <button class="warning_button">Account deaktivieren</button>
+                    <button class="warning_button">Account löschen</button>
                 </div>
                 <div id="links">
                     <h1>Links</h1>
