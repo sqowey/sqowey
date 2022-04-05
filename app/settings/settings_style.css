@@ -89,6 +89,9 @@ li i {
     font-size: 0.75rem;
     margin-left: 1rem;
     background-color: #383e42;
+    padding-left: 2.5rem;
+    padding-bottom: 1rem;
+    height: max-content;
 }
 
 .settings a {
