@@ -208,6 +208,11 @@
                         <i class="fa-solid fa-user-gear"></i> Account
                     </li>
                 </a>
+                <a href="#security">
+                    <li>
+                        <i class="fa-solid fa-shield-halved"></i> Sicherheit
+                    </li>
+                </a>
                 <a href="#links">
                     <li>
                         <i class="fa-solid fa-link"></i> Links
@@ -232,6 +237,20 @@
                     <p>
                         0123456789
                     </p>
+                </div>
+            </div>
+            <div id="security">
+                <h1>Sicherheit</h1>
+                <div id="settings_details">
+                    <h3>Passwort</h3>
+                    <button class="warning_button">Passwort ändern</button>
+                    <h3>Account löschen</h3>
+                    <p>Wenn du deinen Account nur Deaktivierst, kannst du ihn jederzeit wieder Aktivieren!</p>
+                    <button class="warning_button">Passwort ändern</button>
+                    <button class="warning_button">Passwort ändern</button>
+                </div>
+                <div id="links">
+                    <h1>Links</h1>
                 </div>
             </div>
         </div>
