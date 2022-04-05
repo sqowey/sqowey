@@ -127,6 +127,19 @@ li i {
     cursor: pointer;
 }
 
+.language_button {
+    background-color: #383e42;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.language_button:last-child {
+    text-decoration: line-through;
+}
+
 #links img {
     border-radius: 1em;
     margin: 0.5em;
