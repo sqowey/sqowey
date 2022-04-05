@@ -219,14 +219,20 @@
         <div class="settings">
             <div id="account">
                 <h1>Account</h1>
-                <a href="#">Change Username</a><br>
-                <a href="#">Change Password</a><br>
-                <a href="#">Change Email</a><br>
-                <a href="#">Change Avatar</a><br>
-                <a href="#">Change Phone number</a><br>
-            </div>
-            <div id="links">
-                <h1>Links</h1>
+                <div id="settings_details">
+                    <h3>Email</h3>
+                    <p>
+                        muster.mail@muster-mail.de
+                    </p>
+                    <h3>Benutzername</h3>
+                    <p>
+                        muster
+                    </p>
+                    <h3>Telefonnummer</h3>
+                    <p>
+                        0123456789
+                    </p>
+                </div>
             </div>
         </div>
     </div>
