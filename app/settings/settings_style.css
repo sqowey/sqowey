@@ -12,7 +12,7 @@ body {
     width: 100%;
     font-family: 'Dosis', sans-serif;
     font-size: 20px;
-    background-color: #383e42;
+    background-color: #484e52;
     color: #ffffff;
 }
 
@@ -88,6 +88,7 @@ li i {
     grid-area: settings;
     font-size: 0.75rem;
     margin-left: 1rem;
+    background-color: #383e42;
 }
 
 .settings a {
