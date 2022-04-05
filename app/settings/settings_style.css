@@ -119,6 +119,12 @@ li i {
     border-radius: 1rem;
 }
 
+#avatar_image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 20%;
+}
+
 .warning_button {
     background-color: #dd0012;
     border: 0px;
