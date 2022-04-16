@@ -103,7 +103,7 @@ li i {
     margin-top: 5em;
 }
 
-#settings_details {
+.settings_details {
     background-color: #484e52;
     min-width: 650px;
     width: min-content;
@@ -112,7 +112,7 @@ li i {
     padding-top: 0.1px;
 }
 
-#settings_details>p {
+.settings_details>p {
     background-color: #383e42;
     color: #ffffff;
     padding: 0.5rem;
