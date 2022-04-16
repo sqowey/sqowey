@@ -97,6 +97,7 @@ li i {
 
 .settings a {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .settings>div {
