@@ -152,3 +152,12 @@ li i {
     border-radius: 1em;
     margin: 0.5em;
 }
+
+#open_changelog_button {
+    background-color: #3b468a;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
