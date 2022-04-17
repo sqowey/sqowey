@@ -38,3 +38,53 @@ name_element.addEventListener("click", function() {
     window.location.href = 'logout.php';
 
 });
+
+
+// Function to switch the button colors
+function switch_button(lmnt) {
+
+    // Get the class list of the button
+    var class_list = lmnt.classList;
+
+    // Get the id of the button
+    var id = lmnt.id;
+
+    // Check if the button is active
+    if (class_list.contains('button_active')) {
+
+        // Remove the active class
+        class_list.remove('button_active');
+
+        // Add the inactive class
+        class_list.add('button_inactive');
+
+        // Check if the id of the button is "privacy_server_dms"
+        if (id == "privacy_server_dms") {
+
+            // Check if the button with id "privacy_all_dms" is active
+            if (document.getElementById("privacy_all_dms").classList.contains('button_active')) {
+
+                switch_button(document.getElementById("privacy_all_dms"));
+
+            }
+        }
+    } else {
+
+        // Remove the inactive class
+        class_list.remove('button_inactive');
+
+        // Add the active class
+        class_list.add('button_active');
+
+        // Check if the id of the button is "privacy_all_dms"
+        if (id == "privacy_all_dms") {
+
+            // Check if the button with id "privacy_server_dms" is inactive
+            if (document.getElementById("privacy_server_dms").classList.contains('button_inactive')) {
+
+                // Switch the other button
+                switch_button(document.getElementById("privacy_server_dms"));
+            }
+        }
+    }
+}
