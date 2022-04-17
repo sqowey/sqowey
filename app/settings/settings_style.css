@@ -161,3 +161,21 @@ li i {
     border-radius: 0.5rem;
     cursor: pointer;
 }
+
+.settings_button {
+    border: 0px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button_active {
+    background-color: #5b66aa;
+    color: #ffffff;
+}
+
+.button_inactive {
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
