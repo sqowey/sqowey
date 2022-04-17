@@ -68,6 +68,17 @@ function switch_button(lmnt) {
 
             }
         }
+
+        // Check if the id of the button is "privacy_server_friends"
+        if (id == "privacy_server_friends") {
+
+            // Check if the button with id "privacy_all_friends" is active
+            if (document.getElementById("privacy_all_friends").classList.contains('button_active')) {
+
+                switch_button(document.getElementById("privacy_all_friends"));
+
+            }
+        }
     } else {
 
         // Remove the inactive class
@@ -84,6 +95,17 @@ function switch_button(lmnt) {
 
                 // Switch the other button
                 switch_button(document.getElementById("privacy_server_dms"));
+            }
+        }
+
+        // Check if the id of the button is "privacy_all_friends"
+        if (id == "privacy_all_friends") {
+
+            // Check if the button with id "privacy_server_friends" is inactive
+            if (document.getElementById("privacy_server_friends").classList.contains('button_inactive')) {
+
+                // Switch the other button
+                switch_button(document.getElementById("privacy_server_friends"));
             }
         }
     }
