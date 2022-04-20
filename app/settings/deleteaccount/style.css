@@ -45,3 +45,7 @@ input {
 #deletion_text {
     font-size: 0.8rem;
 }
+
+input[type="submit"] {
+    cursor: pointer;
+}
