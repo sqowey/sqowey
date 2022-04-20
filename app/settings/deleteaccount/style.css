@@ -36,3 +36,9 @@ input {
 #password {
     width: calc(100% - 1rem);
 }
+
+#warning,
+#warning i {
+    color: red;
+    font-size: 0.8rem;
+}
