@@ -40,5 +40,8 @@ input {
 #warning,
 #warning i {
     color: red;
+}
+
+#deletion_text {
     font-size: 0.8rem;
 }
