@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+* {
+    color: #ffffff;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    background-color: #484e52;
+    color: #ffffff;
+}
+
+.container {
+    background-color: #383e42;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    min-width: 650px;
+    width: min-content;
+    margin-top: 1rem;
+}
+
+select,
+input {
+    background-color: #484e52;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 0;
+}
+
+#password {
+    width: calc(100% - 1rem);
+}
+
+#warning,
+#warning i {
+    color: red;
+}
+
+#deletion_text {
+    font-size: 0.8rem;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+a {
+    color: #ffccaa;
+    cursor: pointer;
+    text-decoration: underline;
+}
