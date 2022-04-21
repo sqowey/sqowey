@@ -37,3 +37,35 @@ time_changed();
 document.getElementById("time_until_deletion").addEventListener("change", function() {
     time_changed();
 });
+
+
+// 
+// Error message
+// 
+
+// Get the url
+var url = window.location.href;
+
+// Check if there is an ?c= in the url
+if (url.indexOf("?e=wp") > -1) {
+
+    message = "Wrong Password!";
+
+    console.log(message);
+
+    document.getElementById("errorOutputContainer").innerHTML = "<div id='errorOutput'>" + message + "</div>";
+}
+document.getElementById("errorOutputContainer").addEventListener("click", function() {
+
+    // Remove the error message
+    document.getElementById("errorOutputContainer").style.animation = "animation_close_error 0.5s";
+
+    // Remove the error message after the animation is done
+    setTimeout(function() {
+
+        // Remove the error message
+        document.getElementById("errorOutputContainer").style.display = "none";
+
+    }, 500);
+
+});
