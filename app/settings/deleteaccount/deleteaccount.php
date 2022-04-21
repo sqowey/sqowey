@@ -50,7 +50,7 @@
                 session_destroy();
 
                 // Redirect to the index-page
-                header('Location: ../../index.html');
+                header('Location: ./success/index.html?t='.$time_until_deletion);
 
                 // Exit the script
                 exit;
