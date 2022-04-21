@@ -22,6 +22,10 @@
 </head>
 
 <body>
+    <!-- The Container in which the Error output is pasted -->
+    <div id="errorOutputContainer">
+    </div>
+
     <form action="deleteaccount.php" method="post">
         <h1>Account löschen</h1>
         <div class="container">
