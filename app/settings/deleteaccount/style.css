@@ -49,3 +49,11 @@ input {
 input[type="submit"] {
     cursor: pointer;
 }
+
+#account_info {
+    font-size: 0.8rem;
+}
+
+#account_name {
+    color: #ffccaa;
+}
