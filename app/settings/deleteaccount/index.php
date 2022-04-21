@@ -25,6 +25,13 @@
     <form action="deleteaccount.php" method="post">
         <h1>Account löschen</h1>
         <div class="container">
+            <div id="account_info">
+                Du bist dabei eine Löschungsanfrage für das Konto
+                <span id="account_name"><?php echo $_SESSION['name']; ?></span>
+                zu stellen.
+            </div>
+        </div>
+        <div class="container">
             Bis wann soll der account gelöscht werden?
             <br><br>
             <select name="time_until_deletion" id="time_until_deletion">
