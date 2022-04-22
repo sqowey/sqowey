@@ -199,3 +199,20 @@ li i {
     background-color: #eff1d0;
     color: #2f2f2f;
 }
+
+#pw_change {
+    margin-top: 0.5rem;
+    display: none;
+    background-color: #383e42;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#pw_change input {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 0;
+    background-color: #2f2f2f;
+    margin-top: 0.25rem;
+    width: calc(100% - 1rem);
+}
