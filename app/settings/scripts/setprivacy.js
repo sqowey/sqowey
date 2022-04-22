@@ -40,9 +40,9 @@ function push_privacy() {
         privacy_friends = privacy_friends.toString();
 
 
-        // Send the status to "./scripts/changeprivacy.php" 
+        // Send the status to "./scripts/setprivacy.php" 
         $.ajax({
-            url: "./scripts/changeprivacy.php",
+            url: "./scripts/setprivacy.php",
             type: "POST",
             data: {
                 privacy_messages: privacy_messages,
