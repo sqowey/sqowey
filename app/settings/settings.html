@@ -282,16 +282,16 @@
                 <h1>Privatsphäre</h1>
                 <div class="settings_details">
                     <h3>Direktnachrichten</h3>
-                    <button class="settings_button button_active" onclick="switch_button(this);" id="privacy_server_dms">Direktnachrichten von Freunden erlauben</button>
+                    <button class="settings_button button_active" onclick="switch_button(this);push_privacy();" id="privacy_server_dms">Direktnachrichten von Freunden erlauben</button>
                     <br>
                     <br>
-                    <button class="settings_button button_active" onclick="switch_button(this);" id="privacy_all_dms">Direktnachrichten von allen erlauben</button>
+                    <button class="settings_button button_active" onclick="switch_button(this);push_privacy();" id="privacy_all_dms">Direktnachrichten von allen erlauben</button>
                     <br>
                     <h3>Freundschaftsanfragen</h3>
-                    <button class="settings_button button_active" onclick="switch_button(this);" id="privacy_server_friends">Freundschaftsanfragen von servermitgliedern erlauben</button>
+                    <button class="settings_button button_active" onclick="switch_button(this);push_privacy();" id="privacy_server_friends">Freundschaftsanfragen von servermitgliedern erlauben</button>
                     <br>
                     <br>
-                    <button class="settings_button button_active" onclick="switch_button(this);" id="privacy_all_friends">Freundschaftsanfragen von allen erlauben</button>
+                    <button class="settings_button button_active" onclick="switch_button(this);push_privacy();" id="privacy_all_friends">Freundschaftsanfragen von allen erlauben</button>
                     <br>
                 </div>
             </div>
@@ -353,6 +353,7 @@
     </div>
 
     <script src="./settings_script.js"></script>
+    <script src="./scripts/setprivacy.js"></script>
 
     <!-- Get the ajax library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
