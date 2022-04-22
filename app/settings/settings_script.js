@@ -40,7 +40,9 @@ name_element.addEventListener("click", function() {
 });
 
 
-// Function to switch the button colors
+// 
+// Privacy functions
+// 
 function switch_button(lmnt) {
 
     // Get the class list of the button
@@ -110,6 +112,11 @@ function switch_button(lmnt) {
         }
     }
 }
+
+
+// 
+// Security settings
+// 
 
 // Password change
 function open_pw_change() {
