@@ -144,8 +144,8 @@ li i {
     cursor: pointer;
 }
 
-.language_button:last-child {
-    text-decoration: line-through;
+.active_language {
+    background-color: #3b468a;
 }
 
 #links img {
