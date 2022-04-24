@@ -29,7 +29,7 @@ user_element.addEventListener("mouseover", function() {
 user_element.addEventListener("mouseout", function() {
 
     // Change the text of the element
-    name_element.innerHTML = '<?PHP echo $name; ?>';
+    name_element.innerHTML = 'muster';
 });
 
 name_element.addEventListener("click", function() {
