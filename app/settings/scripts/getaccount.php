@@ -38,6 +38,12 @@
         // Return the data
         echo "DATA:".json_encode(array('username' => $username, 'email' => $email, 'phone' => $phone, 'avatar' => $avatar));
 
+        // Store the data in the session
+        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
+        $_SESSION['phone'] = $phone;
+        $_SESSION['avatar'] = $avatar;
+
         // Close the connection
         $con->close();
     

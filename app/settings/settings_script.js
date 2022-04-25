@@ -44,6 +44,40 @@ name_element.addEventListener("click", function() {
 // 
 
 // 
+// Account settings
+// 
+
+function editFormAccounts() {
+
+    // Turn displaying for "account_settings_change" off
+    document.getElementById("account_settings_change").style.display = "none";
+
+    // Turn displaying for "account_settings_submit" on
+    document.getElementById("account_settings_submit").style.display = "block";
+
+    // Get all form elements with class="account_form_inputs" and enable them
+    var form_elements = document.getElementsByClassName("account_form_inputs");
+    for (var i = 0; i < form_elements.length; i++) {
+        form_elements[i].disabled = false;
+    }
+}
+
+function resetFormAccounts() {
+
+    // Turn displaying for "account_settings_change" on
+    document.getElementById("account_settings_change").style.display = "block";
+
+    // Turn displaying for "account_settings_submit" off
+    document.getElementById("account_settings_submit").style.display = "none";
+
+    // Get all form elements with class="account_form_inputs" and disable them
+    var form_elements = document.getElementsByClassName("account_form_inputs");
+    for (var i = 0; i < form_elements.length; i++) {
+        form_elements[i].disabled = true;
+    }
+}
+
+// 
 // Security settings
 // 
 
