@@ -129,3 +129,13 @@ function open_pw_change() {
         document.getElementById("pw_change").style.display = "none";
     }
 }
+
+// 
+// Infos
+// 
+
+function open_changelogs() {
+
+    // Open the changelogs in a new tab
+    window.open("../changelogs/", "_blank");
+}
