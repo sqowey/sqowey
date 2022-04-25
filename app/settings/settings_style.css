@@ -113,11 +113,14 @@ li i {
     padding-top: 0.1px;
 }
 
-.settings_details>p {
+.settings_details>p,
+.settings_details form input {
     background-color: #383e42;
     color: #ffffff;
     padding: 0.5rem;
     border-radius: 1rem;
+    border: 0;
+    width: calc(100% - 1rem);
 }
 
 #account_settings_avatar {
