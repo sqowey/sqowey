@@ -129,6 +129,20 @@ li i {
     border-radius: 20%;
 }
 
+.form_submit {
+    background-color: #3b468a !important;
+    border: 0px !important;
+    color: #ffffff !important;
+    padding: 0.5rem !important;
+    border-radius: 0.5rem !important;
+    cursor: pointer !important;
+    width: 6rem !important;
+}
+
+#account_settings_submit {
+    display: none;
+}
+
 .warning_button {
     background-color: #dd0012;
     border: 0px;
