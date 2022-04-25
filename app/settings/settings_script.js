@@ -39,6 +39,26 @@ name_element.addEventListener("click", function() {
 
 });
 
+// 
+// Settings
+// 
+
+// 
+// Security settings
+// 
+
+// Password change
+function open_pw_change() {
+
+    if (document.getElementById("pw_change").style.display != "block") {
+
+        document.getElementById("pw_change").style.display = "block";
+    } else {
+
+        document.getElementById("pw_change").style.display = "none";
+    }
+}
+
 
 // 
 // Privacy functions
@@ -110,23 +130,6 @@ function switch_button(lmnt) {
                 switch_button(document.getElementById("privacy_server_friends"));
             }
         }
-    }
-}
-
-
-// 
-// Security settings
-// 
-
-// Password change
-function open_pw_change() {
-
-    if (document.getElementById("pw_change").style.display != "block") {
-
-        document.getElementById("pw_change").style.display = "block";
-    } else {
-
-        document.getElementById("pw_change").style.display = "none";
     }
 }
 
