@@ -88,3 +88,7 @@ ul h3 {
     border-radius: 0.5rem;
     background-color: #383e42;
 }
+
+.version_div h1 {
+    margin-left: 1rem;
+}
