@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+* {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    background-color: #484e52;
+    color: #ffffff;
+}
+
+.container {
+    background-color: #383e42;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    min-width: 650px;
+    width: min-content;
+    margin-top: 1rem;
+}
+
+select,
+input {
+    background-color: #484e52;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 0;
+}
+
+#password {
+    width: calc(100% - 1rem);
+}
+
+#warning,
+#warning i {
+    color: red;
+}
+
+#deletion_text {
+    font-size: 0.8rem;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+#account_info {
+    font-size: 0.8rem;
+}
+
+#account_name {
+    color: #ffccaa;
+}
+
+
+/* Error output */
+
+#errorOutput {
+    cursor: pointer;
+    background-color: #cc0605;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: fit-content;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    animation: animation_error 10s ease 0s 1 normal forwards;
+}
+
+@keyframes animation_error {
+    0% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: block;
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: none;
+    }
+}
+
+@keyframes animation_close_error {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
