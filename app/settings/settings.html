@@ -261,7 +261,19 @@
                     </form>
                     <button class="form_submit" id="account_settings_change" onclick="editFormAccounts();">Ändern</button>
                     <h3>Avatar</h3>
-                    <img id="account_settings_avatar" src="">
+                    <div class="avatar_container">
+                        <div class="avatar_image">
+                            <img id="account_settings_avatar" src="">
+                        </div>
+                        <form action="./scripts/setavatar.php" method="post" id="avatar_upload_form">
+                            <div class="avatar_upload">
+                                <div>
+                                    <input type="file" name="avatar" id="account_settings_avatar_file" accept="image/*">
+                                    <input class="form_submit" type="submit" value="Speichern" id="account_settings_avatar_submit">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div id="security">
@@ -374,6 +386,7 @@
     <script src="./scripts/setprivacy.js"></script>
     <script src="./scripts/setlanguage.js"></script>
     <script src="./scripts/setappearance.js"></script>
+    <script src="./scripts/setavatar.js"></script>
 </body>
 
 </html>

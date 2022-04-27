@@ -124,13 +124,60 @@ li i {
 }
 
 #account_settings_avatar {
-    width: 10rem;
-    height: 10rem;
+    width: 100%;
     border-radius: 20%;
 }
 
+.avatar_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "avatar_image avatar_upload";
+    width: 75%;
+}
+
+.avatar_image {
+    grid-area: avatar_image;
+}
+
+.avatar_upload {
+    grid-area: avatar_upload;
+}
+
+.avatar_upload {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar_upload div {
+    width: fit-content;
+    height: fit-content;
+}
+
+.avatar_upload input {
+    margin: auto;
+    cursor: pointer;
+}
+
+#avatar_upload_button {
+    background-color: #5b66aa;
+}
+
+#avatar_save_button {
+    background-color: #2f2f2f;
+}
+
+.active_avatar_upload {
+    background-color: #5b66aa !important;
+}
+
 .form_submit {
-    background-color: #3b468a !important;
+    background-color: #5b66aa !important;
     border: 0px !important;
     color: #ffffff !important;
     padding: 0.5rem !important;
@@ -162,7 +209,7 @@ li i {
 }
 
 .active_language {
-    background-color: #3b468a;
+    background-color: #5b66aa;
 }
 
 #links img {
@@ -171,7 +218,7 @@ li i {
 }
 
 #open_changelog_button {
-    background-color: #3b468a;
+    background-color: #5b66aa;
     border: 0px;
     color: #ffffff;
     padding: 0.5rem;
@@ -239,7 +286,7 @@ li i {
 
 #output_message_inner {
     cursor: pointer;
-    background-color: #3b468a;
+    background-color: #5b66aa;
     color: #ffffff;
     font-size: 1.5rem;
     width: fit-content;
