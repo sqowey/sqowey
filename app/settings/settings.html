@@ -265,10 +265,10 @@
                         <div class="avatar_image">
                             <img id="account_settings_avatar" src="">
                         </div>
-                        <form action="./scripts/setavatar.php" method="post" id="avatar_upload_form">
+                        <form action="./scripts/setavatar.php" method="post" id="avatar_upload_form" enctype="multipart/form-data">
                             <div class="avatar_upload">
                                 <div>
-                                    <input type="file" name="avatar" id="account_settings_avatar_file" accept="image/*">
+                                    <input type="file" name="avatar_upload" id="account_settings_avatar_file" accept="image/*">
                                     <input class="form_submit" type="submit" value="Speichern" id="account_settings_avatar_submit">
                                 </div>
                             </div>

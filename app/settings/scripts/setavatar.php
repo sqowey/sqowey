@@ -22,24 +22,40 @@
     $id = $_SESSION['id'];
 
     // The directory the avatars get uploaded to
-    $upload_dir = "../../files/avatars/";
+    $upload_dir = "../../../files/avatars/";
+    $upload_path = $upload_dir.$id.".".strtolower(pathinfo($_FILES["avatar_upload"]["name"],PATHINFO_EXTENSION));
+    $imageFileType = strtolower(pathinfo($upload_path,PATHINFO_EXTENSION));
+    
+    if(isset($_FILES["avatar_upload"])) {
+        $imagesize = getimagesize($_FILES["avatar_upload"]["tmp_name"]);
 
-    // get the avatar image
-    $avatar = $_POST['avatar'];
+        if ($imagesize == false) {
+            header("Location: ../../settings/settings.html?e=filetype");
+        } else {
 
-    // Generate a link to the avatar
-    $avatar_link = "../../files/avatars/" . $id . ".png";
+            // Check file size
+            if ($_FILES["avatar_upload"]["size"] > 800000) {
+                header("Location: ../../settings/settings.html?e=filesize");
+            } else {
 
-    // Update the avatar link in the database
-    if ($stmt = $con->prepare("UPDATE accounts SET avatar = ? WHERE id = ?")) {
+                // Allow certain file formats
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                    header("Location: ../../settings/settings.html?e=filetype");
+                } else {
 
-        // Bind the parameters
-        $stmt->bind_param("si", $avatar_link, $id);
+                    if (move_uploaded_file($_FILES["avatar_upload"]["tmp_name"], $upload_path)) {
+                        exit("JO!");
+                    } else {
+                        exit("Error".$upload_path);
+                        header("Location: ../../settings/settings.html?e=couldntupload");
+                    }
+                }
+            }
+        }
+    
+    } else {
 
-        // Execute the statement
-        $stmt->execute();
-
-        // Close the statement
-        $stmt->close();
+        header("Location: ../../settings/settings.html?m=error");
     }
+
 ?>
