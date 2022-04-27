@@ -5,7 +5,14 @@
 // Get the url
 var url = window.location.href;
 
-// Check if there is an ?c= in the url
+// Error messages
+const error_messages = {
+    "filesize": "The file is too big. Max file size is 5MB.",
+    "filetype": "The file type is not supported.",
+    "couldntupload": "Could not upload the file. <br>Please try again later.",
+}
+
+// Check if there is an ?m= in the url
 if (url.indexOf("?m=") > -1) {
 
     // Split out the code
@@ -20,6 +27,23 @@ if (url.indexOf("?m=") > -1) {
     console.log(message);
 
     document.getElementById("output_message").innerHTML = "<div id='output_message_inner'>" + message + "</div>";
+}
+
+// Check if there is an ?e= in the url
+if (url.indexOf("?e=") > -1) {
+
+    // Split out the code
+    var code = url.split('?e=')[1];
+    code = code.split('&')[0];
+
+    // Check if there is a message
+    if (code) {
+        var message = error_messages[code];
+    }
+
+    console.log(message);
+
+    document.getElementById("output_message").innerHTML = "<div id='error_message_inner'>" + message + "</div>";
 }
 
 document.getElementById("output_message").addEventListener("click", function() {
