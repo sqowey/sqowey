@@ -298,6 +298,20 @@ li i {
     animation: animation_error 10s ease 0s 1 normal forwards;
 }
 
+#error_message_inner {
+    cursor: pointer;
+    background-color: #dd0012;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: fit-content;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    animation: animation_error 10s ease 0s 1 normal forwards;
+}
+
 @keyframes animation_error {
     0% {
         opacity: 0;
