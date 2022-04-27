@@ -44,7 +44,7 @@
                 } else {
 
                     if (move_uploaded_file($_FILES["avatar_upload"]["tmp_name"], $upload_path)) {
-                        exit("JO!");
+                        header("Location: ../../settings/settings.html?m=success");
                     } else {
                         exit("Error".$upload_path);
                         header("Location: ../../settings/settings.html?e=couldntupload");
