@@ -7,7 +7,7 @@
     require("../../config.php");
     
     // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
 
     // Check connection
     if (!$con) {
