@@ -1,17 +1,15 @@
 <!-- This is the File used to authenticate the user at login -->
 
 <?php
-    // Variables with the login-credentials
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'accounts';
 
     // Start the PHP_session
     session_start();
-
+    
+    // Get the database login-credentials
+    require("config.php");
+    
     // Try to Connect with credentials
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    $con = mysqli_connect($db_host, $db_user, $db_user, 'accounts');
 
     // If there is an error whilst connecting, stop and display it
     if ( mysqli_connect_errno() ) {
