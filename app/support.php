@@ -4,7 +4,7 @@
   require("config.php");
 
   // Try to Connect with credentials
-  $con = mysqli_connect($db_host, $db_user, $db_user, 'sqowey');
+  $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
 
   // Get the form values
   $errorcode = $_POST["errorcode"];

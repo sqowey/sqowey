@@ -7,7 +7,7 @@
     require("config.php");
     
     // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_user, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
     
     // Prepare the SQL
     if ($stmt = $con->prepare('SELECT status FROM settings WHERE user_id = ?')) {
