@@ -12,7 +12,7 @@
     require("config.php");
     
     // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_user, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // check if the connection was successfull
     if (mysqli_connect_errno()) {

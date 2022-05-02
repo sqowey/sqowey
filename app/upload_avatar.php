@@ -6,7 +6,7 @@ session_start();
 require("config.php");
 
 // Try to Connect with credentials
-$con = mysqli_connect($db_host, $db_user, $db_user, 'accounts');
+$con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
 // Check connection
 if ($con->connect_error) {
