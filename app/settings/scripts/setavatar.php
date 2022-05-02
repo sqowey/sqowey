@@ -1,20 +1,7 @@
 <?php 
     // Start the PHP_session
     session_start();
-
-    // Get the database login-credentials
-    require("../../config.php");
-
-    // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
-
-    // Check connection
-    if ($con->connect_error) {
-
-        // exit the script and show error
-        die("Connection failed: " . $con->connect_error);
-    }
-
+    
     // get the user id
     $id = $_SESSION['id'];
 
