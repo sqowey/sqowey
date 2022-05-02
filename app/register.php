@@ -3,16 +3,19 @@
     // Standart image variable
     $standart_imgs_folder = "../files/avatars/standart/";
 
+    // Database credentials
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'accounts';
+
     // Default settings
     $DEFAULT_privacy = 0;
     $DEFAULT_language = 'de';
     $DEFAULT_status = 2;
 
-    // Get the database login-credentials
-    require("config.php");
-    
-    // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
+    // Connect with the Credentials
+    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
     // check if the connection was successfull
     if (mysqli_connect_errno()) {
@@ -117,6 +120,28 @@
 
         } else {
 
+                // Check if account(s) with that email exist
+                if($stmt = $con -> prepare('SELECT id FROM accounts WHERE email = ?')){
+
+                    // Bind parameters
+                    $stmt->bind_param('s', $_POST['email']);
+                    $stmt->execute();
+                    $stmt->store_result();
+    
+                    // Check if there are at last 3 accounts with that email
+                    if ($stmt->num_rows > 2) {
+
+                        // Log the error
+                        error_log("Error(109)-E-Mail:".$_POST['email']."|Username:".$_POST['username']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+        
+                        // Email exists already
+                        header('Location: register.html?c=08');
+
+                        // Beende das script
+                        exit();
+                    }
+                        
+
             // Username doesnt exists, insert new account
             if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, avatar) VALUES (?, ?, ?, ?)')) {
                 // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
@@ -170,9 +195,7 @@
                 exit();
             }
         }
-
-        // close the dabase connection
-        $stmt->close();
+    }
     } else {
 
         // The error log procedure for an error with the database connection
