@@ -7,7 +7,7 @@ code_messages_en = {
     "05": "No user with that email exists",
     "06": "No user with that username exists",
     "07": "Supportticket<br>created",
-    "08": "EMail changed",
+    "08": "There are too many accounts with that email",
     "09": "Password changed",
     "10": "Username changed",
     "11": "Avatar changed",
