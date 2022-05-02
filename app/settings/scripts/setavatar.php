@@ -2,14 +2,11 @@
     // Start the PHP_session
     session_start();
 
-    // Database login credentials
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "accounts";
+    // Get the database login-credentials
+    require("../../config.php");
 
-    // Create connection
-    $con = new mysqli($servername, $username, $password, $dbname);
+    // Try to Connect with credentials
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // Check connection
     if ($con->connect_error) {
