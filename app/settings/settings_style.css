@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+* {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+    background-color: #484e52;
+    color: #ffffff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 15% 85%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "user settings" "tabs settings";
+    height: 100%;
+    width: 100%;
+}
+
+.user {
+    grid-area: user;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "icon name" "icon email";
+    margin-left: 0.5rem;
+}
+
+.icon {
+    grid-area: icon;
+    margin: auto;
+}
+
+.icon * {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.name {
+    grid-area: name;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+.email {
+    grid-area: email;
+    font-size: 80%;
+}
+
+.tabs {
+    grid-area: tabs;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0.5em;
+}
+
+li {
+    padding: 1rem;
+    margin: 0.1em;
+    border-radius: 1rem;
+}
+
+li:hover {
+    background-color: #484e52;
+    cursor: pointer;
+}
+
+li i {
+    margin-right: 1.5em;
+}
+
+.settings {
+    grid-area: settings;
+    font-size: 0.75rem;
+    margin-left: 1rem;
+    background-color: #383e42;
+    padding-left: 2.5rem;
+    padding-bottom: 1rem;
+    height: max-content;
+}
+
+.settings a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.settings>div {
+    margin-top: 5em;
+}
+
+.settings_details {
+    background-color: #484e52;
+    min-width: 650px;
+    width: min-content;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-top: 0.1px;
+}
+
+.settings_details>p,
+.settings_details form input {
+    background-color: #383e42;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 0;
+    width: calc(100% - 1rem);
+}
+
+#account_settings_avatar {
+    width: 100%;
+    border-radius: 20%;
+}
+
+.avatar_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: "avatar_image avatar_upload";
+    width: 75%;
+}
+
+.avatar_image {
+    grid-area: avatar_image;
+}
+
+.avatar_upload {
+    grid-area: avatar_upload;
+}
+
+.avatar_upload {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar_upload div {
+    width: fit-content;
+    height: fit-content;
+}
+
+.avatar_upload input {
+    margin: auto;
+    cursor: pointer;
+}
+
+#avatar_upload_button {
+    background-color: #5b66aa;
+}
+
+#avatar_save_button {
+    background-color: #2f2f2f;
+}
+
+.active_avatar_upload {
+    background-color: #5b66aa !important;
+}
+
+.form_submit {
+    background-color: #5b66aa !important;
+    border: 0px !important;
+    color: #ffffff !important;
+    padding: 0.5rem !important;
+    border-radius: 0.5rem !important;
+    cursor: pointer !important;
+    width: 6rem !important;
+}
+
+#account_settings_submit {
+    display: none;
+}
+
+.warning_button {
+    background-color: #dd0012;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.language_button {
+    background-color: #383e42;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.active_language {
+    background-color: #5b66aa;
+}
+
+#links img {
+    border-radius: 1em;
+    margin: 0.5em;
+}
+
+#open_changelog_button {
+    background-color: #5b66aa;
+    border: 0px;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.settings_button {
+    border: 0px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button_active {
+    background-color: #5b66aa;
+    color: #ffffff;
+}
+
+.button_inactive {
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
+
+.appearance_theme_button {
+    border: 0;
+    padding: 1.55rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 55%;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.theme_button_dark {
+    background-color: #2f2f2f;
+}
+
+.theme_button_light {
+    background-color: #eff1d0;
+    color: #2f2f2f;
+}
+
+#pw_change {
+    margin-top: 0.5rem;
+    display: none;
+    background-color: #383e42;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+#pw_change input {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 0;
+    background-color: #2f2f2f;
+    margin-top: 0.25rem;
+    width: calc(100% - 1rem);
+}
+
+
+/* Error output */
+
+#output_message_inner {
+    cursor: pointer;
+    background-color: #5b66aa;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: fit-content;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    animation: animation_error 10s ease 0s 1 normal forwards;
+}
+
+#error_message_inner {
+    cursor: pointer;
+    background-color: #dd0012;
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: fit-content;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    animation: animation_error 10s ease 0s 1 normal forwards;
+}
+
+@keyframes animation_error {
+    0% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: block;
+    }
+    5% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(5rem);
+        display: none;
+    }
+}
+
+@keyframes animation_close_error {
+    0% {
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
