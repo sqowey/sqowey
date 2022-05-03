@@ -39,7 +39,7 @@
                 <span onclick='window.location.assign("register.html")'>Registrieren</span>
 
                 <!-- Password field -->
-                <span onclick='window.location.assign("help.html")'>Hilfe</span>
+                <span onclick='window.location.assign("../help.html")'>Hilfe</span>
             </div>
         </div>
 
