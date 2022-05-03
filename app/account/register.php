@@ -1,7 +1,7 @@
 <?php
 
     // Standart image variable
-    $standart_imgs_folder = "../files/avatars/standart/";
+    $standart_imgs_folder = "../../files/avatars/standart/";
 
     // Database credentials
     $DATABASE_HOST = 'localhost';

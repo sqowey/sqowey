@@ -34,8 +34,8 @@ user_element.addEventListener("mouseout", function() {
 
 name_element.addEventListener("click", function() {
 
-    // Change the text of the element
-    window.location.href = 'logout.php';
+    // Redirect to logout
+    window.location.href = '../account/logout.php';
 
 });
 
