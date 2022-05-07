@@ -51,6 +51,6 @@ document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && event.key == "s") {
         window.location.href = "settings.php";
     } else if (event.ctrlKey && event.key == "l") {
-        window.location.href = "logout.php";
+        window.location.href = "./account/logout.php";
     }
 });
