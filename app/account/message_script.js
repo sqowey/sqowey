@@ -3,10 +3,13 @@ code_messages_en = {
     "00": "Success",
     "01": "This email<br>is invalid",
     "02": "This username<br>is invalid",
-    "03": "Username length<br>must be between<br>4 and 20 characters",
+    "03": "Username length<br>must be between<br>4 and 12 characters",
     "04": "Password is<br>invalid",
     "11": "Username already taken",
     "12": "Email already taken too many times",
+    "13": "Account created<br>You can login now",
+    "21": "Both passwords must match",
+    "98": "Database error",
     "99": "ERROR"
 };
 
