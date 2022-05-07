@@ -8,6 +8,7 @@ code_messages_en = {
     "11": "Username already taken",
     "12": "Email already taken too many times",
     "13": "Account created<br>You can login now",
+    "14": "Username or<br>password invalid",
     "21": "Both passwords must match",
     "98": "Database error",
     "99": "ERROR"
