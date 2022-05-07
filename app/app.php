@@ -3,7 +3,7 @@
 	session_start();
 	// If the user is not logged in redirect to the index-page
 	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])) {
-		header('Location: index.html');
+		header('Location: ./account/index.html');
 		exit;
 	}
 ?>
