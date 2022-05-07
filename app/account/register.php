@@ -1,209 +1,96 @@
 <?php
 
-    // Standart image variable
-    $standart_imgs_folder = "../../files/avatars/standart/";
+    // Start the PHP_session
+    session_start();
 
-    // Database credentials
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'accounts';
+    // Variables
+    $current_account_version = 2;
+    $db_config = require('../config.php');
 
-    // Default settings
-    $DEFAULT_privacy = 0;
-    $DEFAULT_language = 'de';
-    $DEFAULT_status = 2;
+    // Get input
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password_repeat = $_POST['password_repeat'];
 
-    // Connect with the Credentials
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    // Check if both passwords are the same
+    if ($password != $password_repeat) {
+        header("Location: register.html?c=21");
+        exit;
+    } else {
 
-    // check if the connection was successfull
-    if (mysqli_connect_errno()) {
-
-        // Log the error
-        error_log("Error(101)-".mysqli_connect_error(),0);
-        exit("Error(101)-".mysqli_connect_error());
-
-        // Display an error.
-        header('Location: register.html?c=01');
-        exit();
-    }
-
-    // check if the data was submitted
-    if (!isset($_POST['username'], $_POST['password'], $_POST['email'])) {
-
-        // Log the error
-        error_log("Error(102)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-
-        // Could not get the data that should have been sent.
-        header('Location: register.html?c=02');
-
-        // Beende das script
-        exit();
-    }
-
-    // check if values are empty.
-    if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
-
-        // Log the error
-        error_log("Error(103)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-
-        // One or more values are empty.
-        header('Location: register.html?c=02');
-
-        // Beende das script
-        exit();
-    }
-
-    // 
-    // Validate all inputs
-    // 
-
-    // if the mail is not real
-    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-
-        // Log the error
-        error_log("Error(104)-E-Mail:".$_POST['email'],0);
-
-        // Show error
-        header('Location: register.html?c=04');
-
-        // Beende das script
-        exit();
-    }
-
-    // check if the username is valid
-    if (!preg_match('/^[a-zA-Z0-9_]{3,18}$/', $_POST['username'])) {
-
-        // Log the error
-        error_log("Error(105)-Username:".$_POST['username'],0);
-
-        // Show error
-        header('Location: register.html?c=12');
-
-        // Beende das script
-        exit();
-    }
-
-    // if password doesn't have the right length
-    if (strlen($_POST['password']) > 50 || strlen($_POST['password']) < 8) {
-
-        // Log the error
-        error_log("Error(107)-Passwort:".$_POST['username'],0);    
-
-        // Show error
-        header('Location: register.html?c=05');
-
-        // Beende das script
-        exit();
-    }
-
-    // Check if the account with that username exists
-    if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
-
-        // Bind parameters
-        $stmt->bind_param('s', $_POST['username']);
-        $stmt->execute();
-        $stmt->store_result();
-
-        // Check if there is already an account with that username
-        if ($stmt->num_rows > 0) {
-
-            // Log the error
-            error_log("Error(108)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-    
-            // Username exists already
-            header('Location: register.html?c=05');
-
-            // Beende das script
-            exit();
-
+        // Check if email is a valid email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            header("Location: register.html?c=01");
+            exit;
         } else {
 
-                // Check if account(s) with that email exist
-                if($stmt = $con -> prepare('SELECT id FROM accounts WHERE email = ?')){
+            // Check if username is valid
+            // Only a-z | A-Z | 0-9 | _
+            // Length: 4-12
+            if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $username)) {
+                header("Location: register.html?c=02");
+                exit;
+            } else {
 
-                    // Bind parameters
-                    $stmt->bind_param('s', $_POST['email']);
-                    $stmt->execute();
-                    $stmt->store_result();
-    
-                    // Check if there are at last 3 accounts with that email
-                    if ($stmt->num_rows > 2) {
-
-                        // Log the error
-                        error_log("Error(109)-E-Mail:".$_POST['email']."|Username:".$_POST['username']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-        
-                        // Email exists already
-                        header('Location: register.html?c=08');
-
-                        // Beende das script
-                        exit();
-                    }
-                        
-
-            // Username doesnt exists, insert new account
-            if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email, avatar) VALUES (?, ?, ?, ?)')) {
-                // We do not want to expose passwords in our database, so hash the password and use password_verify when a user logs in.
-
-                // Choose a random image 
-                $random_img = $standart_imgs_folder.rand(1,8).".png";
-
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                $stmt->bind_param('ssss', $_POST['username'], $password, $_POST['email'], $random_img);
-                $stmt->execute();
-
-
-                // get the insert_id of the last inserted row
-                $insert_id = $con->insert_id;
-
-                // Prepare statement to create the entry in the settings table
-                if($stmt = $con->prepare('INSERT INTO settings (user_id, privacy_statistics, privacy_enhance, privacy_ads, language, status) VALUES (?, ?, ?, ?, ?)')){
-
-                    // Set the default settings
-                    $stmt->bind_param('iiiis', $insert_id, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_privacy, $DEFAULT_language, $DEFAULT_status);
-                    $stmt->execute();
-
-                    // Log the success
-                    error_log("Success(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-
-                    // Show success
-                    header('Location: register.html?success=Erfolgreich registriert');
-
-                    // Beende das script
-                    exit();
-
+                // Check if password is valid
+                // Length: 8-255
+                // Contains at least one number, at least one uppercase, at least one lowercase letter and at least one special character
+                if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,255}$/", $password)) {
+                    header("Location: register.html?c=04");
+                    exit;
                 } else {
 
-                    // Log the error
-                    error_log("Error(110)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
+                    // Conect to database
+                    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
+                    if (mysqli_connect_errno()) {
+                        header("Location: register.html?c=98");
+                        exit;
+                    } else {
 
-                    // Show error
-                    header('Location: register.html?c=01');
+                        // Check if username is already taken
+                        $stmt = $con->prepare("SELECT * FROM accounts WHERE username = ?");
+                        $stmt->bind_param('s', $username);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        if ($result->num_rows > 0) {
+                            header("Location: register.html?c=11");
+                            exit;
+                        } else {
 
-                    // Beende das script
-                    exit();
+                            // Check if email is already taken
+                            $stmt = $con->prepare("SELECT * FROM accounts WHERE email = ?");
+                            $stmt->bind_param('s', $email);
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            if ($result->num_rows > 2) {
+                                header("Location: register.html?c=12");
+                                exit;
+                            } else {
+                                
+                                // Create a salt
+                                $salt = bin2hex(openssl_random_pseudo_bytes(32));
+                                $pw_with_salt = $salt . $password;
+
+                                // Hash the password
+                                $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
+
+                                // Insert the user into the database
+                                $stmt = $con->prepare("INSERT INTO accounts (username, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?)");
+                                $stmt->bind_param('ssssi', $username, $email, $hashed_pw, $salt, $current_account_version);
+                                $stmt->execute();
+
+                                // Close the connection
+                                $stmt->close();
+                                $con->close();
+
+                                // Redirect to login page
+                                header("Location: login.html?c=13");
+                            }
+                        }
+                    }
                 }
-            } else {
-                // Something is wrong with the sql statement, make sure accounts table exists with all 3 fields.
-
-                // Log the error
-                error_log("Error(109)-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".password_hash($_POST['password'], PASSWORD_DEFAULT),0);
-
-                // Username exists already
-                header('Location: register.html?c=01');
-                exit();
             }
         }
     }
-    } else {
-
-        // The error log procedure for an error with the database connection
-        error_log("Error()-Username:".$_POST['username']."|E-Mail:".$_POST['email']."|Passworthash:".$password,0);
-        header('Location: register.html?c=01');
-        exit();
-    }
-
-    // close the database connection
-    $con->close();
 ?>

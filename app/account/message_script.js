@@ -1,19 +1,16 @@
 // The messages that refer to the codes
 code_messages_en = {
     "00": "Success",
-    "01": "Error with<br>the Database",
-    "02": "Please fill in<br>all the fields",
-    "04": "No user with that password exists",
-    "05": "No user with that email exists",
-    "06": "No user with that username exists",
-    "07": "Supportticket<br>created",
-    "08": "There are too many accounts with that email",
-    "09": "Password changed",
-    "10": "Username changed",
-    "11": "Avatar changed",
-    "12": "username not valid",
-    "13": "password not valid",
-    "14": "EMail not valid"
+    "01": "This email<br>is invalid",
+    "02": "This username<br>is invalid",
+    "03": "Username length<br>must be between<br>4 and 12 characters",
+    "04": "Password is<br>invalid",
+    "11": "Username already taken",
+    "12": "Email already taken too many times",
+    "13": "Account created<br>You can login now",
+    "21": "Both passwords must match",
+    "98": "Database error",
+    "99": "ERROR"
 };
 
 
