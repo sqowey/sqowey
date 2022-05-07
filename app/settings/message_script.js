@@ -10,6 +10,9 @@ const error_messages = {
     "filesize": "The file is too big. Max file size is 5MB.",
     "filetype": "The file type is not supported.",
     "couldntupload": "Could not upload the file. <br>Please try again later.",
+    "wrongoldpass": "The old password is wrong.",
+    "wrongnewpass": "The new passwords are not the same.",
+    "invalidpass": "New password doesn't meet the requirements."
 }
 
 // Check if there is an ?m= in the url
