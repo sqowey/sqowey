@@ -4,13 +4,13 @@
 	session_start();
 
     // Get the database login-credentials
-    require("config.php");
+    $db_config = require('../config.php');
     
     // Try to Connect with credentials
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
     
     // Prepare the SQL
-    if ($stmt = $con->prepare('SELECT status FROM settings WHERE user_id = ?')) {
+    if ($stmt = $con->prepare('SELECT status FROM activity WHERE user_id = ?')) {
 
         // Bind parameters (s = string, i = int, b = blob, etc)
         $stmt->bind_param('s', $_SESSION['id']);
