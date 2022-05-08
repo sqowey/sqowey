@@ -10,7 +10,7 @@
     $status = $_POST['status'];
 
     // Connect with the Credentials
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // check if the connection was successfull
     if (mysqli_connect_errno()) {
