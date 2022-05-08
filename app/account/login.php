@@ -50,6 +50,7 @@
                 $_SESSION['id'] = $id;
                 $_SESSION['name'] = $username;
                 $_SESSION['email'] = $email;
+                $_SESSION['loggedin'] = true;
 
                 // Redirect to app
                 header("Location: ../app.php");
