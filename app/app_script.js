@@ -22,7 +22,7 @@ function changeStatus(status) {
 
     // Send the status to ajax "setStatus.php" 
     $.ajax({
-        url: "setStatus.php",
+        url: "./scripts/setStatus.php",
         type: "POST",
         data: {
             status: status
