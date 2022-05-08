@@ -6,7 +6,7 @@
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         // Redirect to app
-        header('Location: ../app.php');
+        header('Location: ./app.php');
 
         // Exit script
         exit();
@@ -14,7 +14,7 @@
     } else {
 
         // Redirect to login
-        header('Location: ../account/index.html');
+        header('Location: ./account/index.php');
 
         // Exit script
         exit();
