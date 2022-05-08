@@ -174,7 +174,7 @@ function switch_button(lmnt) {
 function open_changelogs() {
 
     // Open the changelogs in a new tab
-    window.open("../changelogs/", "_blank");
+    window.open("../../misc/changelogs/index.html", "_blank");
 }
 
 // 
