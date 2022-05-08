@@ -22,7 +22,7 @@ function changeStatus(status) {
 
     // Send the status to ajax "setStatus.php" 
     $.ajax({
-        url: "setStatus.php",
+        url: "./scripts/setStatus.php",
         type: "POST",
         data: {
             status: status
@@ -35,7 +35,7 @@ function changeStatus(status) {
 
 function init_status() {
     $.ajax({
-        url: "getStatus.php",
+        url: "./scripts/getStatus.php",
         type: "GET",
         success: function(data) {
             changeStatus(data);
