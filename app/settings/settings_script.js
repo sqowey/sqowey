@@ -183,3 +183,12 @@ function open_changelogs() {
 function closeSettings() {
     window.location.assign("../index.php");
 }
+
+// On escape key press
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        window.setTimeout(() => {
+            window.location.replace("../index.php");
+        }, 1);
+    }
+});
