@@ -14,7 +14,7 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // Get the salt and the password hash from the database
-    $stmt = $con->prepare("SELECT salt, password_hash, account_version FROM accounts WHERE id = ?");
+    $stmt = $con->prepare("SELECT salt, password, account_version FROM accounts WHERE id = ?");
     $stmt->bind_param('i', $_SESSION['id']);
     $stmt->execute();
     $stmt->store_result();
@@ -59,7 +59,7 @@
                 $new_pw_hash = password_hash($new_pw, PASSWORD_DEFAULT);
 
                 // Update the password
-                $stmt = $con->prepare("UPDATE accounts SET password_hash = ?, salt = ?, account_version = 2 WHERE id = ?");
+                $stmt = $con->prepare("UPDATE accounts SET password = ?, salt = ?, account_version = 2 WHERE id = ?");
                 $stmt->bind_param('ssi', $new_pw_hash, $salt, $_SESSION['id']);
                 $stmt->execute();
 

@@ -28,7 +28,7 @@
         } else {
 
             // Get id, salt and password hash from database
-            $stmt = $con->prepare("SELECT id, salt, password_hash, email, account_version FROM accounts WHERE username = ?");
+            $stmt = $con->prepare("SELECT id, salt, password, email, account_version FROM accounts WHERE username = ?");
             $stmt->bind_param('s', $username);
             $stmt->execute();
             $stmt->store_result();
