@@ -4,13 +4,13 @@
     session_start();
 
     // The database credentials
-    require('../config.php');
+    $db_config = require('../config.php');
 
     // Get status from post
     $status = $_POST['status'];
 
     // Connect with the Credentials
-    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
 
     // check if the connection was successfull
     if (mysqli_connect_errno()) {
@@ -31,7 +31,7 @@
     }
 
     // Insert the data into the database
-    if($stmt = $con->prepare('UPDATE settings SET status = ? WHERE user_id = ?')) {
+    if($stmt = $con->prepare('UPDATE activity SET status = ? WHERE user_id = ?')) {
 
         // Bind the variables
         $stmt->bind_param('ii', $status_id, $_SESSION['id']);
