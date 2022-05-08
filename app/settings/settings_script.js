@@ -176,3 +176,19 @@ function open_changelogs() {
     // Open the changelogs in a new tab
     window.open("../changelogs/", "_blank");
 }
+
+// 
+// Close settings
+//
+function closeSettings() {
+    window.location.assign("../index.php");
+}
+
+// On escape key press
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        window.setTimeout(() => {
+            window.location.replace("../index.php");
+        }, 1);
+    }
+});
