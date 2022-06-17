@@ -1,17 +1,13 @@
 <?php
 
-// Database credentials
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'sqowey';
-$DATABASE_TABLE = 'messages';
-
 // Start the PHP_session
 session_start();
 
-// Connect with the Credentials
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// Get the database login-credentials
+require("config.php");
+
+// Try to Connect with credentials
+$con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
 // check if the connection was successfull
 if (mysqli_connect_errno()) {

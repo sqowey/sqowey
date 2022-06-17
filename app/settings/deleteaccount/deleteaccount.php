@@ -12,15 +12,11 @@
 	// Start the session, to get the data
 	session_start();
 
-    // Variables with the login-credentials
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'accounts';
-    
+    // Get the database login-credentials
+    require("../../config.php");
     
     // Try to Connect with credentials
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // Prepare the SQL
     if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
@@ -43,6 +39,13 @@
                 // Add the deletion time to the database
                 if ($stmt = $con->prepare('UPDATE accounts SET delete_until = ? WHERE id = ?')) {
                     $stmt->bind_param('si', $time_until_deletion, $id);
+                    $stmt->execute();
+                }
+
+                // Insert the deletion time with the id into the tmp database
+                $tmp_con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey_tmp');
+                if ($stmt = $tmp_con->prepare('INSERT INTO accountdeletion (user_id, delete_until) VALUES (?, ?)')) {
+                    $stmt->bind_param('is', $id, $time_until_deletion);
                     $stmt->execute();
                 }
 

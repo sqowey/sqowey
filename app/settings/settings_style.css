@@ -17,6 +17,27 @@ body {
     color: #ffffff;
 }
 
+
+/* Close icon */
+
+.close-icon {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 0;
+}
+
+.close-icon i {
+    color: #5b66aa;
+}
+
+
+/* 
+Main container
+*/
+
 .container {
     display: grid;
     grid-template-columns: 25% 75%;
