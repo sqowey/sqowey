@@ -34,8 +34,8 @@ user_element.addEventListener("mouseout", function() {
 
 name_element.addEventListener("click", function() {
 
-    // Change the text of the element
-    window.location.href = 'logout.php';
+    // Redirect to logout
+    window.location.href = '../account/logout.php';
 
 });
 
@@ -174,5 +174,21 @@ function switch_button(lmnt) {
 function open_changelogs() {
 
     // Open the changelogs in a new tab
-    window.open("../changelogs/", "_blank");
+    window.open("../../misc/changelogs/index.html", "_blank");
 }
+
+// 
+// Close settings
+//
+function closeSettings() {
+    window.location.assign("../index.php");
+}
+
+// On escape key press
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+        window.setTimeout(() => {
+            window.location.replace("../index.php");
+        }, 1);
+    }
+});

@@ -80,6 +80,7 @@ ul h3 {
     width: min-content;
     min-width: 600px;
     border-radius: 1rem;
+    margin-bottom: 1rem;
 }
 
 .version_div p {

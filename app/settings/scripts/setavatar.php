@@ -1,23 +1,7 @@
 <?php 
     // Start the PHP_session
     session_start();
-
-    // Database login credentials
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "accounts";
-
-    // Create connection
-    $con = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($con->connect_error) {
-
-        // exit the script and show error
-        die("Connection failed: " . $con->connect_error);
-    }
-
+    
     // get the user id
     $id = $_SESSION['id'];
 

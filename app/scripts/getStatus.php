@@ -1,21 +1,16 @@
 <?php 
 
-
 	// Start the session, to get the data
 	session_start();
 
-    // Variables with the login-credentials
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'accounts';
-    
+    // Get the database login-credentials
+    $db_config = require('../config.php');
     
     // Try to Connect with credentials
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
     
     // Prepare the SQL
-    if ($stmt = $con->prepare('SELECT status FROM settings WHERE user_id = ?')) {
+    if ($stmt = $con->prepare('SELECT status FROM activity WHERE user_id = ?')) {
 
         // Bind parameters (s = string, i = int, b = blob, etc)
         $stmt->bind_param('s', $_SESSION['id']);
