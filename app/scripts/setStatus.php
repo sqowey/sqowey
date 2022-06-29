@@ -31,7 +31,7 @@
     }
 
     // Insert the data into the database
-    if($stmt = $con->prepare('UPDATE activity SET status = ? WHERE user_id = ?')) {
+    if($stmt = $con->prepare('UPDATE activities SET status = ? WHERE user_id = ?')) {
 
         // Bind the variables
         $stmt->bind_param('ii', $status_id, $_SESSION['id']);
