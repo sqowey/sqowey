@@ -45,22 +45,6 @@ body {
 }
 
 
-/* Language switch */
-
-#languageButton {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-}
-
-.languageButtonImage {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    margin-right: 1rem;
-}
-
-
 /* Admin options */
 
 #adminButton {
