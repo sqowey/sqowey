@@ -154,6 +154,15 @@ form input[type="submit"] {
 }
 
 
+/* 
+Button on second/third page to get back
+*/
+
+#back {
+    color: #254674;
+}
+
+
 /* Title */
 
 #title {
