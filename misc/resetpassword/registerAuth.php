@@ -58,17 +58,6 @@ if ($stmt = $con->prepare('INSERT INTO '.$DATABASE_TABLE.' (username, usermail, 
     $_SESSION['pw_reset_username'] = $username;
     $_SESSION['pw_reset_usermail'] = $usermail;
 
-    // Include the accounts.json file
-    $accounts = file_get_contents('accounts.json');
-
-    // Decode the accounts.json file
-    $accounts = json_decode($accounts, true);
-
-    // Get $_POST data
-    // There are $username and $password
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
     // Redirect to page two
     header('Location: ./second_step.html');
 
