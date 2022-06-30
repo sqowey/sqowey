@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    $username = $_SESSION['pw_reset_username'];
+    $usermail= $_SESSION['pw_reset_usermail'];
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -23,8 +29,8 @@
         <h1>Passwort zurücksetzen</h1>
         <!-- The form that gets sent to the server -->
         <form id="pw_resetform_two" action="./pwreset.php" method="POST">
-            <input type="text" name="username" placeholder="Nutzername*" id="username" disabled>
-            <input type="text" name="mail" placeholder="E-Mail*" id="mail" disabled>
+            <input type="text" name="username" placeholder="Nutzername*" id="username" value="<?=$username?>" disabled>
+            <input type="text" name="mail" placeholder="E-Mail*" id="mail" value="<?=$usermail?>" disabled>
             <input type="text" name="code" placeholder="Verifikationscode*" id="code" required>
             <p>Falls E-Mail und nutzername übereinstimmen, wird dir in Kürze eine Mail mit Code geschickt, den du nach Empfang hier eingeben musst</p>
             <input type="submit" id="submit" value="Code Absenden"> <br>
