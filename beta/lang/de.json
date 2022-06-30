@@ -1,0 +1,10 @@
+{
+    "soon": "Kommt bald...",
+    "paragraph_one": "Sqowey ist ein Chat-Service, der auf Privatsphäre ausgelegt ist",
+    "paragraph_two": "Sqowey ist komplett open-source und kann auf <a href=\"https://github.com/sqowey/\" target=\"_blank\">GitHub</a> gefunden werden",
+    "footer": "Programmiert mit ❤️ von <a href=\"https://github.com/cuzimbisonratte\" target=\"_blank\">CuzImBisonratte</a>",
+    "adminHeader": "<h1>Sqowey - Weiterleitung</h1>",
+    "admin_choose_reminder": "Hier kannst du dich (zur Entwicklung) auf alle weiteren Seiten weiterleiten",
+    "admin_choose_button_close": "Doch nicht",
+    "admin_choose_button_home": "Startseite"
+}
