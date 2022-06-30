@@ -153,6 +153,10 @@ form input[type="submit"] {
     margin-bottom: 15px;
 }
 
+.disabled_form_field {
+    background-color: #bbbbbb;
+}
+
 
 /* 
 Button on second/third page to get back

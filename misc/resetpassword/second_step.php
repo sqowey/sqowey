@@ -29,8 +29,8 @@
         <h1>Passwort zurücksetzen</h1>
         <!-- The form that gets sent to the server -->
         <form id="pw_resetform_two" action="./pwreset.php" method="POST">
-            <input type="text" name="username" placeholder="Nutzername*" id="username" value="<?=$username?>" disabled>
-            <input type="text" name="mail" placeholder="E-Mail*" id="mail" value="<?=$usermail?>" disabled>
+            <input class="disabled_form_field" type="text" name="username" placeholder="Nutzername*" id="username" value="<?=$username?>" disabled>
+            <input class="disabled_form_field" type="text" name="mail" placeholder="E-Mail*" id="mail" value="<?=$usermail?>" disabled>
             <input type="text" name="code" placeholder="Verifikationscode*" id="code" required>
             <p>Falls E-Mail und nutzername übereinstimmen, wird dir in Kürze eine Mail mit Code geschickt, den du nach Empfang hier eingeben musst</p>
             <input type="submit" id="submit" value="Code Absenden"> <br>
