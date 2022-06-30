@@ -59,7 +59,7 @@ if ($stmt = $con->prepare('INSERT INTO '.$DATABASE_TABLE.' (username, usermail, 
     $_SESSION['pw_reset_usermail'] = $usermail;
 
     // Redirect to page two
-    header('Location: ./second_step.html');
+    header('Location: ./second_step.php');
 
     // Exit the script
     exit();
