@@ -32,6 +32,8 @@
             <input class="disabled_form_field" type="text" name="username" placeholder="Nutzername*" id="username" value="<?=$username?>" disabled>
             <input class="disabled_form_field" type="text" name="mail" placeholder="E-Mail*" id="mail" value="<?=$usermail?>" disabled>
             <input type="text" name="code" placeholder="Verifikationscode*" id="code" required>
+            <input type="password" name="new_password" placeholder="Neues Passwort*" id="code" required>
+            <input type="password" name="new_password_repeat" placeholder="Neues Passwort wiederholen*" id="code" required>
             <p>Falls E-Mail und nutzername übereinstimmen, wird dir in Kürze eine Mail mit Code geschickt, den du nach Empfang hier eingeben musst</p>
             <input type="submit" id="submit" value="Code Absenden"> <br>
             <a href="./index.html" id="back">Zurück zur Nutzerdateneingabe</a>

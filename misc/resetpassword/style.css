@@ -130,7 +130,7 @@ input {
     width: 92.5%;
 }
 
-form input[type="textarea"],
+form input[type="password"],
 form input[type="text"] {
     height: 50px;
     border: 1px solid #75a7a7;
