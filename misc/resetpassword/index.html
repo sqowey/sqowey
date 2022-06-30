@@ -22,13 +22,12 @@
     <div id="container">
         <h1>Passwort zurücksetzen</h1>
         <!-- The form that gets sent to the server -->
-        <form id="pw_resetform" onsubmit="openCodeInput();return false">
+        <form id="pw_resetform" action="./registerAuth.php" method="POST">
             <input type="text" name="username" placeholder="Nutzername*" id="username" required>
             <input type="text" name="mail" placeholder="E-Mail*" id="mail" required>
             <p>Dir wird ein Code per E-Mail geschickt, den du nach Empfang hier eingeben musst</p>
             <input type="submit" id="submit" value="Code Absenden">
         </form>
-
     </div>
     <script src="script.js"></script>
     <script src="themes.js"></script>
