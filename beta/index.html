@@ -17,10 +17,10 @@
             <div id="adminHeader">
                 <h1>Sqowey - Links</h1>
             </div>
-            <p>Here you can open other pages (Used for development).</p>
+            <p id="admin_choose_reminder">Here you can open other pages (Used for development).</p>
             <div class="admin_choose_container">
-                <div onclick="closeAdmin();" class="admin_no">Close this page</div>
-                <div onclick="window.location.href='../homepage';" class="admin_choose_1 admin_choose">Start page</div>
+                <div id="admin_choose_button_close" onclick="closeAdmin();" class="admin_no">Close this page</div>
+                <div id="admin_choose_button_home" onclick="window.location.href='../homepage';" class="admin_choose_1 admin_choose">Home page</div>
                 <div onclick="window.location.href='../app';" class="admin_choose_2 admin_choose">App</div>
                 <div onclick="window.location.href='https:\/\/www.github.com/sqowey';" class="admin_choose_3 admin_choose_extern">Github</div>
             </div>
@@ -62,6 +62,7 @@
     <!-- Load needed scripts -->
     <script src="./script.js"></script>
     <script src="./themes.js"></script>
+    <script src="./lang/langscript.js"></script>
 </body>
 
 </html>
