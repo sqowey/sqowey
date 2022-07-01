@@ -8,6 +8,7 @@
 
     // Get input
     $username = strtolower($_POST['username']);
+    $displayname = $_POST['username'];
     $password = $_POST['password'];
 
     // Conect to database
