@@ -31,7 +31,7 @@
         <div class="container">
             <div id="account_info">
                 Du bist dabei eine Löschungsanfrage für das Konto
-                <span id="account_name"><?php echo $_SESSION['name']; ?></span>
+                <span id="account_name"><?=$_SESSION['displayname']; ?></span>
                 zu stellen.
             </div>
         </div>

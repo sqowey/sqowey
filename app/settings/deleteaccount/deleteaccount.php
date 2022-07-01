@@ -22,7 +22,7 @@
     if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
 
         // Bind parameters (s = string, i = int, b = blob, etc)
-        $stmt->bind_param('s', $_SESSION['name']);
+        $stmt->bind_param('s', $_SESSION['username']);
         $stmt->execute();
 
         // Store the result so we can check if the account exists in the database.
