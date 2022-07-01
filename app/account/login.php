@@ -7,7 +7,7 @@
     $db_config = require('../config.php');
 
     // Get input
-    $username = $_POST['username'];
+    $username = strtolower($_POST['username']);
     $password = $_POST['password'];
 
     // Conect to database
@@ -48,7 +48,8 @@
 
                 // Set session variables
                 $_SESSION['id'] = $id;
-                $_SESSION['name'] = $username;
+                $_SESSION['username'] = $username;
+                $_SESSION['displayname'] = $displayname;
                 $_SESSION['email'] = $email;
                 $_SESSION['loggedin'] = true;
 
