@@ -2,7 +2,7 @@
 	// Start the session, to get the data
 	session_start();
 	// If the user is not logged in redirect to the index-page
-	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])) {
+	if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 		header('Location: ./account/index.php');
 		exit;
 	}
@@ -29,7 +29,7 @@
             <div id="main">
                 <h2>NOCH IM AUFBAU!</h2>
                 <p>Welcome back,
-                    <?=$_SESSION['name']?>!
+                    <?=$_SESSION['displayname']?>!
                 </p>
             </div>
         </div>
