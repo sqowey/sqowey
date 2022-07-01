@@ -91,35 +91,39 @@
                                 $checking_id_double = true;
                                 while($checking_id_double){
                                     $new_id = generateID();
-                                    $stmt = $con->prepare("SELECT * FROM accounts WHERE username = ?");
-                                    $stmt->bind_param('s', $username);
+                                    $stmt = $con->prepare("SELECT * FROM accounts WHERE id = ?");
+                                    $stmt->bind_param('s', $new_id);
                                     $stmt->execute();
                                     $result = $stmt->get_result();
                                     if ($result->num_rows > 0) {
                                         // Do nothing (this will repeat the process) 
                                     } else { 
                                         $checking_id_double = false;
+
+                                        // 
+                                        // Insert account to db
+                                        // 
+
+                                        // Create a salt
+                                        $salt = bin2hex(openssl_random_pseudo_bytes(32));
+                                        $pw_with_salt = $salt . $password;
+
+                                        // Hash the password
+                                        $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
+
+                                        // Insert the user into the database
+                                        $stmt = $con->prepare("INSERT INTO accounts (id, username, displayname, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                                        $stmt->bind_param('ssssssi', $new_id, $username, $displayname, $email, $hashed_pw, $salt, $current_account_version);
+                                        $stmt->execute();
+
+                                        // Close the connection
+                                        $stmt->close();
+                                        $con->close();
+
+                                        // Redirect to login page
+                                        header("Location: login.html?c=13");
                                     }
                                 }
-                                
-                                // Create a salt
-                                $salt = bin2hex(openssl_random_pseudo_bytes(32));
-                                $pw_with_salt = $salt . $password;
-
-                                // Hash the password
-                                $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
-
-                                // Insert the user into the database
-                                $stmt = $con->prepare("INSERT INTO accounts (id, username, displayname, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?, ?, ?)");
-                                $stmt->bind_param('isssssi', $new_id, $username, $displayname, $email, $hashed_pw, $salt, $current_account_version);
-                                $stmt->execute();
-
-                                // Close the connection
-                                $stmt->close();
-                                $con->close();
-
-                                // Redirect to login page
-                                header("Location: login.html?c=13");
                             }
                         }
                     }
