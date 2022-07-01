@@ -6,7 +6,8 @@ $DATABASE_NAME = 'sqowey_tmp';
 $DATABASE_TABLE = 'pw_reset_auth';
 
 // Get the data
-$username = $_POST['username'];
+$displayname = $_POST['username'];
+$username = strtolower($displayname);
 $usermail = $_POST['mail'];
 
 // Connect with the Credentials
@@ -57,6 +58,7 @@ if ($stmt = $con->prepare('INSERT INTO '.$DATABASE_TABLE.' (username, usermail, 
     session_start();
     $_SESSION['pw_reset_username'] = $username;
     $_SESSION['pw_reset_usermail'] = $usermail;
+    $_SESSION['pw_reset_displayname'] = $displayname;
 
     // Redirect to page two
     header('Location: ./second_step.php');
