@@ -12,7 +12,8 @@ const error_messages = {
     "couldntupload": "Could not upload the file. <br>Please try again later.",
     "wrongoldpass": "The old password is wrong.",
     "wrongnewpass": "The new passwords are not the same.",
-    "invalidpass": "New password doesn't meet the requirements."
+    "invalidpass": "New password doesn't meet the requirements.",
+    "accdel_pending": "You already have a pending<br>account deletion request."
 }
 
 // Check if there is an ?m= in the url

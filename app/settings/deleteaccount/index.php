@@ -2,12 +2,36 @@
     // Start the PHP_session
     session_start();
 
+    // Get the database login-credentials
+    require("../../config.php");
+
 	// If the user is not logged in redirect to the index-page
     // Also if the session variable id is unset
-	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])){
+	if (!isset($_SESSION['displayname']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])){
 		header('Location: ../../index.php');
 		exit;
 	}
+
+    // Try to Connect with credentials
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey_tmp');
+
+    // Prepare the SQL
+    if ($stmt = $con->prepare('SELECT * FROM accountdeletion WHERE user_id = ?')) {
+
+        // Bind parameters (s = string, i = int, b = blob, etc)
+        $stmt->bind_param('s', $_SESSION['id']);
+        $stmt->execute();
+
+        // Store the result so we can check if the account exists in the database.
+        $stmt->store_result();
+
+        // Check if Account exist
+        if ($stmt->num_rows > 0) {
+
+            // Redirect to settings with errormessage
+            header('Location: ../settings.html?e=accdel_pending');
+            exit();
+        }}
 ?>
 <!DOCTYPE html>
 <html lang="de">
