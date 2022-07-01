@@ -2,6 +2,10 @@
     session_start();
     $displayname = $_SESSION['pw_reset_displayname'];
     $usermail= $_SESSION['pw_reset_usermail'];
+
+    if (!isset($displayname) || !isset($usermail)) {
+        header('Location: ./index.html?c=01');
+    }
 ?>
 
 <!DOCTYPE html>
