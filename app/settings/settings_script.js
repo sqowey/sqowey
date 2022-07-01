@@ -18,6 +18,12 @@ if (width / 100 * 15 < 330) {
 user_element = document.getElementById("name");
 name_element = document.getElementById("name_field");
 
+// Wait, so that the php script can be run first, then get the name
+var user_name;
+window.setTimeout(function() {
+    user_name = document.getElementById("account_settings_username").value;
+}, 100)
+
 // Add event listener hover
 user_element.addEventListener("mouseover", function() {
 
@@ -29,7 +35,7 @@ user_element.addEventListener("mouseover", function() {
 user_element.addEventListener("mouseout", function() {
 
     // Change the text of the element
-    name_element.innerHTML = 'muster';
+    name_element.innerHTML = user_name;
 });
 
 name_element.addEventListener("click", function() {
