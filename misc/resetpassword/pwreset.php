@@ -78,9 +78,9 @@
             }
 
             // Check if account exists with email
-            if($account_stmt = $account_db_con->prepare('SELECT * FROM `accounts` WHERE username = ?')){
+            if($account_stmt = $account_db_con->prepare('SELECT * FROM `accounts` WHERE username = ? AND email = ?')){
                 // Bind the username
-                $account_stmt->bind_param("s", $username);
+                $account_stmt->bind_param("ss", $username, $usermail);
                 $account_stmt->execute();
 
                 // Store the result
