@@ -6,6 +6,8 @@ code_messages_en = {
     "03": "Authentification Code<br>is invalid",
     "04": "No matching<br>account found",
     "05": "The password<br>isn't matching the<br>password requirements",
+    "97": "Error with<br>the Database",
+    "98": "Error with<br>the Database",
     "99": "Error with<br>the Database"
 };
 

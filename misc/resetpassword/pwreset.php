@@ -1,8 +1,7 @@
 <?php 
     // Get mail and name from session
     session_start();
-    session_destroy();
-    session_start();
+    $displayname = $_SESSION['pw_reset_displayname'];
     $username = $_SESSION['pw_reset_username'];
     $usermail = $_SESSION['pw_reset_usermail'];
 
@@ -114,19 +113,21 @@
                 $account_stmt->close();
                 $account_db_con->close();
 
+                // Destroy the session
+                session_destroy();
+
                 // Redirect to login
                 header('Location: ../../app/account/');
-                exit($new_pw_hashed . $new_salt . $username);
-                
+
             } else {
-                header('Location: ./second_step.html?c=99');
+                header('Location: ./second_step.html?c=98');
                 exit();
             }
 
         } else {
 
             // Redirect to the second page (with error message)
-            header('Location: ./index.html?c=99');
+            header('Location: ./index.html?c=97');
             exit();
         }
     }
