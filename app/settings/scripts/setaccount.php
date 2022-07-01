@@ -2,6 +2,7 @@
 
     // Get variables and convert them from strings to ints
     $username = $_POST['username'];
+    $displayname = $_POST['displayname'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
@@ -113,8 +114,8 @@
         }
 
         // Insert the data into the database
-        if($stmt = $con->prepare('UPDATE accounts SET username = ?, email = ?, phone = ? WHERE id = ?')) {
-            $stmt->bind_param('sssi', $username, $email, $phone, $_SESSION['id']);
+        if($stmt = $con->prepare('UPDATE accounts SET username = ?, displayname = ?, email = ?, phone = ? WHERE id = ?')) {
+            $stmt->bind_param('sssi', $username, $displayname, $email, $phone, $_SESSION['id']);
             $stmt->execute();
             $stmt->close();
 

@@ -5,7 +5,7 @@
 	// If the user is not logged in redirect to the index-page
     // Also if the session variable id is unset
 	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])){
-		header('Location: ../../index.html');
+		header('Location: ../../index.php');
 		exit;
 	}
 ?>
@@ -31,7 +31,7 @@
         <div class="container">
             <div id="account_info">
                 Du bist dabei eine Löschungsanfrage für das Konto
-                <span id="account_name"><?php echo $_SESSION['name']; ?></span>
+                <span id="account_name"><?=$_SESSION['displayname']; ?></span>
                 zu stellen.
             </div>
         </div>
