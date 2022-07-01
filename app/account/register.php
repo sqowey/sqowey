@@ -8,7 +8,8 @@
     $db_config = require('../config.php');
 
     // Get input
-    $username = $_POST['username'];
+    $displayname = $_POST['username'];
+    $username = strtolower($displayname);
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_repeat = $_POST['password_repeat'];
@@ -25,10 +26,10 @@
             exit;
         } else {
 
-            // Check if username is valid
+            // Check if displayname is valid
             // Only a-z | A-Z | 0-9 | _
             // Length: 4-12
-            if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $username)) {
+            if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $displayname)) {
                 header("Location: register.html?c=02");
                 exit;
             } else {
@@ -76,8 +77,8 @@
                                 $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
 
                                 // Insert the user into the database
-                                $stmt = $con->prepare("INSERT INTO accounts (username, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?)");
-                                $stmt->bind_param('ssssi', $username, $email, $hashed_pw, $salt, $current_account_version);
+                                $stmt = $con->prepare("INSERT INTO accounts (username, displayname, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?, ?)");
+                                $stmt->bind_param('sssssi', $username, $displayname, $email, $hashed_pw, $salt, $current_account_version);
                                 $stmt->execute();
 
                                 // Close the connection
