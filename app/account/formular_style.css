@@ -60,6 +60,7 @@ body {
     text-align: center;
     background-image: -webkit-linear-gradient(180deg, #3274d6, #28c785);
     -webkit-background-clip: text;
+    background-clip: text;
     width: fit-content;
     margin: auto;
     -webkit-text-fill-color: transparent;
@@ -132,6 +133,7 @@ body {
     -webkit-background-clip: text;
     margin: auto;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 
