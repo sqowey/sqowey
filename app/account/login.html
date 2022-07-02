@@ -21,36 +21,40 @@
     <div id="errorOutputContainer">
     </div>
 
-    <!-- The main login section -->
-    <div id="login">
+    <!-- A container that centers the form -->
+    <div id="centering_container">
 
-        <!-- Header -->
-        <h1>Anmelden</h1>
+        <!-- The main login section -->
+        <div id="login">
 
-        <!-- The form -->
-        <form action="login.php" method="post">
+            <!-- Header -->
+            <h1>Anmelden</h1>
 
-            <!-- Username field -->
-            <!-- <label for="username">
+            <!-- The form -->
+            <form action="login.php" method="post">
+
+                <!-- Username field -->
+                <!-- <label for="username">
                 <i class="fas fa-user"></i>
             </label> -->
-            <input type="text" name="username" placeholder="Nutzername" id="username" required>
+                <input type="text" name="username" placeholder="Nutzername" id="username" required>
 
-            <!-- Password field -->
-            <!-- <label for="password">
+                <!-- Password field -->
+                <!-- <label for="password">
                 <i class="fas fa-lock"></i>
             </label> -->
-            <input type="password" name="password" placeholder="Passwort" id="password" required>
+                <input type="password" name="password" placeholder="Passwort" id="password" required>
 
-            <!-- Login-knopf -->
-            <input type="submit" value="Anmelden">
+                <!-- Login-knopf -->
+                <input type="submit" value="Anmelden">
 
-            <!-- Zum Registrieren -->
-            <div id="under_submit">
-                <span id="linkToOther" onclick='window.location.assign("register.html")'>Registrieren</span> &ensp;|&ensp;
-                <span id="linkToPWreset" onclick='window.location.assign("../../misc/resetpassword")'>Passwort vergesen</span>
-            </div>
-        </form>
+                <!-- Zum Registrieren -->
+                <div id="under_submit">
+                    <span id="linkToOther" onclick='window.location.assign("register.html")'>Registrieren</span> &ensp;|&ensp;
+                    <span id="linkToPWreset" onclick='window.location.assign("../../misc/resetpassword")'>Passwort vergesen</span>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Load all needed scripts -->
