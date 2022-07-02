@@ -31,22 +31,25 @@
         <form action="login.php" method="post">
 
             <!-- Username field -->
-            <label for="username">
-					<i class="fas fa-user"></i>
-				</label>
+            <!-- <label for="username">
+                <i class="fas fa-user"></i>
+            </label> -->
             <input type="text" name="username" placeholder="Nutzername" id="username" required>
 
             <!-- Password field -->
-            <label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
+            <!-- <label for="password">
+                <i class="fas fa-lock"></i>
+            </label> -->
             <input type="password" name="password" placeholder="Passwort" id="password" required>
 
             <!-- Login-knopf -->
             <input type="submit" value="Anmelden">
 
             <!-- Zum Registrieren -->
-            <span id="linkToOther" onclick='window.location.assign("register.html")'>Registrieren</span>
+            <div id="under_submit">
+                <span id="linkToOther" onclick='window.location.assign("register.html")'>Registrieren</span> &ensp;|&ensp;
+                <span id="linkToOther" onclick='window.location.assign("register.html")'>Passwort vergesen</span>
+            </div>
         </form>
     </div>
 
