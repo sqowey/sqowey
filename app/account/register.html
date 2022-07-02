@@ -30,27 +30,27 @@
         <form action="register.php" method="post">
 
             <!-- E-Mail field -->
-            <label for="email">
+            <!-- <label for="email">
                 <i class="fas fa-at"></i>
-            </label>
+            </label> -->
             <input type="text" name="email" placeholder="E-Mail" id="email" required>
 
             <!-- Username field -->
-            <label for="username">
+            <!-- <label for="username">
                 <i class="fas fa-user"></i>
-            </label>
+            </label> -->
             <input type="text" name="username" placeholder="Nutzername" id="username" required>
 
             <!-- Password field -->
-            <label for="password">
+            <!-- <label for="password">
                 <i class="fas fa-lock"></i>
-            </label>
+            </label> -->
             <input type="password" name="password" placeholder="Passwort" id="password" required>
 
             <!-- Password field -->
-            <label for="password_repeat">
+            <!-- <label for="password_repeat">
                 <i class="fas fa-lock"></i>
-            </label>
+            </label> -->
             <input type="password" name="password_repeat" placeholder="Passwort wiederholen" id="password_repeat" required>
 
             <!-- Password requirements -->
@@ -73,7 +73,10 @@
             <input id="submitButton" type="submit" value="Registrieren">
 
             <!-- Zum login -->
-            <span id="linkToOther" onclick='window.location.assign("login.html")'>Login</span>
+            <div id="under_submit">
+                <span id="linkToOther" onclick='window.location.assign("login.html")'>Einloggen</span> &ensp;|&ensp;
+                <span id="linkToOther" onclick='window.location.assign("login.html")'>Passwort vergesen</span>
+            </div>
         </form>
     </div>
 
