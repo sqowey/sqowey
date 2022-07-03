@@ -29,7 +29,7 @@
         if ($stmt->num_rows > 0) {
 
             // Redirect to settings with errormessage
-            header('Location: ../settings.html?e=accdel_pending');
+            header('Location: ../settings.php?e=accdel_pending');
             exit();
         }}
 ?>
