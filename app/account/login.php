@@ -43,7 +43,7 @@
                 $pw_with_hash = $salt . $password;
             }
             if (!password_verify($pw_with_hash, $password_hash)) {
-                header("Location: register.html?c=14");
+                header("Location: login.html?c=14");
                 exit;
             } else {
 
