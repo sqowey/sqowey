@@ -18,7 +18,7 @@
     if ($stmt = $con->prepare('SELECT username, displayname, email, phone, avatar FROM accounts WHERE id = ?')) {
 
         // Bind the variables to the parameter
-        $stmt->bind_param('i', $_SESSION['id']);
+        $stmt->bind_param('s', $_SESSION['id']);
 
         // Execute the statement
         $stmt->execute();
