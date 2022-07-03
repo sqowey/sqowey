@@ -73,7 +73,7 @@
 
             // Check if password matches password rules
             if (!preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,255}$/", $input_new_password)) {
-                header("Location: register.html?c=05");
+                header("Location: index.html?c=05");
                 exit;
             }
 
