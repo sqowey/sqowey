@@ -1,3 +1,37 @@
+<?php 
+
+    // 
+    // Check if there is no db entry
+    // 
+
+    // Start the session, to get the data
+    session_start();
+
+    // Get the database login-credentials
+    require("../config.php");
+    
+    // Try to Connect with credentials
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
+
+    // Check connection
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Get the data from the database
+    if ($stmt = $con->prepare('INSERT IGNORE INTO `settings` SET user_id = ?')) {
+
+        // Bind the variables to the parameter
+        $stmt->bind_param('s', $_SESSION['id']);
+
+        // Execute the statement
+        $stmt->execute();
+
+        // Close the statement
+        $stmt->close();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
