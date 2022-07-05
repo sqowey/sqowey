@@ -120,7 +120,7 @@
             $stmt->close();
 
             // Reload the settings page
-            header('Location: ../settings.html');
+            header('Location: ../settings.php');
             echo "<script>resetFormAccounts();window.location.href = 'settings.php';</script>";
         }
     
