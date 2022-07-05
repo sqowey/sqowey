@@ -34,7 +34,7 @@
     if($stmt = $con->prepare('UPDATE activities SET status = ? WHERE user_id = ?')) {
 
         // Bind the variables
-        $stmt->bind_param('ii', $status_id, $_SESSION['id']);
+        $stmt->bind_param('is', $status_id, $_SESSION['id']);
 
         // Execute the statement
         $stmt->execute();

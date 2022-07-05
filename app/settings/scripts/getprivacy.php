@@ -18,7 +18,7 @@
     if ($stmt = $con->prepare('SELECT privacy_messages, privacy_friends FROM settings WHERE user_id = ?')) {
 
         // Bind the variables to the parameter
-        $stmt->bind_param('i', $_SESSION['id']);
+        $stmt->bind_param('s', $_SESSION['id']);
 
         // Execute the statement
         $stmt->execute();
