@@ -115,12 +115,12 @@
 
         // Insert the data into the database
         if($stmt = $con->prepare('UPDATE accounts SET username = ?, displayname = ?, email = ?, phone = ? WHERE id = ?')) {
-            $stmt->bind_param('sssi', $username, $displayname, $email, $phone, $_SESSION['id']);
+            $stmt->bind_param('ssss', $username, $displayname, $email, $phone, $_SESSION['id']);
             $stmt->execute();
             $stmt->close();
 
             // Reload the settings page
-            header('Location: ../settings.html');
+            header('Location: ../settings.php');
             echo "<script>resetFormAccounts();window.location.href = 'settings.php';</script>";
         }
     

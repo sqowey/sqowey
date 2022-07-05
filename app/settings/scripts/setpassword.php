@@ -15,7 +15,7 @@
 
     // Get the salt and the password hash from the database
     $stmt = $con->prepare("SELECT salt, password, account_version FROM accounts WHERE id = ?");
-    $stmt->bind_param('i', $_SESSION['id']);
+    $stmt->bind_param('s', $_SESSION['id']);
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($salt, $password_hash, $account_version);
@@ -33,13 +33,13 @@
 
     // Check if the old password is correct
     if(!password_verify($password, $password_hash)) {
-        header("Location: ./settings.html?e=wrongoldpass");
+        header("Location: ./settings.php?e=wrongoldpass");
         exit;
     } else {
 
         // Check if the new passwords are the same
         if($new_pw != $new_pw_repeat) {
-            header("Location: ./settings.html?e=wrongnewpass");
+            header("Location: ./settings.php?e=wrongnewpass");
             exit;
         } else {
 
@@ -48,7 +48,7 @@
             // Length: 8-255
             // Contains at least one number, at least one uppercase, at least one lowercase letter and at least one special character
             if(!preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9])[0-9A-Za-z!@#$%^&*()_+\-=\[\]{};:\|,.<>\/?]{8,255}$/', $new_pw)) {
-                header("Location: ./settings.html?e=invalidpass");
+                header("Location: ./settings.php?e=invalidpass");
             } else {
 
                 // Generate a salt
@@ -60,7 +60,7 @@
 
                 // Update the password
                 $stmt = $con->prepare("UPDATE accounts SET password = ?, salt = ?, account_version = 2 WHERE id = ?");
-                $stmt->bind_param('ssi', $new_pw_hash, $salt, $_SESSION['id']);
+                $stmt->bind_param('sss', $new_pw_hash, $salt, $_SESSION['id']);
                 $stmt->execute();
 
                 // Log out of the account

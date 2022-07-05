@@ -19,7 +19,7 @@
 
     // Insert the data into the database
     if($stmt = $con->prepare('UPDATE settings SET language = ? WHERE user_id = ?')) {
-        $stmt->bind_param('si', $lang, $_SESSION['id']);
+        $stmt->bind_param('ss', $lang, $_SESSION['id']);
         $stmt->execute();
         $stmt->close();
     }
