@@ -21,7 +21,7 @@
 
     // Insert the data into the database
     if($stmt = $con->prepare('UPDATE settings SET theme = ? WHERE user_id = ?')) {
-        $stmt->bind_param('ii', $theme, $_SESSION['id']);
+        $stmt->bind_param('is', $theme, $_SESSION['id']);
         $stmt->execute();
         $stmt->close();
     }

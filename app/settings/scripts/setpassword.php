@@ -15,7 +15,7 @@
 
     // Get the salt and the password hash from the database
     $stmt = $con->prepare("SELECT salt, password, account_version FROM accounts WHERE id = ?");
-    $stmt->bind_param('i', $_SESSION['id']);
+    $stmt->bind_param('s', $_SESSION['id']);
     $stmt->execute();
     $stmt->store_result();
     $stmt->bind_result($salt, $password_hash, $account_version);
@@ -60,7 +60,7 @@
 
                 // Update the password
                 $stmt = $con->prepare("UPDATE accounts SET password = ?, salt = ?, account_version = 2 WHERE id = ?");
-                $stmt->bind_param('ssi', $new_pw_hash, $salt, $_SESSION['id']);
+                $stmt->bind_param('sss', $new_pw_hash, $salt, $_SESSION['id']);
                 $stmt->execute();
 
                 // Log out of the account
