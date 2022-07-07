@@ -15,7 +15,7 @@
     }
 
     // Get the data from the database
-    if ($stmt = $con->prepare('SELECT username, displayname, email, phone, avatar FROM accounts WHERE id = ?')) {
+    if ($stmt = $con->prepare('SELECT username, displayname, email, phone FROM accounts WHERE id = ?')) {
 
         // Bind the variables to the parameter
         $stmt->bind_param('s', $_SESSION['id']);
@@ -24,7 +24,10 @@
         $stmt->execute();
 
         // Get the result
-        $stmt->bind_result($username, $displayname, $email, $phone, $avatar);
+        $stmt->bind_result($username, $displayname, $email, $phone);
+
+        // Avatar
+        $avatar = $_SESSION['id'].".png";
 
         // Fetch the result
         $stmt->fetch();
