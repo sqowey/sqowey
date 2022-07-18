@@ -79,10 +79,9 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
                 $new_path = "../files/avatars/".$id . "." . $file_ext;
 
                 // prepare the sql
-                $sql = "UPDATE `accounts` SET `avatar`='$new_path' WHERE id = '$id'";
-
-                // push the new path to the database
-                if ($con->query($sql) === TRUE) {
+                if($stmt = $con->prepare("UPDATE `accounts` SET `avatar`=? WHERE id = ?")){
+                    $stmt->bind_param('si', $new_path, $id);
+                    $stmt->execute();
 
                     // destroy the session
                     session_destroy();
@@ -92,7 +91,6 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
                     
                     // redirect
                     header('Location: settings.php?c=Avatar wurde<br>erfolgreich geändert.');
-
                 } else {
 
                     // Output the error
