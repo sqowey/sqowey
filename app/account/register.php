@@ -90,14 +90,17 @@
                                 // Check if id is already taken
                                 $checking_id_double = true;
                                 while($checking_id_double){
+                                    
                                     $new_id = generateID();
-                                    $stmt = $con->prepare("SELECT * FROM accounts WHERE id = ?");
+                                if ($stmt = $con->prepare("SELECT * FROM accounts WHERE id = ?")) {
                                     $stmt->bind_param('s', $new_id);
                                     $stmt->execute();
                                     $result = $stmt->get_result();
+
                                     if ($result->num_rows > 0) {
                                         // Do nothing (this will repeat the process) 
-                                    } else { 
+                                    } else {
+
                                         $checking_id_double = false;
 
                                         // 
@@ -124,6 +127,7 @@
                                         header("Location: login.html?c=13");
                                     }
                                 }
+                            }
                             }
                         }
                     }
