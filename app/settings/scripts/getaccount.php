@@ -27,7 +27,7 @@
         $stmt->bind_result($username, $displayname, $email, $phone);
 
         // Avatar
-        $avatar = $_SESSION['id'].".png";
+        $avatar = '../../files/avatars/'.str_replace('-', '', $_SESSION['id']).".png";
 
         // Fetch the result
         $stmt->fetch();
