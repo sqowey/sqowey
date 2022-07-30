@@ -111,10 +111,11 @@
                 }
                 $image = cropAlign($image, min(imagesx($image), imagesy($image)), min(imagesx($image), imagesy($image)));
 
-    
-
                 // Save the image
                 imagepng($image, $file);
+
+                // Redirect back
+                header("Location: ../settings.php");
             }
             
             // If there are errors, print them
