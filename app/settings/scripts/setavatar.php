@@ -49,8 +49,8 @@
                 $errors[] = 'Dateityp nicht erlaubt: ' . $file_name . ' ' . $file_ext;
             }
 
-            // check if file size is too big
-            if ($file_size > 2097152) {
+            // check if file size is too big (over 10 mb)
+            if ($file_size > 10000000) {
 
                 // Create error record
                 $errors[] = 'Datei zu groß: ' . $file_name . ' ' . $file_type;
