@@ -13,7 +13,9 @@ const error_messages = {
     "wrongoldpass": "The old password is wrong.",
     "wrongnewpass": "The new passwords are not the same.",
     "invalidpass": "New password doesn't meet the requirements.",
-    "accdel_pending": "You already have a pending<br>account deletion request."
+    "accdel_pending": "You already have a pending<br>account deletion request.",
+    "avatar_size": "That file is too big!<br>Stay under 10MB",
+    "avatar_type": "That file type is not allowed!<br>Allowed file types are:<br>bmp, gif, jpg, png, webp"
 }
 
 // Check if there is an ?m= in the url
