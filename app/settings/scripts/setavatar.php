@@ -38,6 +38,9 @@
 
             // create the new file 
             $file = $upload_dir . str_replace("-", "", $id) . ".png";
+            $myfile = fopen($file, "w");
+            fwrite($myfile, "");
+            fclose($myfile);
 
             // check if file extension is allowed
             if (!in_array($file_ext, $extensions)) {
