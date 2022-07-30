@@ -46,14 +46,14 @@
             if (!in_array($file_ext, $extensions)) {
 
                 // Create error record
-                $errors[] = 'Dateityp nicht erlaubt: ' . $file_name . ' ' . $file_ext;
+                header("Location: ./settings.php?e=avatar_type");
             }
 
             // check if file size is too big (over 10 mb)
             if ($file_size > 10000000) {
 
                 // Create error record
-                $errors[] = 'Datei zu groß: ' . $file_name . ' ' . $file_type;
+                header("Location: ./settings.php?e=avatar_size");
             }
             
             // If there are no errors, move the file
