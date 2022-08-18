@@ -50,7 +50,8 @@ if (url.indexOf("?e=") > -1) {
 
     console.log(message);
 
-    document.getElementById("output_message").innerHTML = "<div id='error_message_inner'>" + message + "</div>";
+    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'></div>";
+    document.getElementById("output_message_inner").innerText = message;
 }
 
 document.getElementById("output_message").addEventListener("click", function() {
