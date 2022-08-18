@@ -9,13 +9,13 @@ var url = window.location.href;
 const error_messages = {
     "filesize": "The file is too big. Max file size is 5MB.",
     "filetype": "The file type is not supported.",
-    "couldntupload": "Could not upload the file. <br>Please try again later.",
+    "couldntupload": "Could not upload the file. \nPlease try again later.",
     "wrongoldpass": "The old password is wrong.",
     "wrongnewpass": "The new passwords are not the same.",
     "invalidpass": "New password doesn't meet the requirements.",
-    "accdel_pending": "You already have a pending<br>account deletion request.",
-    "avatar_size": "That file is too big!<br>Stay under 10MB",
-    "avatar_type": "That file type is not allowed!<br>Allowed file types are:<br>bmp, gif, jpg, png, webp"
+    "accdel_pending": "You already have a pending\naccount deletion request.",
+    "avatar_size": "That file is too big!\nStay under 10MB",
+    "avatar_type": "That file type is not allowed!\nAllowed file types are:\nbmp, gif, jpg, png, webp"
 }
 
 // Check if there is an ?m= in the url
@@ -32,7 +32,8 @@ if (url.indexOf("?m=") > -1) {
 
     console.log(message);
 
-    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'>" + message + "</div>";
+    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'></div>";
+    document.getElementById("output_message_inner").innerText = message;
 }
 
 // Check if there is an ?e= in the url
@@ -49,7 +50,8 @@ if (url.indexOf("?e=") > -1) {
 
     console.log(message);
 
-    document.getElementById("output_message").innerHTML = "<div id='error_message_inner'>" + message + "</div>";
+    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'></div>";
+    document.getElementById("output_message_inner").innerText = message;
 }
 
 document.getElementById("output_message").addEventListener("click", function() {
