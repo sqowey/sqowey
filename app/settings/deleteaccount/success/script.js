@@ -14,5 +14,5 @@ if (url.indexOf("?t=") > -1) {
     } else {
         var message = "Dein Account wird schnellstmöglich gelöscht.";
     }
-    document.getElementById("title").innerHTML = message;
+    document.getElementById("title").innerText = message;
 }
