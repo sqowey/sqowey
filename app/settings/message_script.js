@@ -32,7 +32,8 @@ if (url.indexOf("?m=") > -1) {
 
     console.log(message);
 
-    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'>" + message + "</div>";
+    document.getElementById("output_message").innerHTML = "<div id='output_message_inner'></div>";
+    document.getElementById("output_message_inner").innerText = message;
 }
 
 // Check if there is an ?e= in the url
