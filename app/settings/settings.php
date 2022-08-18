@@ -225,7 +225,7 @@
                 <div class="settings_details">
                     <h3>Version</h3>
                     <p>
-                        Beta 0.0.3
+                        Beta 0.0.4
                     </p>
                     <h3>Changelogs</h3>
                     <button onclick="open_changelogs();" id="open_changelog_button">
