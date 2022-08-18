@@ -1,14 +1,14 @@
 // The messages that refer to the codes
 code_messages_en = {
     "00": "Success",
-    "01": "This email<br>is invalid",
-    "02": "This username<br>is invalid",
-    "03": "Username length<br>must be between<br>4 and 12 characters",
-    "04": "Password is<br>invalid",
+    "01": "This email\nis invalid",
+    "02": "This username\nis invalid",
+    "03": "Username length\nmust be between\n4 and 12 characters",
+    "04": "Password is\ninvalid",
     "11": "Username already taken",
     "12": "Email already taken too many times",
-    "13": "Account created<br>You can login now",
-    "14": "Username or<br>password invalid",
+    "13": "Account created\nYou can login now",
+    "14": "Username or\npassword invalid",
     "21": "Both passwords must match",
     "98": "Database error",
     "99": "ERROR"
@@ -39,7 +39,8 @@ if (url.indexOf("?c=") > -1) {
 
     console.log(message);
 
-    document.getElementById("errorOutputContainer").innerHTML = "<div id='errorOutput'>" + message + "</div>";
+    document.getElementById("errorOutputContainer").innerHTML = "<div id='errorOutput'></div>";
+    document.getElementById("errorOutput").innerText = message;
 }
 
 document.getElementById("errorOutputContainer").addEventListener("click", function() {
