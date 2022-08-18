@@ -3,7 +3,7 @@
     // Get variables and convert them from strings to ints
     $theme = $_POST['theme'];
 
-    echo $theme;
+    echo htmlspecialchars($theme);
     
     // Start the session, to get the data
     session_start();
