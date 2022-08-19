@@ -90,6 +90,11 @@
                     exit();
                 }
         }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email";
+            exit;
+        }
     }
 
     // Check if phone has changed AND is not unset
