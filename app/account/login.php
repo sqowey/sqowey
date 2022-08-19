@@ -7,7 +7,8 @@
     $db_config = require('../config.php');
 
     // Get input
-    $username = $_POST['username'];
+    $username = strtolower($_POST['username']);
+    $displayname = $_POST['username'];
     $password = $_POST['password'];
 
     // Conect to database
@@ -27,8 +28,8 @@
             exit;
         } else {
 
-            // Get id, salt and password hash from database
-            $stmt = $con->prepare("SELECT id, salt, password, email, account_version FROM accounts WHERE username = ?");
+        // Get id, salt and password hash from database
+        if ($stmt = $con->prepare("SELECT id, salt, password, email, account_version FROM accounts WHERE username = ?")) {
             $stmt->bind_param('s', $username);
             $stmt->execute();
             $stmt->store_result();
@@ -36,25 +37,28 @@
             $stmt->fetch();
 
             // Add salt and password and check if right
-            if($account_version < 2) {
+            if ($account_version < 2) {
                 $pw_with_hash = $password;
             } else {
                 $pw_with_hash = $salt . $password;
             }
+
+            // Check if password is right
             if (!password_verify($pw_with_hash, $password_hash)) {
-                header("Location: register.html?c=14");
+                header("Location: login.html?c=14");
                 exit;
             } else {
 
                 // Set session variables
                 $_SESSION['id'] = $id;
-                $_SESSION['name'] = $username;
+                $_SESSION['username'] = $username;
+                $_SESSION['displayname'] = $displayname;
                 $_SESSION['email'] = $email;
                 $_SESSION['loggedin'] = true;
 
                 // Redirect to app
                 header("Location: ../app.php");
-
+            }
             }
         }
     }

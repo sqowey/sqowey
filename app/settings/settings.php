@@ -1,3 +1,37 @@
+<?php 
+
+    // 
+    // Check if there is no db entry
+    // 
+
+    // Start the session, to get the data
+    session_start();
+
+    // Get the database login-credentials
+    require("../config.php");
+    
+    // Try to Connect with credentials
+    $con = mysqli_connect($db_host, $db_user, $db_pass, 'sqowey');
+
+    // Check connection
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Get the data from the database
+    if ($stmt = $con->prepare('INSERT IGNORE INTO `settings` SET user_id = ?')) {
+
+        // Bind the variables to the parameter
+        $stmt->bind_param('s', $_SESSION['id']);
+
+        // Execute the statement
+        $stmt->execute();
+
+        // Close the statement
+        $stmt->close();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -78,8 +112,8 @@
             <div id="account">
                 <h1>Account</h1>
                 <div class="settings_details">
-                    <h3>Email</h3>
                     <form action="./scripts/setaccount.php" method="post">
+                        <h3>Email</h3>
                         <input class="account_form_inputs" id="account_settings_mail" type="text" name="email" value="" disabled>
                         <h3>Benutzername</h3>
                         <input class="account_form_inputs" id="account_settings_username" type="text" name="username" value="" disabled>
@@ -191,7 +225,7 @@
                 <div class="settings_details">
                     <h3>Version</h3>
                     <p>
-                        Beta 0.0.3
+                        Beta 0.0.4
                     </p>
                     <h3>Changelogs</h3>
                     <button onclick="open_changelogs();" id="open_changelog_button">
@@ -206,7 +240,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Get all other scripts -->
-    <script src="./settings_script.js"></script>
     <script src="./message_script.js"></script>
     <script src="./scripts/getaccount.js"></script>
     <script src="./scripts/getprivacy.js"></script>
@@ -216,6 +249,7 @@
     <script src="./scripts/setlanguage.js"></script>
     <script src="./scripts/setappearance.js"></script>
     <script src="./scripts/setavatar.js"></script>
+    <script src="./settings_script.js"></script>
 </body>
 
 </html>

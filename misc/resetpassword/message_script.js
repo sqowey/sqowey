@@ -1,19 +1,14 @@
 // The messages that refer to the codes
 code_messages_en = {
     "00": "Success",
-    "01": "Error with<br>the Database",
-    "02": "Please fill in<br>all the fields",
-    "04": "No user with that password exists",
-    "05": "No user with that email exists",
-    "06": "No user with that username exists",
-    "07": "Supportticket<br>created",
-    "08": "There are too many accounts with that email",
-    "09": "Password changed",
-    "10": "Username changed",
-    "11": "Avatar changed",
-    "12": "username not valid",
-    "13": "password not valid",
-    "14": "EMail not valid"
+    "01": "Authentification Code<br>has expired",
+    "02": "The passwords are<br>not the same",
+    "03": "Authentification Code<br>is invalid",
+    "04": "No matching<br>account found",
+    "05": "The password<br>isn't matching the<br>password requirements",
+    "97": "Error with<br>the Database",
+    "98": "Error with<br>the Database",
+    "99": "Error with<br>the Database"
 };
 
 

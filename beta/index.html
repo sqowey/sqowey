@@ -1,19 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weiterleitung</title>
-    <link rel="stylesheet" href="./style.css">
+<html>
+</head>
+<title>Sqowey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./style.css">
+<!-- Set tab icon -->
+<link rel="icon" href="../contents/icon.svg">
 </head>
 
 <body>
-    <header>Du wirst gleich weitergeleitet</header>
-    <h2>Bitte warte einen moment</h2>
-    <footer>Falls du nicht weitergeleitet wirst, klicke <a href="de.html">hier</a></footer>
-    <script src="./lang_redirector.js"></script>
+
+    <!-- The container thats opened if the "admin"-link-page is opened -->
+    <div id="adminContainer">
+        <div id="admin">
+            <div id="adminHeader">
+                <h1>Sqowey - Links</h1>
+            </div>
+            <p id="admin_choose_reminder">Here you can open other pages (Used for development).</p>
+            <div class="admin_choose_container">
+                <div id="admin_choose_button_close" onclick="closeAdmin();" class="admin_no">Close this page</div>
+                <div id="admin_choose_button_home" onclick="window.location.href='../homepage';" class="admin_choose_1 admin_choose">Home page</div>
+                <div onclick="window.location.href='../app';" class="admin_choose_2 admin_choose">App</div>
+                <div onclick="window.location.href='https:\/\/www.github.com/sqowey';" class="admin_choose_3 admin_choose_extern">Github</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button to change the themes -->
+    <div id="themeButton">
+        <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
+    </div>
+
+    <!-- Button to get to other websites -->
+    <div id="adminButton">
+        <img onclick="openAdmin()" src="./contents/fontawesome_toolbox.svg">
+    </div>
+
+
+    <!-- Main content -->
+    <header>Sqowey</header>
+    <main>
+        <h2 id="soon">Coming soon...</h2>
+        <p id="paragraph_one">
+            Sqowey is a Chat-Service, that is focused on privacy
+        </p>
+        <p id="paragraph_two">
+            Sqowey is fully open-source and can be found on <a href="https://github.com/sqowey/" target="_blank">GitHub</a>
+        </p>
+    </main>
+    <footer id="footer">
+        Made with ❤️ by <a href="https://github.com/cuzimbisonratte" target="_blank">CuzImBisonratte</a>
+    </footer>
+
+    <!-- Load needed scripts -->
+    <script src="./script.js"></script>
+    <script src="./themes.js"></script>
+    <script src="./lang/langscript.js"></script>
 </body>
 
 </html>

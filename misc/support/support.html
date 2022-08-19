@@ -6,8 +6,6 @@
     <title>Sqowey - Support</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link href="support_style.css" rel="stylesheet" type="text/css">
-    <!-- Set tab icon -->
-    <link rel="icon" href="../contents/icon.svg">
 </head>
 
 <body>
@@ -15,116 +13,8 @@
         <button id="themeToggleButton" onclick="toggleTheme()">Darkmode/Lightmode</button>
     </div>
 
-
-    <!-- The Container in which the Error output is pasted -->
-    <div id="errorOutputContainer">
-    </div>
-
-    <!-- container -->
-    <div id="container">
-        <h1>Fehler melden</h1>
-        <!-- This is to choose which type of error to report -->
-        <div id="error_type" class="dropdown-menu" class="dropdown-menu-div">
-            <div class="dropdown">
-                <button id="error_type_button" class="dropbtn">Was m&ouml;chtest du melden?</button>
-                <div id="error_type_dropdown" class="dropdown-content">
-                    <a href="#" onclick="error_type('error');">Funktionsfehler</a>
-                    <a href="#" onclick="error_type('account');">Kontoprobleme</a>
-                    <a href="#" onclick="error_type('user');">Nutzer melden</a>
-                    <a href="#" onclick="error_type('server');">Server melden</a>
-                    <a href="#" onclick="error_type('other');">Sonstiges</a>
-                </div>
-            </div>
-        </div>
-        <!-- The div that gets Displayed, when an functional error is being reported -->
-        <div id="error">
-            <div id="wherehappens" class="dropdown-menu-div">
-                <div class="dropdown">
-                    <button id="error_in_button" class="dropbtn">In welchem Teil passiert es?</button>
-                    <div id="error_in_dropdown" class="dropdown-content">
-                        <a href="#" onclick="error_in('app');">App</a>
-                        <a href="#" onclick="error_in('home');">Startseite</a>
-                    </div>
-                </div>
-            </div>
-            <!-- The dropdown to choose, where it happened -->
-            <div id="app_error_area" class="dropdown-menu-div">
-                <div class="dropdown">
-                    <button id="app_error_area_button" class="dropbtn">Wo passiert es?</button>
-                    <div id="app_error_area_dropdown" class="dropdown-content">
-                        <a href="#" onclick="app_error_area('voice');">Sprachkanal</a>
-                        <a href="#" onclick="app_error_area('text');">Textkanal</a>
-                        <a href="#" onclick="app_error_area('settings');">Einstellungen</a>
-                        <a href="#" onclick="app_error_area('other');">Sonstige</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- The div that gets Displayed, when an account error is being reported -->
-        <div id="account_error">
-            <div id="wherehappens" class="dropdown-menu-div">
-                <div class="dropdown">
-                    <button id="account_error_button" class="dropbtn">Was ist das Problem?</button>
-                    <div id="account_error_dropdown" class="dropdown-content">
-                        <a href="#" onclick="account_error('email');">Falsche E-Mail</a>
-                        <a href="#" onclick="account_error('age');">Falsches Alter</a>
-                        <a href="#" onclick="account_error('password');">Passwort vergessen</a>
-                        <a href="#" onclick="account_error('other');">Sonstiges</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- The div that gets Displayed, when a user is being reported -->
-        <div id="user">
-            <div id="user_type_div" class="dropdown-menu-div">
-                <div class="dropdown">
-                    <button id="user_type_button" class="dropbtn">Welche art von Nutzer?</button>
-                    <div id="user_type_dropdown" class="dropdown-content">
-                        <a href="#" onclick="user_type('user');">Nutzer</a>
-                        <a href="#" onclick="user_type('team');">Sqowey-Team</a>
-                    </div>
-                </div>
-            </div>
-            <!-- The dropdown to choose, what happened -->
-            <div id="user_happened" class="dropdown-menu-div">
-                <div class="dropdown">
-                    <button id="user_happened_button" class="dropbtn">Was ist passiert?</button>
-                    <div id="user_happened_dropdown" class="dropdown-content">
-                        <a href="#" onclick="user_happened('beleidung');">Beleidung</a>
-                        <a href="#" onclick="user_happened('drohung');">Drohung</a>
-                        <a href="#" onclick="user_happened('hacking');">Hacking</a>
-                        <a href="#" onclick="user_happened('scam');">Scam</a>
-                        <a href="#" onclick="user_happened('jung');">Zu Jung</a>
-                        <a href="#" onclick="user_happened('sonstige');">Sonstiges</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- The div that gets Displayed, when a server is being reported -->
-        <div id="server">
-
-        </div>
-        <!-- The div that gets Displayed, when something other is being reported -->
-        <div id="other">
-
-        </div>
-        <hr>
-        <!-- The form that gets sent to the server -->
-        <form action="support.php" method="post">
-            <input type="text" name="errorcode" id="errorcode" class="hiddenFormField">
-            <input type="text" name="title" placeholder="Titel*" id="title" required>
-            <input type="text" name="mail" placeholder="E-Mail*" id="mail" required>
-            <input type="textarea" name="problem" placeholder="Das Problem*" id="problem" required>
-            <input type="textarea" name="sonstige" placeholder="Sonstige Informationen" id="sonstige">
-            <input type="submit" id="submit" value="Absenden">
-        </form>
-
-    </div>
-    <script src="support.js"></script>
-    <script src="formular_themes.js"></script>
-    <script src="message_script.js"></script>
+    <h2>Support is back soon!</h2>
+    <script src="support_themes.js"></script>
 </body>
 
 </html>

@@ -20,61 +20,52 @@
     <div id="errorOutputContainer">
     </div>
 
-    <!-- The main registration section -->
-    <div id="login">
+    <!-- A container that centers the form -->
+    <div id="centering_container">
 
-        <!-- Heading -->
-        <h1>REGISTRIEREN</h1>
+        <!-- The main registration section -->
+        <div id="register">
 
-        <!-- Formular -->
-        <form action="register.php" method="post">
+            <!-- Heading -->
+            <h1>REGISTRIEREN</h1>
 
-            <!-- E-Mail field -->
-            <label for="email">
-                <i class="fas fa-at"></i>
-            </label>
-            <input type="text" name="email" placeholder="E-Mail" id="email" required>
+            <!-- Formular -->
+            <form action="register.php" method="post">
 
-            <!-- Username field -->
-            <label for="username">
-                <i class="fas fa-user"></i>
-            </label>
-            <input type="text" name="username" placeholder="Nutzername" id="username" required>
+                <!-- E-Mail field -->
+                <!-- <label for="email">
+                    <i class="fas fa-at"></i>
+                </label> -->
+                <input type="text" name="email" placeholder="E-Mail" id="email" required>
 
-            <!-- Password field -->
-            <label for="password">
-                <i class="fas fa-lock"></i>
-            </label>
-            <input type="password" name="password" placeholder="Passwort" id="password" required>
+                <!-- Username field -->
+                <!-- <label for="username">
+                    <i class="fas fa-user"></i>
+                </label> -->
+                <input type="text" name="username" placeholder="Nutzername" id="username" required>
 
-            <!-- Password field -->
-            <label for="password_repeat">
-                <i class="fas fa-lock"></i>
-            </label>
-            <input type="password" name="password_repeat" placeholder="Passwort wiederholen" id="password_repeat" required>
+                <!-- Password field -->
+                <!-- <label for="password">
+                    <i class="fas fa-lock"></i>
+                </label> -->
+                <input type="password" name="password" placeholder="Passwort" id="password" required>
 
-            <!-- Password requirements -->
-            <div id="passwordRequirements">
-                <div id="passwordRequirement1">
-                    <i id="passwordRequirement1icon" class="far fa-times-circle"></i> Sonderzeichen
+                <!-- Password field -->
+                <!-- <label for="password_repeat">
+                    <i class="fas fa-lock"></i>
+                </label> -->
+                <input type="password" name="password_repeat" placeholder="Passwort wiederholen" id="password_repeat" required>
+
+                <!-- Registrierungsknopf -->
+                <input id="submitButton" type="submit" value="Registrieren">
+
+                <!-- Zum login -->
+                <div id="under_submit">
+                    <span id="linkToOther" onclick='window.location.assign("login.html")'>Einloggen</span> &ensp;|&ensp;
+                    <span id="linkToPWreset" onclick='window.location.assign("../../misc/resetpassword")'>Passwort vergesen</span>
                 </div>
-                <div id="passwordRequirement2">
-                    <i id="passwordRequirement2icon" class="far fa-times-circle"></i> Gro&szlig;buchstaben
-                </div>
-                <div id="passwordRequirement3">
-                    <i id="passwordRequirement3icon" class="far fa-times-circle"></i> Kleinbuchstaben
-                </div>
-                <div id="passwordRequirement4">
-                    <i id="passwordRequirement4icon" class="far fa-times-circle"></i> L&auml;nge 8-100 Buchstaben
-                </div>
-            </div>
-
-            <!-- Registrierungsknopf -->
-            <input id="submitButton" type="submit" value="Registrieren">
-
-            <!-- Zum login -->
-            <span id="linkToOther" onclick='window.location.assign("login.html")'>Login</span>
-        </form>
+            </form>
+        </div>
     </div>
 
     <!-- Load all needed scripts -->

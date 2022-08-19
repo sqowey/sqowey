@@ -24,13 +24,14 @@ $.ajax({
 
             // Get the account info
             var username = data.username;
+            var displayname = data.displayname;
             var email = data.email;
             var phone = data.phone;
             var avatar = data.avatar;
 
             // Set the name fields
-            name_field.innerHTML = username;
-            account_settings_name.value = username;
+            name_field.innerHTML = displayname;
+            account_settings_name.value = displayname;
 
             // Set the email fields
             email_field.innerHTML = email;
