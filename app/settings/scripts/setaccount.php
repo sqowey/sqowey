@@ -76,16 +76,10 @@
                 $stmt->execute();
 
                 // Get the result
-                $stmt->bind_result($id);
-
-                // Fetch the result
-                $stmt->fetch();
-
-                // Close the statement
-                $stmt->close();
-
-                // Check if the email is already taken
-                if ($id != null) {
+                $result = $stmt->get_result();
+                
+                // Check if more than two accounts with that mail exist
+                if ($result->num_rows > 2) {
                     echo "Email is already taken";
                     exit();
                 }
