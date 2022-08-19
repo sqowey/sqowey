@@ -24,16 +24,45 @@
     if (!preg_match("/^[0-9+]+$/", $phone) && $phone) {
         echo "Phone number can only contain numbers and +";
         exit();
-    } else {
+    } 
 
-        // Check if username has changed
-        if ($username != $_SESSION['username']) {
+    // Check if username has changed
+    if ($username != $_SESSION['username']) {
 
-            // Check if username is already taken
-            if ($stmt = $con->prepare('SELECT id FROM accounts WHERE username = ?')) {
+        // Check if username is already taken
+        if ($stmt = $con->prepare('SELECT id FROM accounts WHERE username = ?')) {
+
+            // Bind the variables to the parameter
+            $stmt->bind_param('s', $username);
+
+            // Execute the statement
+            $stmt->execute();
+
+            // Get the result
+            $stmt->bind_result($id);
+
+            // Fetch the result
+            $stmt->fetch();
+
+            // Close the statement
+            $stmt->close();
+
+            // Check if the username is already taken
+            if ($id != null) {
+                echo "Username is already taken";
+                exit();
+            }
+        }
+    }
+
+    // Check if email has changed
+    if ($email != $_SESSION['email']) {
+
+        // Check if email is already taken
+        if ($stmt = $con->prepare('SELECT id FROM accounts WHERE email = ?')) {
 
                 // Bind the variables to the parameter
-                $stmt->bind_param('s', $username);
+                $stmt->bind_param('s', $email);
 
                 // Execute the statement
                 $stmt->execute();
@@ -47,84 +76,52 @@
                 // Close the statement
                 $stmt->close();
 
-                // Check if the username is already taken
+                // Check if the email is already taken
                 if ($id != null) {
-                    echo "Username is already taken";
+                    echo "Email is already taken";
                     exit();
                 }
-            }
         }
+    }
 
-        // Check if email has changed
-        if ($email != $_SESSION['email']) {
+    // Check if phone has changed AND is not unset
+    if ($phone != $_SESSION['phone'] && $phone) {
 
-            // Check if email is already taken
-            if ($stmt = $con->prepare('SELECT id FROM accounts WHERE email = ?')) {
-    
-                    // Bind the variables to the parameter
-                    $stmt->bind_param('s', $email);
-    
-                    // Execute the statement
-                    $stmt->execute();
-    
-                    // Get the result
-                    $stmt->bind_result($id);
-    
-                    // Fetch the result
-                    $stmt->fetch();
-    
-                    // Close the statement
-                    $stmt->close();
-    
-                    // Check if the email is already taken
-                    if ($id != null) {
-                        echo "Email is already taken";
-                        exit();
-                    }
-            }
+        // Check if phone is already taken
+        if ($stmt = $con->prepare('SELECT id FROM accounts WHERE phone = ?')) {
+
+                // Bind the variables to the parameter
+                $stmt->bind_param('s', $phone);
+
+                // Execute the statement
+                $stmt->execute();
+
+                // Get the result
+                $stmt->bind_result($id);
+
+                // Fetch the result
+                $stmt->fetch();
+
+                // Close the statement
+                $stmt->close();
+
+                // Check if the phone is already taken
+                if ($id != null) {
+                    echo "Phone is already taken";
+                    exit();
+                }
         }
+    }
 
-        // Check if phone has changed AND is not unset
-        if ($phone != $_SESSION['phone'] && $phone) {
+    // Insert the data into the database
+    if($stmt = $con->prepare('UPDATE accounts SET username = ?, displayname = ?, email = ?, phone = ? WHERE id = ?')) {
+        $stmt->bind_param('sssss', $username, $displayname, $email, str_replace("+","00",$phone), $_SESSION['id']);
+        $stmt->execute();
+        $stmt->close();
 
-            // Check if phone is already taken
-            if ($stmt = $con->prepare('SELECT id FROM accounts WHERE phone = ?')) {
-    
-                    // Bind the variables to the parameter
-                    $stmt->bind_param('s', $phone);
-    
-                    // Execute the statement
-                    $stmt->execute();
-    
-                    // Get the result
-                    $stmt->bind_result($id);
-    
-                    // Fetch the result
-                    $stmt->fetch();
-    
-                    // Close the statement
-                    $stmt->close();
-    
-                    // Check if the phone is already taken
-                    if ($id != null) {
-                        echo "Phone is already taken";
-                        exit();
-                    }
-            }
-        }
-
-        // Insert the data into the database
-        if($stmt = $con->prepare('UPDATE accounts SET username = ?, displayname = ?, email = ?, phone = ? WHERE id = ?')) {
-            $stmt->bind_param('sssss', $username, $displayname, $email, str_replace("+","00",$phone), $_SESSION['id']);
-            $stmt->execute();
-            $stmt->close();
-
-            // Reload the settings page
-            header('Location: ../settings.php');
-            echo "<script>resetFormAccounts();window.location.href = 'settings.php';</script>";
-        }
-    
-    
+        // Reload the settings page
+        header('Location: ../settings.php');
+        echo "<script>resetFormAccounts();window.location.href = 'settings.php';</script>";
     }
 
 ?>
