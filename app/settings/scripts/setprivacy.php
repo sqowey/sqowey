@@ -26,7 +26,7 @@
 
             // Insert the data into the database
             if($stmt = $con->prepare('UPDATE settings SET privacy_messages = ?, privacy_friends = ? WHERE user_id = ?')) {
-                $stmt->bind_param('iii', $privacy_messages, $privacy_friends, $_SESSION['id']);
+                $stmt->bind_param('iis', $privacy_messages, $privacy_friends, $_SESSION['id']);
                 $stmt->execute();
                 $stmt->close();
             }

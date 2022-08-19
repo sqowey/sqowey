@@ -19,10 +19,10 @@
     $con = mysqli_connect($db_host, $db_user, $db_pass, 'accounts');
 
     // Prepare the SQL
-    if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+    if ($stmt = $con->prepare('SELECT id, password, salt, account_version FROM accounts WHERE username = ?')) {
 
         // Bind parameters (s = string, i = int, b = blob, etc)
-        $stmt->bind_param('s', $_SESSION['name']);
+        $stmt->bind_param('s', $_SESSION['username']);
         $stmt->execute();
 
         // Store the result so we can check if the account exists in the database.
@@ -30,11 +30,22 @@
 
         // Check if Account exist
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($id, $password);
+            $stmt->bind_result($id, $password, $salt, $account_version);
             $stmt->fetch();
 
+            // Check if account is over version 2.0
+            if ($account_version >= 2) {
+                
+                // Add the salt to the password
+                $password_input = $salt.$_POST['password'];
+            } else {
+
+                // Just fill in the password input variable
+                $password_input = $_POST['password'];
+            }
+
             // Check if the password is correct
-            if (password_verify($_POST['password'], $password)) {
+            if (password_verify($password_input, $password)) {
                 
                 // Add the deletion time to the database
                 if ($stmt = $con->prepare('UPDATE accounts SET delete_until = ? WHERE id = ?')) {

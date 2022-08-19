@@ -2,8 +2,8 @@
 	// Start the session, to get the data
 	session_start();
 	// If the user is not logged in redirect to the index-page
-	if (!isset($_SESSION['name']) || !isset($_SESSION['loggedin']) || !isset($_SESSION['id'])) {
-		header('Location: ./account/index.html');
+	if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+		header('Location: ./account/index.php');
 		exit;
 	}
 ?>
@@ -29,7 +29,7 @@
             <div id="main">
                 <h2>NOCH IM AUFBAU!</h2>
                 <p>Welcome back,
-                    <?=$_SESSION['name']?>!
+                    <?=$_SESSION['displayname']?>!
                 </p>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <!-- The Name thats on the top of the page -->
         <div class="name">
             <div id="actions">
-                <i class="fas fa-cog" onclick='location.href = "./settings/settings.html";'></i>
+                <i class="fas fa-cog" onclick='location.href = "./settings/settings.php";'></i>
             </div>
             <span>Test</span>
             <div id="personal_actions">

@@ -15,16 +15,19 @@
     }
 
     // Get the data from the database
-    if ($stmt = $con->prepare('SELECT username, email, phone, avatar FROM accounts WHERE id = ?')) {
+    if ($stmt = $con->prepare('SELECT username, displayname, email, phone FROM accounts WHERE id = ?')) {
 
         // Bind the variables to the parameter
-        $stmt->bind_param('i', $_SESSION['id']);
+        $stmt->bind_param('s', $_SESSION['id']);
 
         // Execute the statement
         $stmt->execute();
 
         // Get the result
-        $stmt->bind_result($username, $email, $phone, $avatar);
+        $stmt->bind_result($username, $displayname, $email, $phone);
+
+        // Avatar
+        $avatar = '../../files/avatars/'.str_replace('-', '', $_SESSION['id']).".png";
 
         // Fetch the result
         $stmt->fetch();
@@ -33,10 +36,11 @@
         $stmt->close();
     
         // Return the data
-        echo "DATA:".json_encode(array('username' => $username, 'email' => $email, 'phone' => $phone, 'avatar' => $avatar));
+        echo "DATA:".json_encode(array('username' => $username, 'displayname' => $displayname, 'email' => $email, 'phone' => $phone, 'avatar' => $avatar));
 
         // Store the data in the session
         $_SESSION['username'] = $username;
+        $_SESSION['displayname'] = $displayname;
         $_SESSION['email'] = $email;
         $_SESSION['phone'] = $phone;
         $_SESSION['avatar'] = $avatar;

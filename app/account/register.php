@@ -1,4 +1,22 @@
 <?php
+    // Functions to generate an ID
+    function generateIDsection($length){
+        $id_charset = "abcdefghijklmnopqrstuvwxyz123465789";
+        $generated = "";
+        for ($i=0; $i < $length; $i++) { 
+            $new_char = substr($id_charset, mt_rand(0, strlen($id_charset)),1);
+            $generated .= $new_char;
+        }
+        return $generated;
+    }
+    function generateID(){
+        $gen_id = generateIDsection(8) . "-";
+        $gen_id .= generateIDsection(4) . "-";
+        $gen_id .= generateIDsection(4) . "-";
+        $gen_id .= generateIDsection(4) . "-";
+        $gen_id .= generateIDsection(12);
+        return $gen_id;
+    }
 
     // Start the PHP_session
     session_start();
@@ -8,7 +26,8 @@
     $db_config = require('../config.php');
 
     // Get input
-    $username = $_POST['username'];
+    $displayname = $_POST['username'];
+    $username = strtolower($displayname);
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_repeat = $_POST['password_repeat'];
@@ -25,10 +44,10 @@
             exit;
         } else {
 
-            // Check if username is valid
+            // Check if displayname is valid
             // Only a-z | A-Z | 0-9 | _
             // Length: 4-12
-            if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $username)) {
+            if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $displayname)) {
                 header("Location: register.html?c=02");
                 exit;
             } else {
@@ -67,25 +86,48 @@
                                 header("Location: register.html?c=12");
                                 exit;
                             } else {
-                                
-                                // Create a salt
-                                $salt = bin2hex(openssl_random_pseudo_bytes(32));
-                                $pw_with_salt = $salt . $password;
 
-                                // Hash the password
-                                $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
+                                // Check if id is already taken
+                                $checking_id_double = true;
+                                while($checking_id_double){
+                                    
+                                    $new_id = generateID();
+                                if ($stmt = $con->prepare("SELECT * FROM accounts WHERE id = ?")) {
+                                    $stmt->bind_param('s', $new_id);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
 
-                                // Insert the user into the database
-                                $stmt = $con->prepare("INSERT INTO accounts (username, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?)");
-                                $stmt->bind_param('ssssi', $username, $email, $hashed_pw, $salt, $current_account_version);
-                                $stmt->execute();
+                                    if ($result->num_rows > 0) {
+                                        // Do nothing (this will repeat the process) 
+                                    } else {
 
-                                // Close the connection
-                                $stmt->close();
-                                $con->close();
+                                        $checking_id_double = false;
 
-                                // Redirect to login page
-                                header("Location: login.html?c=13");
+                                        // 
+                                        // Insert account to db
+                                        // 
+
+                                        // Create a salt
+                                        $salt = bin2hex(openssl_random_pseudo_bytes(32));
+                                        $pw_with_salt = $salt . $password;
+
+                                        // Hash the password
+                                        $hashed_pw = password_hash($pw_with_salt, PASSWORD_DEFAULT);
+
+                                        // Insert the user into the database
+                                        $stmt = $con->prepare("INSERT INTO accounts (id, username, displayname, email, password, salt, account_version) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                                        $stmt->bind_param('ssssssi', $new_id, $username, $displayname, $email, $hashed_pw, $salt, $current_account_version);
+                                        $stmt->execute();
+
+                                        // Close the connection
+                                        $stmt->close();
+                                        $con->close();
+
+                                        // Redirect to login page
+                                        header("Location: login.html?c=13");
+                                    }
+                                }
+                            }
                             }
                         }
                     }
