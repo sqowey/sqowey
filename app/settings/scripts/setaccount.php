@@ -53,6 +53,14 @@
                 exit();
             }
         }
+
+        // Check if displayname is valid
+        // Only a-z | A-Z | 0-9 | _
+        // Length: 4-12
+        if (!preg_match("/^[a-zA-Z0-9_]{4,12}$/", $displayname)) {
+            echo "Username is invalid";
+            exit;
+        }
     }
 
     // Check if email has changed
