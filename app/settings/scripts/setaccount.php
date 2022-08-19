@@ -1,8 +1,8 @@
 <?php 
 
     // Get variables and convert them from strings to ints
-    $username = $_POST['username'];
-    $displayname = $_POST['displayname'];
+    $displayname = $_POST['username'];
+    $username = strtolower($displayname);
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
@@ -20,8 +20,8 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Check phone number (can only contain numbers and +)
-    if (!preg_match("/^[0-9+]+$/", $phone)) {
+    // Check phone number (can only contain numbers and +) AND is set 
+    if (!preg_match("/^[0-9+]+$/", $phone) && $phone) {
         echo "Phone number can only contain numbers and +";
         exit();
     } else {
@@ -84,8 +84,8 @@
             }
         }
 
-        // Check if phone has changed
-        if ($phone != $_SESSION['phone']) {
+        // Check if phone has changed AND is not unset
+        if ($phone != $_SESSION['phone'] && $phone) {
 
             // Check if phone is already taken
             if ($stmt = $con->prepare('SELECT id FROM accounts WHERE phone = ?')) {
@@ -115,7 +115,7 @@
 
         // Insert the data into the database
         if($stmt = $con->prepare('UPDATE accounts SET username = ?, displayname = ?, email = ?, phone = ? WHERE id = ?')) {
-            $stmt->bind_param('ssss', $username, $displayname, $email, $phone, $_SESSION['id']);
+            $stmt->bind_param('sssss', $username, $displayname, $email, str_replace("+","00",$phone), $_SESSION['id']);
             $stmt->execute();
             $stmt->close();
 

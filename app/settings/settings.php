@@ -112,8 +112,8 @@
             <div id="account">
                 <h1>Account</h1>
                 <div class="settings_details">
-                    <h3>Email</h3>
                     <form action="./scripts/setaccount.php" method="post">
+                        <h3>Email</h3>
                         <input class="account_form_inputs" id="account_settings_mail" type="text" name="email" value="" disabled>
                         <h3>Benutzername</h3>
                         <input class="account_form_inputs" id="account_settings_username" type="text" name="username" value="" disabled>
