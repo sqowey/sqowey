@@ -1,6 +1,5 @@
 # Sqowey - Dein Messenger aber in besser
 
-[![Snyk Infrastructure as Code](https://github.com/sqowey/sqowey/actions/workflows/snyk-infrastructure.yml/badge.svg)](https://github.com/sqowey/sqowey/actions/workflows/snyk-infrastructure.yml) 
 [![PHPMD](https://github.com/sqowey/sqowey/actions/workflows/phpmd.yml/badge.svg)](https://github.com/sqowey/sqowey/actions/workflows/phpmd.yml)
 [![CodeQL](https://github.com/sqowey/sqowey/actions/workflows/codeql.yml/badge.svg)](https://github.com/sqowey/sqowey/actions/workflows/codeql.yml)
 ![GitHub repo size](https://img.shields.io/github/repo-size/sqowey/sqowey?style=plastic)
